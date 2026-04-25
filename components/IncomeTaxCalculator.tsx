@@ -1,22 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import {
-  FEDERAL_2026,
-  PROVINCES_2026,
-  CPP_2026,
-  EI_2026,
-  PROVINCE_CODES,
-} from '@/lib/rates/2026';
+import { PROVINCE_CODES, PROVINCES_2026 } from '@/lib/rates/2026';
+import { RATES_BY_YEAR, SUPPORTED_YEARS, DEFAULT_YEAR, type TaxYear } from '@/lib/rates';
 import { calculateTax } from '@/lib/tax/calculate';
 import { useProvince } from '@/contexts/ProvinceContext';
-
-const RATES_2026 = {
-  federal: FEDERAL_2026,
-  provinces: PROVINCES_2026,
-  cpp: CPP_2026,
-  ei: EI_2026,
-};
 
 const PROVINCE_GOV_LINKS: Record<string, { label: string; href: string }> = {
   BC: { label: 'BC Ministry of Finance — Personal Income Tax',          href: 'https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal' },
@@ -126,18 +114,15 @@ function formatPercent(n: number, digits = 1): string {
 }
 
 interface Props {
-  /**
-   * Pre-select a province code. When omitted, falls back to the value set in
-   * ProvinceContext (e.g. via the nav dropdown), then 'BC'.
-   */
   defaultProvince?: string;
-  /** Pre-fill an income (used by programmatic /[province]/[income]/ pages) */
   defaultIncome?: number;
+  defaultYear?: TaxYear;
 }
 
 export default function IncomeTaxCalculator({
   defaultProvince,
   defaultIncome = 75000,
+  defaultYear = DEFAULT_YEAR,
 }: Props) {
   const { province: contextProvince, geoSource, setProvince: setContextProvince } = useProvince();
   const [income, setIncome] = useState(defaultIncome);
@@ -146,8 +131,26 @@ export default function IncomeTaxCalculator({
   const [rrsp, setRrsp] = useState(0);
   const [otherDeductions, setOtherDeductions] = useState(0);
   const [isSelfEmployed, setIsSelfEmployed] = useState(false);
+  const [year, setYear] = useState<TaxYear>(defaultYear);
 
   const userHasChosenRef = useRef(false);
+
+  // On mount: read year preference from localStorage
+  useEffect(() => {
+    if (defaultYear !== DEFAULT_YEAR) return; // page prop overrides localStorage
+    try {
+      const saved = localStorage.getItem('mapletax:tax-year');
+      const parsed = saved ? (Number(saved) as TaxYear) : null;
+      if (parsed && (SUPPORTED_YEARS as number[]).includes(parsed)) {
+        setYear(parsed);
+      }
+    } catch {}
+  }, [defaultYear]);
+
+  function handleYearChange(y: TaxYear) {
+    setYear(y);
+    try { localStorage.setItem('mapletax:tax-year', String(y)); } catch {}
+  }
 
   // On mount: apply user preference from localStorage (takes priority over geo)
   useEffect(() => {
@@ -204,21 +207,45 @@ export default function IncomeTaxCalculator({
           otherDeductions,
           isSelfEmployed,
         },
-        RATES_2026
+        RATES_BY_YEAR[year]
       ),
-    [grossIncome, province, rrsp, otherDeductions, isSelfEmployed]
+    [grossIncome, province, rrsp, otherDeductions, isSelfEmployed, year]
   );
 
   return (
     <div className="mx-auto max-w-5xl p-6 md:p-10">
       <header className="mb-8">
         <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
-          Canadian income tax calculator 2026
+          Canadian income tax calculator {year}
         </h1>
         <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
           Federal and provincial tax, CPP, and EI. Live calculation as you
           type — no page refresh, no sign-up.
         </p>
+
+        {/* Year toggle — only shown when not locked to a specific year by page prop */}
+        {defaultYear === DEFAULT_YEAR && (
+          <div className="mt-4 inline-flex rounded-lg border border-neutral-200 dark:border-neutral-700" role="group" aria-label="Tax year">
+            {SUPPORTED_YEARS.map((y, i) => (
+              <button
+                key={y}
+                onClick={() => handleYearChange(y)}
+                aria-pressed={year === y}
+                className={[
+                  'px-4 py-1.5 text-sm font-medium transition-colors',
+                  i === 0 ? 'rounded-l-lg' : '',
+                  i === SUPPORTED_YEARS.length - 1 ? 'rounded-r-lg' : '',
+                  i > 0 ? 'border-l border-neutral-200 dark:border-neutral-700' : '',
+                  year === y
+                    ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
+                    : 'bg-white text-neutral-600 hover:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:text-white',
+                ].join(' ')}
+              >
+                {y}
+              </button>
+            ))}
+          </div>
+        )}
       </header>
 
       <div className="grid gap-8 md:grid-cols-[1fr_1.2fr]">
@@ -408,7 +435,7 @@ export default function IncomeTaxCalculator({
 
       <footer className="mt-10 text-xs text-neutral-500">
         <p>
-          Estimates based on 2026 CRA-published rates. Your actual tax may
+          Estimates based on {year} CRA-published rates. Your actual tax may
           differ based on additional deductions and credits. Not tax advice —
           consult a professional before making financial decisions.
         </p>

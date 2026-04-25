@@ -146,4 +146,27 @@ French mirrors all of above under `/fr/...`.
 - FAQ section added to `app/income-tax-calculator/page.tsx` — schema rendered into static HTML, verified in `out/income-tax-calculator/index.html`
 - Extension point: province pages should pass `getFAQs([...GENERAL_IDS, ...provinceSpecificIds])` to both components
 - 50 tests pass (1 snapshot written); `npm run build` clean
-- TODO next session: 2025 rates + year toggle + Tax Filing 2025 sub-pages
+
+### Session 4 (2026-04-25)
+- Built: pay period selector (annual/monthly/biweekly/weekly/daily/hourly) in IncomeTaxCalculator; annualises via PAY_PERIODS factor map
+- Built: 2025 tax rates — `lib/rates/2025.ts` with all 13 provinces; `lib/rates/index.ts` with `RATES_BY_YEAR`, `TaxYear`, `SUPPORTED_YEARS`, `DEFAULT_YEAR=2026`
+- CORRECTIONS vs task spec: EI 2025 rate is 1.64% (not 1.66% which was 2024); AB 8% bracket was NEW in 2025 (not 2026)
+- IncomeTaxCalculator: added `defaultYear` prop; segmented year toggle (2025 / 2026) below H1; year persisted to `mapletax:tax-year` localStorage; H1 and disclaimer use dynamic year; toggle hidden when page passes a specific year
+- Created `app/income-tax-calculator-2025/page.tsx` — unique metadata, canonical URL, passes `defaultYear={2025}`
+- Added `lib/tax/calculate.2025.test.ts` — 19 tests covering 4 hand-computed scenarios (BC $60k, AB $80k, ON $120k+RRSP, QC $80k self-employed) plus BPA phase-out
+- 69 tests pass; `npm run build` clean — both `/income-tax-calculator` and `/income-tax-calculator-2025` generated as static pages
+- TODO next session: Tax Filing 2025 sub-pages; province-specific pages for 2025
+
+### Session 5 (2026-04-25)
+- Built: per-province pages for all 13 provinces × 2 years (26 total static pages)
+- `lib/content/provinces.ts` — `ProvinceContent` interface, 26 content blocks keyed as `'BC-2025'` etc.; `getProvinceContent(code, year)` throws on missing
+- `lib/content/faqs.ts` — added 17 province-specific FAQs; `PROVINCE_FAQS` map (all 13 provinces, territories/QC/BC get 2 each); `getProvinceFAQs(code)` helper
+- `components/BracketTable.tsx` — semantic `<table>`, `buildBracketRows()` exported for testing, plain English ranges ("First $X", "Over $X to $Y", "Over $X")
+- `components/RelatedProvinces.tsx` — hardcoded NEIGHBORS map, 3 cards per province linking to correct year URL
+- `components/ProvincePage.tsx` — shared template: breadcrumb, H1, IncomeTaxCalculator, bracket table, 4 prose sections, QC/ON callout boxes, FAQ (province-specific + general), RelatedProvinces, disclaimer
+- `app/income-tax-calculator/[province]/page.tsx` — 2026 route: `generateStaticParams`, async `generateMetadata`, per-province canonical URLs
+- `app/income-tax-calculator-2025/[province]/page.tsx` — 2025 route: same structure, different year and canonical base
+- `app/sitemap.ts` — covers homepage (1.0), two calculator index pages (0.9), 26 province pages (0.8); `export const dynamic = 'force-static'` required for static export
+- `lib/content/provinces.test.ts` — 214 pure data tests: 26 blocks exist, required fields non-empty, howItWorks ≥100 words, creditsAndDeductions ≥50 words, province FAQs resolve
+- 283 tests pass; `npm run build` clean — 26 province pages + sitemap generated as static HTML
+- Spot-checked QC (abatement note, Revenu Québec), AB (8% bracket, no PST), YT (NRD, $11/day) in generated HTML

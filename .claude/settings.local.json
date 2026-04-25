@@ -11,7 +11,11 @@
       "Bash(python3 -c ' *)",
       "WebSearch",
       "WebFetch(domain:www.canada.ca)",
-      "WebFetch(domain:www.taxtips.ca)"
+      "WebFetch(domain:www.taxtips.ca)",
+      "WebFetch(domain:www.alberta.ca)",
+      "WebFetch(domain:www2.gov.bc.ca)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\localadmin\\\\Documents\\\\_vscode_Projects\\\\mapletax-calculator\\\\app\\\\income-tax-calculator\\\\[province]\")",
+      "Bash(mkdir -p \"c:\\\\Users\\\\localadmin\\\\Documents\\\\_vscode_Projects\\\\mapletax-calculator\\\\app\\\\income-tax-calculator-2025\\\\[province]\")"
     ]
   }
 }
