@@ -120,3 +120,12 @@ French mirrors all of above under `/fr/...`.
 4. Add new year option to year toggle
 5. Update default year on calculator pages
 6. Keep prior-year pages live for late filers and historical reference
+
+## Session log
+
+### Session 1 (2026-04-24)
+- Built: layout shell, Nav, ProvincesDropdown, Footer, LanguageToggle (stubbed)
+- ProvinceContext wired up, IncomeTaxCalculator reads from it
+- Mobile nav sheet works
+- TODO next session: client-side geolocation via ipapi.co, useGeoProvince hook
+- Known issues: [anything you noticed but didn't fix]
