@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb3b4",
+                      "surface-dim": "#efd4d3",
+                      "on-secondary-fixed": "#002114",
+                      "inverse-surface": "#3d2c2c",
+                      "surface-tint": "#b71d36",
+                      "surface-container": "#ffe9e8",
+                      "surface-variant": "#f8dcdc",
+                      "on-tertiary-fixed": "#00201f",
+                      "on-primary-fixed": "#40000a",
+                      "surface": "#fff8f7",
+                      "tertiary-fixed-dim": "#8fd3ce",
+                      "on-surface": "#261818",
+                      "surface-container-high": "#fee2e1",
+                      "surface-warm": "#fcf9f8",
+                      "background": "#fff8f7",
+                      "surface-container-highest": "#f8dcdc",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#920023",
+                      "on-primary-container": "#ffa6a8",
+                      "emerald": "#006c4a",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#5a4040",
+                      "secondary-fixed-dim": "#81d8ae",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#006c4a",
+                      "inverse-on-surface": "#ffedec",
+                      "primary-fixed": "#ffdad9",
+                      "on-background": "#261818",
+                      "outline-subtle": "#e3bebd",
+                      "on-tertiary-fixed-variant": "#00504d",
+                      "primary-container": "#9e0027",
+                      "secondary-container": "#9af1c6",
+                      "on-secondary-fixed-variant": "#005237",
+                      "outline-variant": "#e2bebe",
+                      "outline": "#8e7070",
+                      "tertiary-fixed": "#aaefea",
+                      "tertiary": "#003e3c",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-container": "#005754",
+                      "maple-red": "#9e0027",
+                      "surface-container-low": "#fff0f0",
+                      "charcoal": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "maple-red-container": "#c41e3a",
+                      "on-secondary-container": "#0b714e",
+                      "on-tertiary-container": "#87cbc6",
+                      "inverse-primary": "#ffb3b4",
+                      "outline-fine": "#8f6f6f",
+                      "surface-bright": "#fff8f7",
+                      "primary": "#73001a",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#9df4c9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "16px",
+                      "container-max": "1200px",
+                      "xs": "8px",
+                      "md": "24px",
+                      "lg": "48px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "data-lg": ["Inter"],
+                      "h2": ["Inter"],
+                      "h1": ["Inter"],
+                      "h3": ["Inter"],
+                      "label": ["Inter"],
+                      "body-md": ["Inter"],
+                      "data-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "data-lg": ["24px", {"lineHeight": "1", "fontWeight": "600"}],
+                      "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "data-md": ["16px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f7;
+            font-family: 'Inter', sans-serif;
+        }
+        .flat-card {
+            background-color: #ffffff;
+            border: 0.5px solid #e3bebd;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto w-full bg-white dark:bg-zinc-950 border-b-[0.5px] border-zinc-200 dark:border-zinc-800">
+<div class="text-xl font-black text-[#9e0027] dark:text-red-600 tracking-tighter uppercase">MapleTax Calculator</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:text-[#9e0027] transition-colors duration-150" href="#">Income Tax</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-[#9e0027] border-b-2 border-[#9e0027] pb-1" href="#">Tax Filing 2025</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:text-[#9e0027] transition-colors duration-150" href="#">Tax Planning 2026</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:text-[#9e0027] transition-colors duration-150" href="#">Provinces</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 dark:text-zinc-400 hover:text-[#9e0027] transition-colors duration-150" href="#">Guides</a>
+</div>
+<div class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-[#9e0027] dark:text-red-500 cursor-pointer">EN/FR</div>
+</nav>
+<main class="max-w-[1200px] mx-auto px-6 py-12">
+<!-- Status Banner -->
+<div class="mb-lg p-md bg-error-container border-l-4 border-error flex items-start gap-4">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<p class="font-body-md text-on-error-container">
+                The April 30, 2026 deadline has passed. You can still file — here's what to know about late filing.
+            </p>
+</div>
+<!-- Header -->
+<header class="mb-lg">
+<h1 class="font-h1 text-h1 text-charcoal mb-4">Filing your 2025 Canadian tax return</h1>
+<p class="font-body-lg text-on-surface-variant max-w-3xl">Complete your 2025 income tax and benefit return to ensure your benefits continue and to avoid further penalties. Use our tools and guides to get started.</p>
+</header>
+<!-- Bento Grid of Sub-page Cards -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
+<!-- Large Primary Card -->
+<div class="md:col-span-8 flat-card p-md flex flex-col justify-between min-h-[320px] relative overflow-hidden group hover:border-maple-red transition-colors">
+<div>
+<span class="font-label text-label text-maple-red block mb-4 uppercase">Essential Checklist</span>
+<h2 class="font-h2 text-h2 mb-4">2025 Filing checklist</h2>
+<p class="font-body-md text-on-surface-variant max-w-md">Gather your slips, receipts, and personal information before you start. Use our verified 12-point checklist for Canadian residents.</p>
+</div>
+<div class="mt-md">
+<button class="bg-maple-red text-on-primary px-6 py-3 font-label text-label uppercase tracking-widest flex items-center gap-2 group">
+                        View Checklist 
+                        <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="absolute top-0 right-0 p-md opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="checklist">checklist</span>
+</div>
+</div>
+<!-- Late Filing Card -->
+<div class="md:col-span-4 flat-card p-md bg-surface-container hover:border-maple-red transition-colors">
+<span class="font-label text-label text-error block mb-4 uppercase">Late Filing</span>
+<h3 class="font-h3 text-h3 mb-4">What to do if you can't pay</h3>
+<p class="font-body-sm text-on-surface-variant mb-6">Explore payment arrangements, taxpayer relief provisions, and voluntary disclosures for the 2025 tax year.</p>
+<a class="font-label text-label text-maple-red uppercase flex items-center gap-2" href="#">
+                    Payment Options <span class="material-symbols-outlined text-[14px]" data-icon="payments">payments</span>
+</a>
+</div>
+<!-- Software Card -->
+<div class="md:col-span-4 flat-card p-md hover:border-maple-red transition-colors">
+<h3 class="font-h3 text-h3 mb-2">NETFILE software</h3>
+<p class="font-body-sm text-on-surface-variant mb-6">Find CRA-certified free and paid software to file your 2025 return electronically.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 border-[0.5px] border-outline text-[10px] font-bold uppercase text-outline">CRA Certified</span>
+<span class="px-2 py-1 border-[0.5px] border-outline text-[10px] font-bold uppercase text-outline">NETFILE</span>
+</div>
+</div>
+<!-- Credits Card -->
+<div class="md:col-span-4 flat-card p-md hover:border-maple-red transition-colors">
+<h3 class="font-h3 text-h3 mb-2">2025 Credits</h3>
+<p class="font-body-sm text-on-surface-variant mb-4">Discover new and updated tax credits for 2025 including the Multi-generational Home Renovation Tax Credit.</p>
+<a class="text-maple-red font-label text-label uppercase" href="#">Explore Deductions</a>
+</div>
+<!-- Life Events -->
+<div class="md:col-span-4 flat-card p-md hover:border-maple-red transition-colors">
+<h3 class="font-h3 text-h3 mb-2">Life events</h3>
+<p class="font-body-sm text-on-surface-variant mb-4">How getting married, having a child, or moving affects your 2025 tax filing and benefit amounts.</p>
+<span class="material-symbols-outlined text-outline" data-icon="family_history">family_history</span>
+</div>
+<!-- Amend Card -->
+<div class="md:col-span-12 flat-card p-md flex flex-col md:flex-row items-center gap-8 bg-surface-warm">
+<div class="flex-1">
+<h3 class="font-h3 text-h3 mb-2">Need to change a return?</h3>
+<p class="font-body-md text-on-surface-variant">Learn how to amend your 2025 return after you've already filed. Do not file a second return for the same year.</p>
+</div>
+<div class="w-full md:w-auto">
+<button class="border-[1px] border-charcoal px-8 py-3 font-label text-label text-charcoal uppercase w-full md:w-auto hover:bg-charcoal hover:text-white transition-colors">
+                        How to Amend
+                    </button>
+</div>
+</div>
+</div>
+<!-- Inline Mini-Tool: Late-filing penalty calculator -->
+<section class="mb-xl bg-white border-[0.5px] border-outline-subtle p-lg">
+<div class="max-w-2xl mx-auto">
+<div class="text-center mb-md">
+<span class="font-label text-label text-maple-red uppercase tracking-widest block mb-2">Calculator</span>
+<h2 class="font-h2 text-h2 mb-4">Late-filing penalties calculator</h2>
+<p class="font-body-md text-on-surface-variant">Estimate the cost of filing your 2025 return after the deadline. This calculation includes the 5% basic penalty plus monthly interest.</p>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label text-label uppercase text-on-surface-variant block mb-2">Estimated Balance Owing ($)</label>
+<input class="w-full h-12 border-[1px] border-outline focus:border-maple-red focus:ring-0 px-4 font-data-md" placeholder="5,000" type="number"/>
+</div>
+<div>
+<label class="font-label text-label uppercase text-on-surface-variant block mb-2">Months Past Deadline</label>
+<select class="w-full h-12 border-[1px] border-outline focus:border-maple-red focus:ring-0 px-4 font-body-md">
+<option>1 Month</option>
+<option>2 Months</option>
+<option>3 Months</option>
+<option>4 Months</option>
+<option>5 Months</option>
+<option>6+ Months (Maximum penalty)</option>
+</select>
+</div>
+<div class="p-md bg-surface-container-low border-[0.5px] border-outline-variant flex justify-between items-center">
+<div>
+<span class="font-label text-label uppercase text-on-surface-variant block">Estimated Penalty</span>
+<span class="font-data-lg text-data-lg text-charcoal">$250.00</span>
+</div>
+<div class="text-right">
+<span class="font-label text-label uppercase text-on-surface-variant block">Interest (approx)</span>
+<span class="font-data-md text-data-md text-charcoal">$45.00</span>
+</div>
+</div>
+<p class="font-body-sm text-on-surface-variant italic text-center">Note: This is an estimate. The CRA will calculate final interest based on daily compounding rates.</p>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="max-w-3xl mx-auto mb-xl">
+<h2 class="font-h2 text-h2 mb-lg text-center">Frequently asked questions</h2>
+<div class="space-y-4">
+<div class="flat-card">
+<button class="w-full flex justify-between items-center p-md text-left group">
+<span class="font-body-lg font-bold">When is the absolute latest I can file?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-maple-red" data-icon="add">add</span>
+</button>
+</div>
+<div class="flat-card">
+<button class="w-full flex justify-between items-center p-md text-left group">
+<span class="font-body-lg font-bold">Will late filing affect my GST/HST credit?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-maple-red" data-icon="add">add</span>
+</button>
+</div>
+<div class="flat-card">
+<button class="w-full flex justify-between items-center p-md text-left group">
+<span class="font-body-lg font-bold">What if I have no income to report for 2025?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-maple-red" data-icon="add">add</span>
+</button>
+</div>
+<div class="flat-card">
+<button class="w-full flex justify-between items-center p-md text-left group">
+<span class="font-body-lg font-bold">Can I still use NETFILE if I am late?</span>
+<span class="material-symbols-outlined text-outline group-hover:text-maple-red" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 border-t-[0.5px] border-zinc-200 dark:border-zinc-800">
+<div class="w-full py-12 px-6 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<div class="font-bold text-zinc-900 dark:text-white mb-4 uppercase tracking-tighter">MapleTax Calculator</div>
+<p class="font-['Inter'] text-xs leading-relaxed text-zinc-500">© 2025 MapleTax Calculator. For informational purposes only. Information is subject to change based on federal budget updates.</p>
+</div>
+<div>
+<h4 class="font-label text-label uppercase mb-4 text-charcoal">Filing Resources</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Tax Filing 2025</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">CRA Login</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Certified Software</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label uppercase mb-4 text-charcoal">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Disclaimer</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Privacy Policy</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label uppercase mb-4 text-charcoal">Quick Tools</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Income Tax Calculator</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">RRSP Limit Check</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Child Benefit Est.</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<div class="fixed bottom-0 left-0 w-full z-40 flex items-center justify-between px-4 h-16 md:hidden bg-white dark:bg-zinc-950 border-t-[0.5px] border-zinc-200 dark:border-zinc-800">
+<div class="flex flex-col items-center justify-center w-full text-[#9e0027] font-black">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase">Live Take-home</span>
+</div>
+</div>
+</body></html>

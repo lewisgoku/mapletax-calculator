@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MapleTax Calculator | Canadian Income Tax Calculator 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb3b4",
+                        "surface-dim": "#efd4d3",
+                        "on-secondary-fixed": "#002114",
+                        "inverse-surface": "#3d2c2c",
+                        "surface-tint": "#b71d36",
+                        "surface-container": "#ffe9e8",
+                        "surface-variant": "#f8dcdc",
+                        "on-tertiary-fixed": "#00201f",
+                        "on-primary-fixed": "#40000a",
+                        "surface": "#fff8f7",
+                        "tertiary-fixed-dim": "#8fd3ce",
+                        "on-surface": "#261818",
+                        "surface-container-high": "#fee2e1",
+                        "surface-warm": "#fcf9f8",
+                        "background": "#fff8f7",
+                        "surface-container-highest": "#f8dcdc",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#920023",
+                        "on-primary-container": "#ffa6a8",
+                        "emerald": "#006c4a",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#5a4040",
+                        "secondary-fixed-dim": "#81d8ae",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006c4a",
+                        "inverse-on-surface": "#ffedec",
+                        "primary-fixed": "#ffdad9",
+                        "on-background": "#261818",
+                        "outline-subtle": "#e3bebd",
+                        "on-tertiary-fixed-variant": "#00504d",
+                        "primary-container": "#9e0027",
+                        "secondary-container": "#9af1c6",
+                        "on-secondary-fixed-variant": "#005237",
+                        "outline-variant": "#e2bebe",
+                        "outline": "#8e7070",
+                        "tertiary-fixed": "#aaefea",
+                        "tertiary": "#003e3c",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#005754",
+                        "maple-red": "#9e0027",
+                        "surface-container-low": "#fff0f0",
+                        "charcoal": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "maple-red-container": "#c41e3a",
+                        "on-secondary-container": "#0b714e",
+                        "on-tertiary-container": "#87cbc6",
+                        "inverse-primary": "#ffb3b4",
+                        "outline-fine": "#8f6f6f",
+                        "surface-bright": "#fff8f7",
+                        "primary": "#73001a",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#9df4c9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "16px",
+                        "container-max": "1200px",
+                        "xs": "8px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "data-lg": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "h3": ["Inter"],
+                        "label": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f7; }
+        .hairline-border { border: 0.5px solid #e3bebd; }
+        .thick-border { border: 1px solid #1c1b1b; }
+        .red-border { border: 1px solid #9e0027; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto w-full bg-white border-b-[0.5px] border-zinc-200">
+<div class="text-xl font-black text-[#9e0027] tracking-tighter">MapleTax Calculator</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-[#9e0027] border-b-2 border-[#9e0027] pb-1" href="#">Income Tax</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 hover:text-[#9e0027] transition-colors duration-150" href="#">Tax Filing 2025</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 hover:text-[#9e0027] transition-colors duration-150" href="#">Tax Planning 2026</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 hover:text-[#9e0027] transition-colors duration-150" href="#">Provinces</a>
+<a class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-zinc-600 hover:text-[#9e0027] transition-colors duration-150" href="#">Guides</a>
+</nav>
+<div class="font-['Inter'] uppercase tracking-tight text-xs font-bold text-[#9e0027]">EN/FR</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-12">
+<!-- Hero Section -->
+<div class="mb-12">
+<h1 class="font-h1 text-h1 text-charcoal mb-4">Canadian income tax calculator 2026</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Estimate your net take-home pay for the upcoming 2026 fiscal year based on current federal and provincial projections.</p>
+</div>
+<!-- Year Toggle & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+<div class="inline-flex p-1 bg-white border-[0.5px] border-zinc-200">
+<button class="px-8 py-2 font-label text-label text-zinc-500 hover:text-charcoal transition-all">2025</button>
+<button class="px-8 py-2 font-label text-label bg-charcoal text-white">2026</button>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="flex items-center gap-2 px-4 py-2 border-[0.5px] border-zinc-300 font-label text-[11px] uppercase bg-white hover:bg-zinc-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="link">link</span>
+                    Copy shareable link
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 border-[0.5px] border-zinc-300 font-label text-[11px] uppercase bg-white hover:bg-zinc-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="picture_as_pdf">picture_as_pdf</span>
+                    Print / Save as PDF
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 border-[0.5px] border-zinc-300 font-label text-[11px] uppercase bg-white hover:bg-zinc-50 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="compare_arrows">compare_arrows</span>
+                    Compare with another province
+                </button>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- LEFT COLUMN: Inputs -->
+<div class="lg:col-span-5">
+<div class="bg-white p-md border-[0.5px] border-zinc-200">
+<h2 class="font-h3 text-h3 mb-6">Employment Income</h2>
+<div class="space-y-6">
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-2 uppercase">GROSS INCOME (ANNUAL)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-data-md text-data-md text-zinc-400">$</span>
+<input class="w-full pl-10 pr-4 py-3 border-[1px] border-zinc-300 focus:border-maple-red focus:ring-0 text-data-md font-data-md outline-none transition-all" type="number" value="100000"/>
+</div>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-2 uppercase">PROVINCE OF RESIDENCE</label>
+<select class="w-full px-4 py-3 border-[1px] border-zinc-300 focus:border-maple-red focus:ring-0 font-body-md text-body-md outline-none appearance-none bg-white">
+<option>Ontario</option>
+<option>British Columbia</option>
+<option>Quebec</option>
+<option>Alberta</option>
+<option>Manitoba</option>
+<option>Saskatchewan</option>
+</select>
+</div>
+<div class="pt-4 border-t-[0.5px] border-zinc-100">
+<h3 class="font-label text-label text-zinc-400 uppercase mb-4 tracking-widest">Deductions</h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-2 uppercase">RRSP CONTRIBUTION</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-data-md text-data-md text-zinc-400">$</span>
+<input class="w-full pl-10 pr-4 py-3 border-[1px] border-zinc-200 focus:border-maple-red focus:ring-0 text-data-md font-data-md outline-none" placeholder="0" type="number"/>
+</div>
+</div>
+<div>
+<label class="block font-label text-label text-on-surface-variant mb-2 uppercase">OTHER DEDUCTIONS</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-data-md text-data-md text-zinc-400">$</span>
+<input class="w-full pl-10 pr-4 py-3 border-[1px] border-zinc-200 focus:border-maple-red focus:ring-0 text-data-md font-data-md outline-none" placeholder="0" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 flex items-center gap-3">
+<input class="w-5 h-5 border-zinc-300 text-maple-red focus:ring-0" id="self-employed" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="self-employed">I am self-employed (Calculate double CPP/EI)</label>
+</div>
+<button class="w-full bg-maple-red text-white py-4 font-label text-label uppercase tracking-widest hover:brightness-110 transition-all">Calculate 2026 Taxes</button>
+</div>
+</div>
+<div class="mt-6 p-6 bg-zinc-900 text-white">
+<p class="font-label text-[10px] text-zinc-400 uppercase mb-2">Notice</p>
+<p class="font-body-sm text-body-sm opacity-80">2026 values are based on projected indexation of tax brackets at 2.4% inflation.</p>
+</div>
+</div>
+<!-- RIGHT COLUMN: Results -->
+<div class="lg:col-span-7 space-y-gutter">
+<!-- 2x2 Stats -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-6 border-[0.5px] border-zinc-200">
+<p class="font-label text-label text-zinc-500 uppercase mb-2">Net Take-Home</p>
+<p class="font-data-lg text-data-lg text-emerald">$72,450.12</p>
+</div>
+<div class="bg-white p-6 border-[0.5px] border-zinc-200">
+<p class="font-label text-label text-zinc-500 uppercase mb-2">Total Tax Paid</p>
+<p class="font-data-lg text-data-lg text-charcoal">$27,549.88</p>
+</div>
+<div class="bg-white p-6 border-[0.5px] border-zinc-200">
+<p class="font-label text-label text-zinc-500 uppercase mb-2">Average Rate</p>
+<p class="font-data-lg text-data-lg text-charcoal">27.55%</p>
+</div>
+<div class="bg-white p-6 border-[0.5px] border-zinc-200">
+<p class="font-label text-label text-zinc-500 uppercase mb-2">Marginal Rate</p>
+<p class="font-data-lg text-data-lg text-charcoal">43.41%</p>
+</div>
+</div>
+<!-- Breakdown Table -->
+<div class="bg-white border-[0.5px] border-zinc-200 overflow-hidden">
+<div class="p-6 border-b-[0.5px] border-zinc-200 bg-zinc-50">
+<h3 class="font-label text-label uppercase tracking-widest">Detailed Tax Breakdown</h3>
+</div>
+<table class="w-full text-left">
+<tbody class="font-body-md text-body-md divide-y-[0.5px] divide-zinc-100">
+<tr>
+<td class="px-6 py-4 text-on-surface-variant">Federal Tax</td>
+<td class="px-6 py-4 text-right font-data-md">$15,240.00</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-on-surface-variant">Provincial Tax (Ontario)</td>
+<td class="px-6 py-4 text-right font-data-md">$8,320.00</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-on-surface-variant">CPP Contributions</td>
+<td class="px-6 py-4 text-right font-data-md">$3,039.00</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-on-surface-variant">EI Premiums</td>
+<td class="px-6 py-4 text-right font-data-md">$950.88</td>
+</tr>
+<tr class="bg-surface-container-low font-bold">
+<td class="px-6 py-4 text-charcoal">Total Deductions</td>
+<td class="px-6 py-4 text-right font-data-md">$27,549.88</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bar Chart -->
+<div class="bg-white p-6 border-[0.5px] border-zinc-200">
+<p class="font-label text-label uppercase mb-6 tracking-widest">Income Allocation</p>
+<div class="flex h-12 w-full mb-4">
+<div class="h-full bg-emerald flex-grow-[72]" title="Take-Home: 72%"></div>
+<div class="h-full bg-charcoal flex-grow-[28]" title="Tax &amp; Deductions: 28%"></div>
+</div>
+<div class="flex justify-between items-center font-label text-[10px] uppercase text-zinc-500">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-emerald"></div>
+                            Take-home pay ($72,450)
+                        </div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-charcoal"></div>
+                            Total Deductions ($27,550)
+                        </div>
+</div>
+</div>
+<!-- Per Period -->
+<div class="bg-white border-[0.5px] border-zinc-200 overflow-hidden">
+<div class="p-6 border-b-[0.5px] border-zinc-200">
+<h3 class="font-label text-label uppercase tracking-widest">Take-home per period</h3>
+</div>
+<div class="grid grid-cols-3 divide-x-[0.5px] divide-zinc-100">
+<div class="p-6 text-center">
+<p class="text-[10px] uppercase text-zinc-500 font-label mb-1">Monthly</p>
+<p class="font-data-md text-emerald">$6,037.51</p>
+</div>
+<div class="p-6 text-center">
+<p class="text-[10px] uppercase text-zinc-500 font-label mb-1">Bi-Weekly</p>
+<p class="font-data-md text-emerald">$2,786.54</p>
+</div>
+<div class="p-6 text-center">
+<p class="text-[10px] uppercase text-zinc-500 font-label mb-1">Weekly</p>
+<p class="font-data-md text-emerald">$1,393.27</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Accordion -->
+<div class="mt-24 max-w-3xl mx-auto">
+<h2 class="font-h2 text-h2 text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- FAQ Item -->
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">When is the 2026 tax filing deadline?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">How are the 2026 tax brackets calculated?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">Does this include the Climate Action Incentive?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">What is the CPP maximum for 2026?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">How does RRSP impact my 2026 refund?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">Are provincial tax credits included?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">Can I calculate taxes for previous years?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-white border-[0.5px] border-zinc-200">
+<div class="p-6 flex justify-between items-center cursor-pointer">
+<span class="font-body-md font-bold">What happens if I'm self-employed in 2026?</span>
+<span class="material-symbols-outlined text-zinc-400" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<div class="fixed bottom-0 left-0 w-full z-40 flex items-center justify-between px-4 h-16 md:hidden bg-white border-t-[0.5px] border-zinc-200">
+<div class="flex flex-col items-center justify-center flex-1 text-[#9e0027] font-black font-['Inter'] text-[10px] uppercase">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+            Live Take-home
+        </div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 border-t-[0.5px] border-zinc-200 bg-zinc-50 mt-24">
+<div class="md:col-span-1">
+<div class="font-bold text-zinc-900 mb-4">MapleTax Calculator</div>
+<p class="font-['Inter'] text-xs leading-relaxed text-zinc-500">© 2025 MapleTax Calculator. For informational purposes only.</p>
+</div>
+<div>
+<h4 class="font-label text-label uppercase text-zinc-400 mb-4 tracking-widest">Resources</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">About Us</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Disclaimer</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label uppercase text-zinc-400 mb-4 tracking-widest">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Privacy Policy</a></li>
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label uppercase text-zinc-400 mb-4 tracking-widest">Contact</h4>
+<ul class="space-y-2">
+<li><a class="font-['Inter'] text-xs text-zinc-500 hover:text-zinc-800 underline" href="#">Contact Support</a></li>
+</ul>
+</div>
+</footer>
+</body></html>
