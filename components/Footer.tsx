@@ -65,11 +65,25 @@ export default function Footer() {
 
         {/* Bottom row: disclaimer + language toggle */}
         <div className="mt-10 flex flex-col gap-4 border-t border-zinc-200 pt-6 dark:border-zinc-800 md:flex-row md:items-start md:justify-between">
-          <p className="max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-            Estimates based on CRA-published rates. Your actual tax may differ based on additional
-            deductions and credits. Not tax advice — consult a professional before making financial
-            decisions.
-          </p>
+          <div className="max-w-2xl space-y-2">
+            <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+              Estimates based on CRA-published rates. Your actual tax may differ based on additional
+              deductions and credits. Not tax advice — consult a professional before making financial
+              decisions.
+            </p>
+            <p className="text-xs leading-relaxed text-zinc-400 dark:text-zinc-600">
+              Province auto-detection powered by{' '}
+              <a
+                href="https://ipapi.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-zinc-600 dark:hover:text-zinc-400"
+              >
+                ipapi.co
+              </a>
+              . Your IP address is not stored or logged by us.
+            </p>
+          </div>
           <div className="shrink-0">
             <LanguageToggle />
           </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   FEDERAL_2026,
   PROVINCES_2026,
@@ -102,6 +102,17 @@ const PROVINCE_INFO: Record<string, readonly string[]> = {
   ],
 };
 
+type PayPeriod = 'annual' | 'monthly' | 'biweekly' | 'weekly' | 'daily' | 'hourly';
+
+const PAY_PERIODS: Record<PayPeriod, { label: string; factor: number; inputLabel: string }> = {
+  annual:   { label: 'Annual',    factor: 1,    inputLabel: 'Gross annual income' },
+  monthly:  { label: 'Monthly',   factor: 12,   inputLabel: 'Gross monthly income' },
+  biweekly: { label: 'Bi-weekly', factor: 26,   inputLabel: 'Gross income per pay period' },
+  weekly:   { label: 'Weekly',    factor: 52,   inputLabel: 'Gross weekly income' },
+  daily:    { label: 'Daily',     factor: 260,  inputLabel: 'Gross daily income' },
+  hourly:   { label: 'Hourly',    factor: 2080, inputLabel: 'Gross hourly rate' },
+};
+
 function formatCurrency(n: number): string {
   return new Intl.NumberFormat('en-CA', {
     style: 'currency',
@@ -128,18 +139,66 @@ export default function IncomeTaxCalculator({
   defaultProvince,
   defaultIncome = 75000,
 }: Props) {
-  const { province: contextProvince } = useProvince();
+  const { province: contextProvince, geoSource, setProvince: setContextProvince } = useProvince();
   const [income, setIncome] = useState(defaultIncome);
-  const [province, setProvince] = useState(defaultProvince ?? contextProvince ?? 'BC');
+  const [payPeriod, setPayPeriod] = useState<PayPeriod>('annual');
+  const [province, setLocalProvince] = useState(defaultProvince ?? 'BC');
   const [rrsp, setRrsp] = useState(0);
   const [otherDeductions, setOtherDeductions] = useState(0);
   const [isSelfEmployed, setIsSelfEmployed] = useState(false);
+
+  const userHasChosenRef = useRef(false);
+
+  // On mount: apply user preference from localStorage (takes priority over geo)
+  useEffect(() => {
+    if (defaultProvince) return;
+    try {
+      const userPref = localStorage.getItem('mapletax:user-province');
+      if (userPref && (PROVINCE_CODES as string[]).includes(userPref)) {
+        setLocalProvince(userPref);
+        userHasChosenRef.current = true;
+      }
+    } catch {}
+  }, [defaultProvince]);
+
+  // Sync when geo resolves into context (skipped if user has chosen or a prop was given)
+  useEffect(() => {
+    if (defaultProvince || userHasChosenRef.current) return;
+    setLocalProvince(contextProvince);
+  }, [contextProvince, defaultProvince]);
+
+  // Geo hint: show briefly when province was freshly detected (not served from cache)
+  const [hintVisible, setHintVisible] = useState(false);
+  const [hintFading, setHintFading] = useState(false);
+  useEffect(() => {
+    if (geoSource !== 'geo' || defaultProvince || userHasChosenRef.current) return;
+    setHintFading(false);
+    setHintVisible(true);
+    const fadeTimer = setTimeout(() => setHintFading(true), 3000);
+    const removeTimer = setTimeout(() => setHintVisible(false), 3700);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, [geoSource, defaultProvince]);
+
+  function handleProvinceChange(code: string) {
+    setLocalProvince(code);
+    setContextProvince(code);
+    userHasChosenRef.current = true;
+    setHintVisible(false);
+    try {
+      localStorage.setItem('mapletax:user-province', code);
+    } catch {}
+  }
+
+  const grossIncome = income * PAY_PERIODS[payPeriod].factor;
 
   const result = useMemo(
     () =>
       calculateTax(
         {
-          grossIncome: income,
+          grossIncome,
           provinceCode: province,
           rrspContribution: rrsp,
           otherDeductions,
@@ -147,7 +206,7 @@ export default function IncomeTaxCalculator({
         },
         RATES_2026
       ),
-    [income, province, rrsp, otherDeductions, isSelfEmployed]
+    [grossIncome, province, rrsp, otherDeductions, isSelfEmployed]
   );
 
   return (
@@ -171,7 +230,7 @@ export default function IncomeTaxCalculator({
           >
             <select
               value={province}
-              onChange={(e) => setProvince(e.target.value)}
+              onChange={(e) => handleProvinceChange(e.target.value)}
               className="w-full rounded-lg border-2 border-maple-red bg-white px-3 py-2 text-base font-medium outline-none focus:ring-2 focus:ring-maple-red/20 dark:bg-neutral-900"
             >
               {PROVINCE_CODES.map((code) => (
@@ -182,7 +241,33 @@ export default function IncomeTaxCalculator({
             </select>
           </Field>
 
-          <Field label="Gross annual income">
+          {hintVisible && (
+            <p
+              aria-live="polite"
+              className={`-mt-3 text-xs text-neutral-400 transition-opacity duration-700 dark:text-neutral-500 ${hintFading ? 'opacity-0' : 'opacity-100'}`}
+            >
+              Detected: {PROVINCES_2026[province]?.name}
+            </p>
+          )}
+
+          <Field label="Pay period">
+            <select
+              value={payPeriod}
+              onChange={(e) => setPayPeriod(e.target.value as PayPeriod)}
+              className="w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-base outline-none focus:border-neutral-500 dark:border-neutral-700 dark:bg-neutral-900"
+            >
+              {(Object.keys(PAY_PERIODS) as PayPeriod[]).map((p) => (
+                <option key={p} value={p}>
+                  {PAY_PERIODS[p].label}
+                </option>
+              ))}
+            </select>
+          </Field>
+
+          <Field
+            label={PAY_PERIODS[payPeriod].inputLabel}
+            hint={payPeriod !== 'annual' ? `= ${formatCurrency(grossIncome)} annually` : undefined}
+          >
             <CurrencyInput value={income} onChange={setIncome} />
           </Field>
 
@@ -317,7 +402,7 @@ export default function IncomeTaxCalculator({
             </dl>
           </div>
 
-          <StackedBar result={result} grossIncome={income} />
+          <StackedBar result={result} grossIncome={grossIncome} />
         </section>
       </div>
 

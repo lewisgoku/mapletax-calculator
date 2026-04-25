@@ -127,5 +127,14 @@ French mirrors all of above under `/fr/...`.
 - Built: layout shell, Nav, ProvincesDropdown, Footer, LanguageToggle (stubbed)
 - ProvinceContext wired up, IncomeTaxCalculator reads from it
 - Mobile nav sheet works
-- TODO next session: client-side geolocation via ipapi.co, useGeoProvince hook
-- Known issues: [anything you noticed but didn't fix]
+
+### Session 2 (2026-04-24)
+- Built: client-side geolocation via ipapi.co (`hooks/useGeoProvince.ts`)
+- `resolveGeoProvince` (pure async fn), `readGeoCache`/`writeGeoCache` (localStorage TTL 30d), `mapIpapiResponse` all exported for testing
+- `GeoProvinceInit` component mounted in root layout; updates ProvinceContext once on first load, skipping if `mapletax:user-province` is set
+- ProvinceContext extended with `geoSource` / `setGeoSource`
+- IncomeTaxCalculator: user province choice persisted to `mapletax:user-province`, overrides geo; "Detected: [Province]" hint fades after 3s on first geo visit
+- Footer: ipapi.co privacy note added
+- `vitest.config.ts` added with `@/` alias for test resolution
+- All 37 tests pass; `npm run build` clean
+- TODO next session: 2025 rates + year toggle + Tax Filing 2025 sub-pages

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ProvinceProvider } from '@/contexts/ProvinceContext';
+import GeoProvinceInit from '@/components/GeoProvinceInit';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
         <ProvinceProvider>
+          <GeoProvinceInit />
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
