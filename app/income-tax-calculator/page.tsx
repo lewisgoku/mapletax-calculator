@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import IncomeTaxCalculator from '@/components/IncomeTaxCalculator';
+import FAQAccordion from '@/components/FAQAccordion';
+import FAQSchema from '@/components/FAQSchema';
 import { PROVINCES_2026, PROVINCE_CODES } from '@/lib/rates/2026';
+import { getFAQs } from '@/lib/content/faqs';
 
 export const metadata: Metadata = {
   title: 'Canadian income tax calculator 2026 — federal and all provinces',
   description:
     'Free 2026 Canadian income tax calculator. See federal tax, provincial tax, CPP, EI, and take-home pay for every province. Live calculation, no sign-up.',
   alternates: {
-    canonical: 'https://example.ca/income-tax-calculator',
+    canonical: 'https://mapletaxcalculator.ca/income-tax-calculator',
   },
   openGraph: {
     title: 'Canadian income tax calculator 2026',
@@ -17,12 +20,32 @@ export const metadata: Metadata = {
   },
 };
 
+// FAQ IDs shown on this page — order controls display order
+const FAQ_IDS = [
+  'marginal-vs-average-rate',
+  'taxable-income-calculation',
+  'basic-personal-amount',
+  'cpp-cpp2-2026',
+  'ei-premiums',
+  'quebec-tax-system',
+  'rrsp-tax-reduction',
+  'calculator-vs-cra-bill',
+];
+
+const pageFaqs = getFAQs(FAQ_IDS);
+
 export default function IncomeTaxCalculatorPage() {
   return (
     <main>
       <IncomeTaxCalculator />
 
-      <section className="mx-auto max-w-3xl px-6 py-12">
+      {/* FAQ section — JSON-LD rendered server-side into static HTML */}
+      <div className="mx-auto max-w-3xl px-6 py-12">
+        <FAQSchema faqs={pageFaqs} />
+        <FAQAccordion faqs={pageFaqs} />
+      </div>
+
+      <section className="mx-auto max-w-3xl px-6 pb-12">
         <h2 className="text-2xl font-medium">
           Calculators for each province
         </h2>

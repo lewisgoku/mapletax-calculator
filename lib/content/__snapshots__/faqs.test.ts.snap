@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildFAQSchema > matches snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your marginal rate is the rate that applies to the next dollar you earn — it's set by whichever federal and provincial bracket the top slice of your income falls into. Your average rate is simply total income tax divided by gross income, expressed as a percentage. Canada uses a graduated bracket system, so only the income above each threshold is taxed at the higher rate — not your entire income. For most people, the marginal rate is noticeably higher than the average rate.",
+      },
+      "name": "What's the difference between my marginal and average tax rate?",
+    },
+  ],
+}
+`;

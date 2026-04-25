@@ -137,4 +137,13 @@ French mirrors all of above under `/fr/...`.
 - Footer: ipapi.co privacy note added
 - `vitest.config.ts` added with `@/` alias for test resolution
 - All 37 tests pass; `npm run build` clean
+
+### Session 3 (2026-04-24)
+- Built: FAQ system — `lib/content/faqs.ts` (typed `FAQ` interface, `FAQS` dict, `getFAQs` helper that throws on unknown ID)
+- 8 starter FAQs for the income tax calculator covering marginal/average rates, taxable income, BPA, CPP/CPP2, EI, Quebec, RRSP, and calculator accuracy
+- `components/FAQAccordion.tsx` — server component using `<details>`/`<summary>` for native a11y; CSS-only chevron via Tailwind `group-open:rotate-180`; `**bold**` markdown rendered inline
+- `components/FAQSchema.tsx` — server component rendering FAQPage JSON-LD; exports `buildFAQSchema` (pure fn) for testing; `<` escaped to `<` to prevent script injection
+- FAQ section added to `app/income-tax-calculator/page.tsx` — schema rendered into static HTML, verified in `out/income-tax-calculator/index.html`
+- Extension point: province pages should pass `getFAQs([...GENERAL_IDS, ...provinceSpecificIds])` to both components
+- 50 tests pass (1 snapshot written); `npm run build` clean
 - TODO next session: 2025 rates + year toggle + Tax Filing 2025 sub-pages

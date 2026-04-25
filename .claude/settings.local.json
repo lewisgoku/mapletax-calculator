@@ -3,7 +3,15 @@
     "allow": [
       "Bash(grep -E \"\\\\.\\(ts|tsx|js|jsx\\)$\")",
       "Bash(npx vitest *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\\\\projects\" -Directory | Select-Object Name)",
+      "Bash(awk '{print $2}')",
+      "Read(//tmp/**)",
+      "Bash(python3 -)",
+      "Bash(python3 -c ' *)",
+      "WebSearch",
+      "WebFetch(domain:www.canada.ca)",
+      "WebFetch(domain:www.taxtips.ca)"
     ]
   }
 }
