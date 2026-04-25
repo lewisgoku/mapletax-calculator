@@ -44,7 +44,7 @@ export default function Nav() {
                 key={href}
                 href={href}
                 className={[
-                  'font-bold uppercase text-xs tracking-tight transition-colors',
+                  'font-bold text-xs tracking-tight transition-colors',
                   isActive(href)
                     ? 'border-b-2 border-maple-red pb-0.5 text-maple-red'
                     : 'text-zinc-600 hover:text-maple-red dark:text-zinc-400 dark:hover:text-maple-red',

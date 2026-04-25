@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <div className="mb-3 font-black text-base uppercase tracking-tighter text-zinc-900 dark:text-zinc-100">
+            <div className="mb-3 font-black text-base tracking-tighter text-zinc-900 dark:text-zinc-100">
               MapleTax Calculator
             </div>
             <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
