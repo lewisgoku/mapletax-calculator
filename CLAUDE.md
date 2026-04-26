@@ -170,3 +170,25 @@ French mirrors all of above under `/fr/...`.
 - `lib/content/provinces.test.ts` — 214 pure data tests: 26 blocks exist, required fields non-empty, howItWorks ≥100 words, creditsAndDeductions ≥50 words, province FAQs resolve
 - 283 tests pass; `npm run build` clean — 26 province pages + sitemap generated as static HTML
 - Spot-checked QC (abatement note, Revenu Québec), AB (8% bracket, no PST), YT (NRD, $11/day) in generated HTML
+
+### Session 6 (2026-04-26)
+- Built: full French language support via next-intl 4.9.1
+- Architecture: `app/(en)/` route group (English, URLs unchanged) + `app/fr/` directory (French at `/fr/...`); no middleware needed for static export
+- `i18n/config.ts` — `locales = ['en', 'fr']`, `defaultLocale = 'en'`, `Locale` type
+- `i18n/request.ts` — `getRequestConfig` loading messages from `messages/{locale}.json`
+- `next.config.ts` — wrapped with `createNextIntlPlugin`
+- `messages/en.json` + `messages/fr.json` — CRA-official French terminology: RPC, AE, REER, Taux marginal, Taux moyen, Salaire net, Revenu annuel brut, cotisations
+- `app/(en)/layout.tsx` — `NextIntlClientProvider locale="en"` + ProvinceProvider + Nav + Footer; calls `setRequestLocale('en')`
+- `app/fr/layout.tsx` — same pattern with `locale="fr"` and French messages
+- `app/layout.tsx` — stripped to minimal html/body/fonts shell (locale-specific content in sub-layouts)
+- Moved all English route files from `app/` to `app/(en)/` — URLs unchanged (route group is transparent)
+- Created French route files: `app/fr/page.tsx`, `app/fr/income-tax-calculator/`, `app/fr/income-tax-calculator-2025/` with matching `[province]` routes
+- `components/IncomeTaxCalculator.tsx` — `useTranslations('Calculator')` replaces all hardcoded labels; PAY_PERIODS built inside component so labels react to locale
+- `components/Nav.tsx` — `useTranslations('Nav')` + `useLocale()`; links prefixed with `/fr` for French
+- `components/Footer.tsx` — converted to `'use client'`; `useTranslations('Footer')` + `useLocale()`; `t.rich('geoNotice')` renders ipapi.co link
+- `components/LanguageToggle.tsx` — real routing via `usePathname` + `useRouter`; toggles between EN/FR counterpart of current page
+- `components/ProvincePage.tsx` — accepts `locale` prop; French pages show calculator in French + "coming soon" notice instead of English prose; `getTranslations` for breadcrumb strings
+- `components/RelatedProvinces.tsx` — accepts `locale` prop; locale-aware base paths and heading/subtitle
+- `app/sitemap.ts` — expanded to include all `/fr/` URLs (52 province pages total + 6 index pages)
+- `hreflang` alternates on all 62 pages (en + fr + x-default pointing to English)
+- 283 tests pass; `npm run build` clean — 62 static pages generated (26 EN + 26 FR province pages + homepage/calculator index pages in both locales)

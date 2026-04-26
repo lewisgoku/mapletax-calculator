@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { PROVINCE_CODES, PROVINCES_2026 } from '@/lib/rates/2026';
 import { RATES_BY_YEAR, SUPPORTED_YEARS, DEFAULT_YEAR, type TaxYear } from '@/lib/rates';
 import { calculateTax } from '@/lib/tax/calculate';
@@ -92,15 +93,6 @@ const PROVINCE_INFO: Record<string, readonly string[]> = {
 
 type PayPeriod = 'annual' | 'monthly' | 'biweekly' | 'weekly' | 'daily' | 'hourly';
 
-const PAY_PERIODS: Record<PayPeriod, { label: string; factor: number; inputLabel: string }> = {
-  annual:   { label: 'Annual',    factor: 1,    inputLabel: 'Gross annual income' },
-  monthly:  { label: 'Monthly',   factor: 12,   inputLabel: 'Gross monthly income' },
-  biweekly: { label: 'Bi-weekly', factor: 26,   inputLabel: 'Gross income per pay period' },
-  weekly:   { label: 'Weekly',    factor: 52,   inputLabel: 'Gross weekly income' },
-  daily:    { label: 'Daily',     factor: 260,  inputLabel: 'Gross daily income' },
-  hourly:   { label: 'Hourly',    factor: 2080, inputLabel: 'Gross hourly rate' },
-};
-
 function formatCurrency(n: number): string {
   return new Intl.NumberFormat('en-CA', {
     style: 'currency',
@@ -124,6 +116,7 @@ export default function IncomeTaxCalculator({
   defaultIncome = 75000,
   defaultYear = DEFAULT_YEAR,
 }: Props) {
+  const t = useTranslations('Calculator');
   const { province: contextProvince, geoSource, setProvince: setContextProvince } = useProvince();
   const [income, setIncome] = useState(defaultIncome);
   const [payPeriod, setPayPeriod] = useState<PayPeriod>('annual');
@@ -133,11 +126,20 @@ export default function IncomeTaxCalculator({
   const [isSelfEmployed, setIsSelfEmployed] = useState(false);
   const [year, setYear] = useState<TaxYear>(defaultYear);
 
+  const PAY_PERIODS: Record<PayPeriod, { label: string; factor: number; inputLabel: string }> = {
+    annual:   { label: t('annual'),   factor: 1,    inputLabel: t('grossAnnual') },
+    monthly:  { label: t('monthly'),  factor: 12,   inputLabel: t('grossMonthly') },
+    biweekly: { label: t('biweekly'), factor: 26,   inputLabel: t('grossBiweekly') },
+    weekly:   { label: t('weekly'),   factor: 52,   inputLabel: t('grossWeekly') },
+    daily:    { label: t('daily'),    factor: 260,  inputLabel: t('grossDaily') },
+    hourly:   { label: t('hourly'),   factor: 2080, inputLabel: t('grossHourly') },
+  };
+
   const userHasChosenRef = useRef(false);
 
   // On mount: read year preference from localStorage
   useEffect(() => {
-    if (defaultYear !== DEFAULT_YEAR) return; // page prop overrides localStorage
+    if (defaultYear !== DEFAULT_YEAR) return;
     try {
       const saved = localStorage.getItem('mapletax:tax-year');
       const parsed = saved ? (Number(saved) as TaxYear) : null;
@@ -216,16 +218,15 @@ export default function IncomeTaxCalculator({
     <div className="mx-auto max-w-5xl p-6 md:p-10">
       <header className="mb-8">
         <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
-          Canadian income tax calculator {year}
+          {t('title', { year })}
         </h1>
         <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-          Federal and provincial tax, CPP, and EI. Live calculation as you
-          type — no page refresh, no sign-up.
+          {t('subtitle')}
         </p>
 
         {/* Year toggle — only shown when not locked to a specific year by page prop */}
         {defaultYear === DEFAULT_YEAR && (
-          <div className="mt-4 inline-flex rounded-lg border border-neutral-200 dark:border-neutral-700" role="group" aria-label="Tax year">
+          <div className="mt-4 inline-flex rounded-lg border border-neutral-200 dark:border-neutral-700" role="group" aria-label={t('taxYear')}>
             {SUPPORTED_YEARS.map((y, i) => (
               <button
                 key={y}
@@ -251,8 +252,8 @@ export default function IncomeTaxCalculator({
       <div className="grid gap-8 md:grid-cols-[1fr_1.2fr]">
         <section className="space-y-5 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
           <Field
-            label="Province or territory"
-            hint="Your provincial tax rate depends on this."
+            label={t('province')}
+            hint={t('provinceHint')}
             highlighted
           >
             <select
@@ -273,11 +274,11 @@ export default function IncomeTaxCalculator({
               aria-live="polite"
               className={`-mt-3 text-xs text-neutral-400 transition-opacity duration-700 dark:text-neutral-500 ${hintFading ? 'opacity-0' : 'opacity-100'}`}
             >
-              Detected: {PROVINCES_2026[province]?.name}
+              {t('detected', { province: PROVINCES_2026[province]?.name })}
             </p>
           )}
 
-          <Field label="Pay period">
+          <Field label={t('payPeriod')}>
             <select
               value={payPeriod}
               onChange={(e) => setPayPeriod(e.target.value as PayPeriod)}
@@ -293,21 +294,21 @@ export default function IncomeTaxCalculator({
 
           <Field
             label={PAY_PERIODS[payPeriod].inputLabel}
-            hint={payPeriod !== 'annual' ? `= ${formatCurrency(grossIncome)} annually` : undefined}
+            hint={payPeriod !== 'annual' ? t('annualEquivalent', { amount: formatCurrency(grossIncome) }) : undefined}
           >
             <CurrencyInput value={income} onChange={setIncome} />
           </Field>
 
           <Field
-            label="RRSP contribution"
-            hint="Reduces your taxable income dollar-for-dollar."
+            label={t('rrsp')}
+            hint={t('rrspHint')}
           >
             <CurrencyInput value={rrsp} onChange={setRrsp} />
           </Field>
 
           <Field
-            label="Other deductions"
-            hint="Union dues, child care, home office, etc."
+            label={t('otherDeductions')}
+            hint={t('otherDeductionsHint')}
           >
             <CurrencyInput
               value={otherDeductions}
@@ -323,8 +324,8 @@ export default function IncomeTaxCalculator({
               className="h-4 w-4 rounded border-neutral-300"
             />
             <span className="text-sm">
-              Self-employed{' '}
-              <span className="text-neutral-500">(2× CPP, no EI)</span>
+              {t('selfEmployed')}{' '}
+              <span className="text-neutral-500">{t('selfEmployedNote')}</span>
             </span>
           </label>
 
@@ -361,84 +362,80 @@ export default function IncomeTaxCalculator({
         <section className="space-y-5">
           <div className="grid grid-cols-2 gap-3">
             <Stat
-              label="Take-home pay"
+              label={t('takeHomePay')}
               value={formatCurrency(result.netIncome)}
               accent
             />
             <Stat
-              label="Total tax"
+              label={t('totalTax')}
               value={formatCurrency(result.totalTax)}
             />
             <Stat
-              label="Average rate"
+              label={t('averageRate')}
               value={formatPercent(result.averageTaxRate)}
             />
             <Stat
-              label="Marginal rate"
+              label={t('marginalRate')}
               value={formatPercent(result.combinedMarginalRate)}
             />
           </div>
 
           <div className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
             <h2 className="mb-4 text-sm font-medium text-neutral-500">
-              Breakdown
+              {t('breakdown')}
             </h2>
             <dl className="space-y-2 text-sm">
               <Row
-                label="Federal tax"
+                label={t('federalTax')}
                 value={result.federalTaxAfterCredits}
               />
               <Row
-                label="Provincial tax"
+                label={t('provincialTax')}
                 value={result.provincialTaxAfterCredits}
               />
-              <Row label="CPP contributions" value={result.cppContributions}>
+              <Row label={t('cppContributions')} value={result.cppContributions}>
                 {result.cpp2 > 0 && (
                   <span className="text-xs text-neutral-500">
                     {' '}
-                    (incl. {formatCurrency(result.cpp2)} CPP2)
+                    {t('cpp2Note', { amount: formatCurrency(result.cpp2) })}
                   </span>
                 )}
               </Row>
               {result.eiPremiums > 0 && (
-                <Row label="EI premiums" value={result.eiPremiums} />
+                <Row label={t('eiPremiums')} value={result.eiPremiums} />
               )}
               <div className="border-t border-neutral-200 pt-2 dark:border-neutral-800">
-                <Row label="Total deductions" value={result.totalTax} bold />
+                <Row label={t('totalDeductions')} value={result.totalTax} bold />
               </div>
             </dl>
           </div>
 
           <div className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
             <h2 className="mb-4 text-sm font-medium text-neutral-500">
-              Take-home per period
+              {t('takeHomePerPeriod')}
             </h2>
             <dl className="grid grid-cols-3 gap-3 text-sm">
               <Period
-                label="Monthly"
+                label={t('monthly')}
                 value={result.takeHomeMonthly}
               />
               <Period
-                label="Biweekly"
+                label={t('biweekly')}
                 value={result.takeHomeBiweekly}
               />
               <Period
-                label="Weekly"
+                label={t('weekly')}
                 value={result.netIncome / 52}
               />
             </dl>
           </div>
 
-          <StackedBar result={result} grossIncome={grossIncome} />
+          <StackedBar result={result} grossIncome={grossIncome} t={t} />
         </section>
       </div>
 
       <footer className="mt-10 text-xs text-neutral-500">
-        <p>
-          Estimates based on {year} CRA-published rates. Your actual tax may
-          differ based on additional deductions and credits. Not tax advice —
-          consult a professional before making financial decisions.
-        </p>
+        <p>{t('disclaimer', { year })}</p>
       </footer>
     </div>
   );
@@ -577,21 +574,23 @@ function Period({ label, value }: { label: string; value: number }) {
 function StackedBar({
   result,
   grossIncome,
+  t,
 }: {
   result: ReturnType<typeof calculateTax>;
   grossIncome: number;
+  t: ReturnType<typeof useTranslations<'Calculator'>>;
 }) {
   const [view, setView] = useState<'bar' | 'donut'>('bar');
 
   if (grossIncome <= 0) return null;
 
   const segments = [
-    { label: 'Take-home', value: result.netIncome,                    bg: 'bg-emerald-500', hex: '#10b981' },
-    { label: 'Federal',   value: result.federalTaxAfterCredits,       bg: 'bg-blue-500',    hex: '#3b82f6' },
-    { label: 'Provincial',value: result.provincialTaxAfterCredits,    bg: 'bg-indigo-500',  hex: '#6366f1' },
-    { label: 'CPP',       value: result.cppContributions,             bg: 'bg-amber-500',   hex: '#f59e0b' },
+    { label: t('segmentTakeHome'), value: result.netIncome,                    bg: 'bg-emerald-500', hex: '#10b981' },
+    { label: t('segmentFederal'),  value: result.federalTaxAfterCredits,       bg: 'bg-blue-500',    hex: '#3b82f6' },
+    { label: t('segmentProvincial'), value: result.provincialTaxAfterCredits,  bg: 'bg-indigo-500',  hex: '#6366f1' },
+    { label: t('segmentCpp'),      value: result.cppContributions,             bg: 'bg-amber-500',   hex: '#f59e0b' },
     ...(result.eiPremiums > 0
-      ? [{ label: 'EI',   value: result.eiPremiums,                   bg: 'bg-rose-500',    hex: '#f43f5e' }]
+      ? [{ label: t('segmentEi'),  value: result.eiPremiums,                   bg: 'bg-rose-500',    hex: '#f43f5e' }]
       : []),
   ];
 
@@ -611,7 +610,7 @@ function StackedBar({
       {/* Header + toggle */}
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-sm font-medium text-neutral-500">
-          Where your money goes
+          {t('chartTitle')}
         </h2>
         <div className="flex text-[10px]">
           {(['bar', 'donut'] as const).map((v, i) => (
@@ -627,7 +626,7 @@ function StackedBar({
                   : 'bg-white text-neutral-500 hover:text-neutral-800 dark:bg-neutral-900 dark:text-neutral-400',
               ].join(' ')}
             >
-              {v === 'bar' ? 'Bar' : 'Donut'}
+              {v === 'bar' ? t('chartBar') : t('chartDonut')}
             </button>
           ))}
         </div>
@@ -638,7 +637,7 @@ function StackedBar({
         <div
           className="flex h-8 w-full overflow-hidden rounded-md"
           role="img"
-          aria-label="Breakdown of gross income by destination"
+          aria-label={t('chartBarAriaLabel')}
         >
           {segments.map((s) => (
             <div
@@ -658,7 +657,7 @@ function StackedBar({
             viewBox="0 0 200 200"
             className="w-44 h-44"
             role="img"
-            aria-label="Donut chart breakdown of gross income by destination"
+            aria-label={t('chartDonutAriaLabel')}
           >
             <g transform={`rotate(-90 ${cx} ${cy})`}>
               {donutSegments.map(({ label, hex, len, acc: segAcc }) => (
@@ -682,7 +681,7 @@ function StackedBar({
               textAnchor="middle"
               style={{ fontSize: 9, fontFamily: 'Inter, sans-serif', fill: '#737373' }}
             >
-              Take-home
+              {t('segmentTakeHome')}
             </text>
             <text
               x={cx}

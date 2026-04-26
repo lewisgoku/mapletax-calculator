@@ -1,5 +1,6 @@
 import { PROVINCES_2026 } from '@/lib/rates/2026';
 import type { TaxYear } from '@/lib/rates';
+import type { Locale } from '@/i18n/config';
 
 /** Hardcoded geographic/comparable neighbors — 3 per province. */
 export const NEIGHBORS: Record<string, [string, string, string]> = {
@@ -21,32 +22,36 @@ export const NEIGHBORS: Record<string, [string, string, string]> = {
 interface Props {
   currentCode: string;
   year: TaxYear;
-}
-
-function basePath(year: TaxYear): string {
-  return year === 2026
-    ? '/income-tax-calculator'
-    : '/income-tax-calculator-2025';
+  locale?: Locale;
 }
 
 function provinceSlug(name: string): string {
   return name.toLowerCase().replace(/ /g, '-');
 }
 
-export default function RelatedProvinces({ currentCode, year }: Props) {
+export default function RelatedProvinces({ currentCode, year, locale = 'en' }: Props) {
   const codes = NEIGHBORS[currentCode] ?? [];
+  const prefix = locale === 'fr' ? '/fr' : '';
+  const base = year === 2026
+    ? `${prefix}/income-tax-calculator`
+    : `${prefix}/income-tax-calculator-2025`;
+
+  const heading = locale === 'fr' ? "Comparer d'autres provinces" : 'Compare other provinces';
+  const subtitle = locale === 'fr'
+    ? `Calculateur d'impôt ${year} →`
+    : `${year} income tax calculator →`;
 
   return (
     <section>
       <h2 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
-        Compare other provinces
+        {heading}
       </h2>
       <ul className="mt-4 grid gap-3 sm:grid-cols-3">
         {codes.map((code) => {
           const prov = PROVINCES_2026[code];
           if (!prov) return null;
           const slug = provinceSlug(prov.name);
-          const href = `${basePath(year)}/${slug}`;
+          const href = `${base}/${slug}`;
           return (
             <li key={code}>
               <a
@@ -57,7 +62,7 @@ export default function RelatedProvinces({ currentCode, year }: Props) {
                   {prov.name}
                 </span>
                 <span className="mt-0.5 block text-xs text-neutral-500">
-                  {year} income tax calculator →
+                  {subtitle}
                 </span>
               </a>
             </li>

@@ -3,21 +3,26 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
 import LanguageToggle from './LanguageToggle';
 
-const NAV_LINKS = [
-  { label: 'Income Tax', href: '/' },
-  { label: 'Tax Filing 2025', href: '/tax-filing-2025' },
-  { label: 'Tax Planning 2026', href: '/tax-planning-2026' },
-  { label: 'Guides', href: '/guides' },
-];
-
 export default function Nav() {
+  const t = useTranslations('Nav');
+  const locale = useLocale();
   const pathname = usePathname();
   const [sheetOpen, setSheetOpen] = useState(false);
 
+  const prefix = locale === 'fr' ? '/fr' : '';
+
+  const NAV_LINKS = [
+    { label: t('incomeTax'),       href: `${prefix}/income-tax-calculator` },
+    { label: t('taxFiling2025'),   href: `${prefix}/tax-filing-2025` },
+    { label: t('taxPlanning2026'), href: `${prefix}/tax-planning-2026` },
+    { label: t('guides'),          href: `${prefix}/guides` },
+  ];
+
   function isActive(href: string) {
-    if (href === '/') return pathname === '/';
+    if (href === prefix || href === '/') return pathname === href;
     return pathname === href || pathname.startsWith(href + '/');
   }
 
@@ -31,10 +36,10 @@ export default function Nav() {
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
           {/* Wordmark */}
           <Link
-            href="/"
+            href={prefix || '/'}
             className="text-xl font-black tracking-tighter text-maple-red"
           >
-            MapleTax Calculator
+            {t('wordmark')}
           </Link>
 
           {/* Desktop nav */}
@@ -63,7 +68,7 @@ export default function Nav() {
           {/* Mobile: hamburger */}
           <button
             className="flex md:hidden items-center justify-center p-2 text-zinc-600 dark:text-zinc-400"
-            aria-label={sheetOpen ? 'Close menu' : 'Open menu'}
+            aria-label={sheetOpen ? t('closeMenu') : t('openMenu')}
             aria-expanded={sheetOpen}
             onClick={() => setSheetOpen((o) => !o)}
           >
@@ -98,15 +103,15 @@ export default function Nav() {
             {/* Sheet header */}
             <div className="flex h-16 items-center justify-between border-b border-zinc-200 px-6 dark:border-zinc-800">
               <Link
-                href="/"
+                href={prefix || '/'}
                 className="text-xl font-black tracking-tighter text-maple-red"
                 onClick={closeSheet}
               >
-                MapleTax
+                {t('wordmarkShort')}
               </Link>
               <button
                 onClick={closeSheet}
-                aria-label="Close menu"
+                aria-label={t('closeMenu')}
                 className="p-2 text-zinc-600 dark:text-zinc-400"
               >
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">

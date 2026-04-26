@@ -1,35 +1,42 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import LanguageToggle from './LanguageToggle';
 
-const COLUMNS = [
-  {
-    heading: 'Calculators',
-    links: [
-      { label: 'Income Tax 2026', href: '/income-tax-calculator' },
-      { label: 'Income Tax 2025', href: '/income-tax-calculator-2025' },
-      { label: 'Compare Provinces', href: '/compare-provinces' },
-    ],
-  },
-  {
-    heading: 'Resources',
-    links: [
-      { label: 'Guides', href: '/guides' },
-      { label: "What's New 2026", href: '/whats-new-2026' },
-      { label: 'Tax Filing 2025', href: '/tax-filing-2025' },
-      { label: 'Tax Planning 2026', href: '/tax-planning-2026' },
-    ],
-  },
-  {
-    heading: 'Legal',
-    links: [
-      { label: 'Disclaimer', href: '/disclaimer' },
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
-    ],
-  },
-];
-
 export default function Footer() {
+  const t = useTranslations('Footer');
+  const locale = useLocale();
+  const prefix = locale === 'fr' ? '/fr' : '';
+
+  const COLUMNS = [
+    {
+      heading: t('calculators'),
+      links: [
+        { label: t('incomeTax2026'),     href: `${prefix}/income-tax-calculator` },
+        { label: t('incomeTax2025'),     href: `${prefix}/income-tax-calculator-2025` },
+        { label: t('compareProvinces'), href: `${prefix}/compare-provinces` },
+      ],
+    },
+    {
+      heading: t('resources'),
+      links: [
+        { label: t('guides'),          href: `${prefix}/guides` },
+        { label: t('whatsNew2026'),    href: `${prefix}/whats-new-2026` },
+        { label: t('taxFiling2025'),   href: `${prefix}/tax-filing-2025` },
+        { label: t('taxPlanning2026'), href: `${prefix}/tax-planning-2026` },
+      ],
+    },
+    {
+      heading: t('legal'),
+      links: [
+        { label: t('disclaimerLink'), href: `${prefix}/disclaimer` },
+        { label: t('privacy'),        href: `${prefix}/privacy` },
+        { label: t('terms'),          href: `${prefix}/terms` },
+      ],
+    },
+  ];
+
   return (
     <footer className="w-full border-t border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
       <div className="mx-auto max-w-[1200px] px-6 py-12">
@@ -37,10 +44,10 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1">
             <div className="mb-3 font-black text-base tracking-tighter text-zinc-900 dark:text-zinc-100">
-              MapleTax Calculator
+              {t('wordmark')}
             </div>
             <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-              © {new Date().getFullYear()} MapleTax Calculator. For informational purposes only.
+              {t('copyright', { year: new Date().getFullYear() })}
             </p>
           </div>
 
@@ -67,21 +74,21 @@ export default function Footer() {
         <div className="mt-10 flex flex-col gap-4 border-t border-zinc-200 pt-6 dark:border-zinc-800 md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl space-y-2">
             <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-              Estimates based on CRA-published rates. Your actual tax may differ based on additional
-              deductions and credits. Not tax advice — consult a professional before making financial
-              decisions.
+              {t('disclaimerFull')}
             </p>
             <p className="text-xs leading-relaxed text-zinc-400 dark:text-zinc-600">
-              Province auto-detection powered by{' '}
-              <a
-                href="https://ipapi.co"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-zinc-600 dark:hover:text-zinc-400"
-              >
-                ipapi.co
-              </a>
-              . Your IP address is not stored or logged by us.
+              {t.rich('geoNotice', {
+                link: (chunks) => (
+                  <a
+                    href="https://ipapi.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-zinc-600 dark:hover:text-zinc-400"
+                  >
+                    {chunks}
+                  </a>
+                ),
+              })}
             </p>
           </div>
           <div className="shrink-0">

@@ -2,25 +2,31 @@ import type { Metadata } from 'next';
 import IncomeTaxCalculator from '@/components/IncomeTaxCalculator';
 import FAQAccordion from '@/components/FAQAccordion';
 import FAQSchema from '@/components/FAQSchema';
-import { PROVINCES_2026, PROVINCE_CODES } from '@/lib/rates/2026';
+import { PROVINCES_2025, PROVINCE_CODES_2025 } from '@/lib/rates/2025';
 import { getFAQs } from '@/lib/content/faqs';
 
+const BASE = 'https://mapletaxcalculator.ca';
+
 export const metadata: Metadata = {
-  title: 'Canadian income tax calculator 2026 — federal and all provinces',
+  title: 'Canadian income tax calculator 2025 — federal and all provinces',
   description:
-    'Free 2026 Canadian income tax calculator. See federal tax, provincial tax, CPP, EI, and take-home pay for every province. Live calculation, no sign-up.',
+    'Free 2025 Canadian income tax calculator. See federal tax, provincial tax, CPP, EI, and take-home pay for every province. Useful for late filers and prior-year comparisons.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/income-tax-calculator',
+    canonical: `${BASE}/income-tax-calculator-2025`,
+    languages: {
+      en: `${BASE}/income-tax-calculator-2025`,
+      fr: `${BASE}/fr/income-tax-calculator-2025`,
+      'x-default': `${BASE}/income-tax-calculator-2025`,
+    },
   },
   openGraph: {
-    title: 'Canadian income tax calculator 2026',
+    title: 'Canadian income tax calculator 2025',
     description:
-      'Calculate your 2026 take-home pay after federal and provincial tax, CPP, and EI.',
+      'Calculate your 2025 take-home pay after federal and provincial tax, CPP, and EI.',
     type: 'website',
   },
 };
 
-// FAQ IDs shown on this page — order controls display order
 const FAQ_IDS = [
   'marginal-vs-average-rate',
   'taxable-income-calculation',
@@ -34,12 +40,11 @@ const FAQ_IDS = [
 
 const pageFaqs = getFAQs(FAQ_IDS);
 
-export default function IncomeTaxCalculatorPage() {
+export default function IncomeTaxCalculator2025Page() {
   return (
     <main>
-      <IncomeTaxCalculator />
+      <IncomeTaxCalculator defaultYear={2025} />
 
-      {/* FAQ section — JSON-LD rendered server-side into static HTML */}
       <div className="mx-auto max-w-3xl px-6 py-12">
         <FAQSchema faqs={pageFaqs} />
         <FAQAccordion faqs={pageFaqs} />
@@ -47,19 +52,25 @@ export default function IncomeTaxCalculatorPage() {
 
       <section className="mx-auto max-w-3xl px-6 pb-12">
         <h2 className="text-2xl font-medium">
-          Calculators for each province
+          Province-specific 2025 calculators
         </h2>
         <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-          Prefer a province-specific page? Jump straight to the one you need.
+          Looking for 2026 rates instead?{' '}
+          <a
+            href="/income-tax-calculator"
+            className="underline underline-offset-2 hover:opacity-70"
+          >
+            Use the 2026 calculator.
+          </a>
         </p>
         <ul className="mt-6 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
-          {PROVINCE_CODES.map((code) => {
-            const name = PROVINCES_2026[code].name;
+          {PROVINCE_CODES_2025.map((code) => {
+            const name = PROVINCES_2025[code].name;
             const slug = name.toLowerCase().replace(/ /g, '-');
             return (
               <li key={code}>
                 <a
-                  href={`/income-tax-calculator/${slug}`}
+                  href={`/income-tax-calculator-2025/${slug}`}
                   className="block rounded-lg px-3 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-900"
                 >
                   {name} income tax calculator →
