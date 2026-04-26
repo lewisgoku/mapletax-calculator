@@ -192,3 +192,7 @@ French mirrors all of above under `/fr/...`.
 - `app/sitemap.ts` — expanded to include all `/fr/` URLs (52 province pages total + 6 index pages)
 - `hreflang` alternates on all 62 pages (en + fr + x-default pointing to English)
 - 283 tests pass; `npm run build` clean — 62 static pages generated (26 EN + 26 FR province pages + homepage/calculator index pages in both locales)
+- Fix: 8 Nav/Footer links pointed to unbuilt roadmap pages (guides, tax-filing-2025, tax-planning-2026, compare-provinces, whats-new-2026, disclaimer, privacy, terms) — caused 404s
+- `components/Placeholder.tsx` — bilingual minimal placeholder: EN "This page does not exist yet." / FR "Cette page n'existe pas encore."; links back to home
+- Created 16 placeholder route files (8 routes × 2 locales) under `app/(en)/` and `app/fr/` — each renders `<Placeholder />` or `<Placeholder locale="fr" />`
+- Total build: 78 static pages (62 + 16 placeholder pages)

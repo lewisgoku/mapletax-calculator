@@ -15,7 +15,15 @@
       "WebFetch(domain:www.alberta.ca)",
       "WebFetch(domain:www2.gov.bc.ca)",
       "Bash(mkdir -p \"c:\\\\Users\\\\localadmin\\\\Documents\\\\_vscode_Projects\\\\mapletax-calculator\\\\app\\\\income-tax-calculator\\\\[province]\")",
-      "Bash(mkdir -p \"c:\\\\Users\\\\localadmin\\\\Documents\\\\_vscode_Projects\\\\mapletax-calculator\\\\app\\\\income-tax-calculator-2025\\\\[province]\")"
+      "Bash(mkdir -p \"c:\\\\Users\\\\localadmin\\\\Documents\\\\_vscode_Projects\\\\mapletax-calculator\\\\app\\\\income-tax-calculator-2025\\\\[province]\")",
+      "Bash(npm show *)",
+      "Bash(npm install *)",
+      "Bash(mkdir -p \"c:/Users/localadmin/Documents/_vscode_Projects/mapletax-calculator/i18n\")",
+      "Bash(mkdir -p \"c:/Users/localadmin/Documents/_vscode_Projects/mapletax-calculator/messages\")",
+      "Bash(mkdir -p \"c:/Users/localadmin/Documents/_vscode_Projects/mapletax-calculator/app/\\(en\\)/income-tax-calculator/[province]\")",
+      "Bash(mkdir -p \"c:/Users/localadmin/Documents/_vscode_Projects/mapletax-calculator/app/\\(en\\)/income-tax-calculator-2025/[province]\")",
+      "Bash(mkdir -p \"c:/Users/localadmin/Documents/_vscode_Projects/mapletax-calculator/app/fr/income-tax-calculator/[province]\")",
+      "Bash(git add *)"
     ]
   }
 }
