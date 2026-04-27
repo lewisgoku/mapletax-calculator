@@ -307,7 +307,12 @@ export default function IncomeTaxCalculator({
           </Field>
 
           <Field
-            label={t('otherDeductions')}
+            label={
+              <>
+                {t('otherDeductions')}
+                <InfoTooltip content="Above-the-line deductions that reduce your net income: union or professional dues, child care expenses, moving expenses, home office expenses (T2200), carrying charges on investments, and employment expenses. Do not include RRSP — enter that in the field above." />
+              </>
+            }
             hint={t('otherDeductionsHint')}
           >
             <CurrencyInput
@@ -381,9 +386,10 @@ export default function IncomeTaxCalculator({
           </div>
 
           <div className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
-            <h2 className="mb-4 text-sm font-medium text-neutral-500">
+            <h2 className="text-sm font-bold text-neutral-900 dark:text-neutral-100">
               {t('breakdown')}
             </h2>
+            <hr className="my-3 border-neutral-200 dark:border-neutral-800" />
             <dl className="space-y-2 text-sm">
               <Row
                 label={t('federalTax')}
@@ -441,13 +447,41 @@ export default function IncomeTaxCalculator({
   );
 }
 
+function InfoTooltip({ content }: { content: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <span className="relative inline-flex items-center">
+      <button
+        type="button"
+        aria-label="More information"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        onBlur={() => setOpen(false)}
+        className="ml-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full border border-neutral-300 text-neutral-400 transition-colors hover:border-neutral-500 hover:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:border-neutral-600 dark:text-neutral-500 dark:hover:border-neutral-400 dark:hover:text-neutral-300"
+      >
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" className="h-2.5 w-2.5">
+          <path d="M6 5v4M6 3.5v.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        </svg>
+      </button>
+      {open && (
+        <span
+          role="tooltip"
+          className="absolute bottom-full left-0 z-50 mb-2 w-64 rounded-xl border border-neutral-200 bg-white px-3 py-2.5 text-xs leading-relaxed text-neutral-700 shadow-md dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300"
+        >
+          {content}
+        </span>
+      )}
+    </span>
+  );
+}
+
 function Field({
   label,
   hint,
   highlighted = false,
   children,
 }: {
-  label: string;
+  label: React.ReactNode;
   hint?: string;
   highlighted?: boolean;
   children: React.ReactNode;
@@ -461,7 +495,7 @@ function Field({
       }
     >
       <label
-        className={`mb-1.5 block text-sm font-medium ${
+        className={`mb-1.5 flex items-center text-sm font-medium ${
           highlighted ? 'text-maple-red' : ''
         }`}
       >
@@ -470,7 +504,7 @@ function Field({
       {children}
       {hint && (
         <p
-          className={`mt-1.5 text-xs ${
+          className={`mt-1.5 text-xs font-semibold ${
             highlighted ? 'text-maple-red/70' : 'text-neutral-500'
           }`}
         >

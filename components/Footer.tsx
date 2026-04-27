@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Link columns */}
           {COLUMNS.map(({ heading, links }) => (
             <div key={heading} className="flex flex-col gap-2">
-              <span className="mb-1 text-xs font-bold uppercase tracking-widest text-zinc-900 dark:text-zinc-100">
+              <span className="mb-1 text-xs font-bold tracking-widest text-zinc-900 dark:text-zinc-100">
                 {heading}
               </span>
               {links.map(({ label, href }) => (
