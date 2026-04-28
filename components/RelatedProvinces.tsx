@@ -56,6 +56,8 @@ export default function RelatedProvinces({ currentCode, year, locale = 'en' }: P
             <li key={code}>
               <a
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm transition-colors hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
               >
                 <span className="font-medium text-neutral-900 dark:text-neutral-100">

@@ -65,7 +65,7 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
       {/* Breadcrumb */}
       <nav
         aria-label="Breadcrumb"
-        className="mx-auto max-w-3xl px-6 pt-6 pb-2 text-sm text-neutral-500 dark:text-neutral-400"
+        className="mx-auto max-w-5xl px-6 pt-6 pb-2 text-sm text-neutral-500 dark:text-neutral-400"
       >
         <ol className="flex flex-wrap items-center gap-1">
           <li>
@@ -87,7 +87,7 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
       </nav>
 
       {/* H1 */}
-      <div className="mx-auto max-w-3xl px-6 pt-4 pb-2">
+      <div className="mx-auto max-w-5xl px-6 pt-4 pb-2">
         <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
           {isFr
             ? `${provinceData.name} — calculateur d'impôt sur le revenu ${year}`
@@ -100,7 +100,7 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
       <IncomeTaxCalculator defaultProvince={provinceCode} defaultYear={year} />
 
       {/* Provincial bracket table */}
-      <section className="mx-auto max-w-3xl px-6 py-10">
+      <section className="mx-auto max-w-5xl px-6 py-10">
         <h2 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
           {year} {provinceData.name} {isFr ? "tranches d'imposition provinciales" : 'provincial tax brackets'}
         </h2>
@@ -114,7 +114,7 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
 
       {/* Prose content */}
       {isFr ? (
-        <section className="mx-auto max-w-3xl px-6 pb-10">
+        <section className="mx-auto max-w-5xl px-6 pb-10">
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4 dark:border-neutral-800 dark:bg-neutral-900">
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
               {t('frComingSoonNote')}
@@ -122,7 +122,7 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
           </div>
         </section>
       ) : (
-        <section className="mx-auto max-w-3xl px-6 pb-10 space-y-8">
+        <section className="mx-auto max-w-5xl px-6 pb-10 space-y-8">
           {/* How it works */}
           <div>
             <h2 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
@@ -190,18 +190,18 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
       )}
 
       {/* FAQ */}
-      <div className="mx-auto max-w-3xl px-6 pb-12">
+      <div className="mx-auto max-w-5xl px-6 pb-12">
         <FAQSchema faqs={allFaqs} />
         <FAQAccordion faqs={allFaqs} />
       </div>
 
       {/* Related provinces */}
-      <section className="mx-auto max-w-3xl px-6 pb-12">
+      <section className="mx-auto max-w-5xl px-6 pb-12">
         <RelatedProvinces currentCode={provinceCode} year={year} locale={locale} />
       </section>
 
       {/* Disclaimer */}
-      <footer className="mx-auto max-w-3xl px-6 pb-10">
+      <footer className="mx-auto max-w-5xl px-6 pb-10">
         <p className="text-xs text-neutral-500 dark:text-neutral-400 border-t border-neutral-200 dark:border-neutral-800 pt-6">
           {isFr
             ? `Estimations basées sur les taux publiés par l'ARC pour ${year}. Votre impôt réel peut différer. Ce n'est pas un conseil fiscal — consultez un professionnel.`

@@ -196,3 +196,20 @@ French mirrors all of above under `/fr/...`.
 - `components/Placeholder.tsx` — bilingual minimal placeholder: EN "This page does not exist yet." / FR "Cette page n'existe pas encore."; links back to home
 - Created 16 placeholder route files (8 routes × 2 locales) under `app/(en)/` and `app/fr/` — each renders `<Placeholder />` or `<Placeholder locale="fr" />`
 - Total build: 78 static pages (62 + 16 placeholder pages)
+
+### Session 7 (2026-04-27) 
+- Built: SubPageTemplate component (reusable for Sessions 8+)
+- Built: /tax-planning-2026 landing with 9-card grid (3 live, 6 "coming soon")
+- Built: RRSP, TFSA, FHSA sub-pages with mini-calculators
+- Built: lib/registered-accounts/2026.ts + room.ts + tests
+- Stubbed: French versions at /fr/tax-planning-2026/* with placeholder
+- Updated: nav resolves "Tax Planning 2026" to live page; sitemap includes new URLs
+- TODO next session: Tax Filing 2025 landing + sub-pages, reusing SubPageTemplate
+- Known issues: [anything you noticed but didn't fix]
+
+### Session 7 (2026-04-27) Extension
+- Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container
+- Layout alignment: `app/(en)/page.tsx` and `app/(en)/income-tax-calculator/page.tsx` — FAQ and "Calculators for each province" sections changed from `max-w-3xl` to `max-w-5xl` to match calculator width
+- Province grid: "Calculators for each province" changed from `sm:grid-cols-2 md:grid-cols-3` to fixed `grid-cols-2` on both the homepage and `/income-tax-calculator` page
+- New tab links: province links in "Calculators for each province" on both homepage and `/income-tax-calculator` page now open with `target="_blank" rel="noopener noreferrer"`
+- New tab links: "Compare other provinces" cards in `components/RelatedProvinces.tsx` now open with `target="_blank" rel="noopener noreferrer"`
