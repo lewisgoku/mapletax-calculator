@@ -207,6 +207,16 @@ French mirrors all of above under `/fr/...`.
 - TODO next session: Tax Filing 2025 landing + sub-pages, reusing SubPageTemplate
 - Known issues: [anything you noticed but didn't fix]
 
+### Session 8 (2026-04-28)
+- Built: /tax-filing-2025 landing + 7 sub-pages
+- Built: lib/filing/deadlines.ts + penalty.ts + tests
+- Built: DeadlineStatusBanner (dynamic, date-computed)
+- Built: LatePenaltyCalculator component
+- Stubbed: French versions at /fr/tax-filing-2025/*
+- Updated: nav resolves "Tax Filing 2025" to live page; sitemap updated
+- TODO next session: remaining Tax Planning 2026 sub-pages (RESP, Credits, Life Events, Self-Employed, Year-End Checklist, Key Dates)
+- Known issues: none
+
 ### Session 7 (2026-04-27) Extension
 - Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container
 - Layout alignment: `app/(en)/page.tsx` and `app/(en)/income-tax-calculator/page.tsx` — FAQ and "Calculators for each province" sections changed from `max-w-3xl` to `max-w-5xl` to match calculator width

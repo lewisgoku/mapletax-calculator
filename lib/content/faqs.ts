@@ -208,6 +208,302 @@ export const FAQS: Record<string, FAQ> = {
     tags: ['nu', 'rates'],
   },
 
+  // ── Tax Filing 2025 — landing page ──────────────────────────────────────────
+
+  'tf25-deadline': {
+    id: 'tf25-deadline',
+    question: 'When is the deadline to file my 2025 tax return?',
+    answer:
+      'Most Canadians must file by **April 30, 2026**. If you or your spouse/common-law partner had self-employment income in 2025, you have until **June 15, 2026** to file — but any balance owing is still due April 30. Interest starts accruing from May 1 on any unpaid amount.',
+    tags: ['filing-2025', 'deadline'],
+  },
+
+  'tf25-must-file': {
+    id: 'tf25-must-file',
+    question: "Do I have to file if I didn't earn income in 2025?",
+    answer:
+      "You're not legally required to file a return if you have no income and no taxes owing — but you should still file. Filing is the only way to receive the GST/HST credit, Canada Child Benefit (CCB), and other income-tested benefits. TFSA contribution room also accumulates only from the year you file and turn 18. Filing a nil return takes minutes and keeps your benefit entitlements intact.",
+    tags: ['filing-2025', 'basics'],
+  },
+
+  'tf25-late-penalty': {
+    id: 'tf25-late-penalty',
+    question: 'What happens if I file late?',
+    answer:
+      "If you have **no balance owing**, there is no late-filing penalty — just file as soon as you can. If you owe tax, the penalty is **5% of the balance owing immediately**, plus **1% per complete month late**, up to 12 months (maximum 17%). Repeat offenders who were penalized in any of the three prior years and received a CRA demand to file face a higher rate: 10% + 2% per month up to 20 months. Interest also compounds daily on the unpaid balance from May 1.",
+    tags: ['filing-2025', 'penalty'],
+  },
+
+  'tf25-free-software': {
+    id: 'tf25-free-software',
+    question: 'Can I file my 2025 return for free?',
+    answer:
+      "Yes. **Wealthsimple Tax** is completely free for all situations with no income limit. **GenuTax Standard** and **StudioTax** (up to 20 returns per year) are also fully free. TurboTax Free and H&R Block Free offer free basic tiers but may prompt upgrades for more complex returns. All are NETFILE-certified for 2025.",
+    tags: ['filing-2025', 'software'],
+  },
+
+  'tf25-cant-pay': {
+    id: 'tf25-cant-pay',
+    question: "What if I can't pay what I owe?",
+    answer:
+      "**File your return on time regardless.** Filing on time stops the 5% late-filing penalty — only interest accrues on an unpaid balance, and interest is far less expensive than penalty plus interest. After filing, pay what you can and contact CRA at 1-888-863-8657 or through My Account to set up a payment arrangement. CRA is generally cooperative with taxpayers who reach out proactively.",
+    tags: ['filing-2025', 'payment'],
+  },
+
+  'tf25-amend': {
+    id: 'tf25-amend',
+    question: "I made a mistake on my already-filed return — what do I do?",
+    answer:
+      "Don't file a new return. Use **ReFILE** inside your existing NETFILE software — it's the fastest method and is available for 2022–2025 T1 returns. If your software doesn't support ReFILE, submit a **T1-ADJ** (Adjustment Request) through CRA My Account online or mail the paper form to your tax centre. Wait until you've received your Notice of Assessment before amending.",
+    tags: ['filing-2025', 'amendment'],
+  },
+
+  // ── Tax Filing 2025 — slips checklist ────────────────────────────────────
+
+  'tf25-missing-slip': {
+    id: 'tf25-missing-slip',
+    question: 'What if I\'m missing a slip?',
+    answer:
+      "Use **Auto-fill My Return** inside any NETFILE-certified software — it pulls all slips CRA has on file directly from the CRA system. If a slip is missing from Auto-fill, contact the issuer (employer, financial institution, government agency). You can also check CRA My Account under \"Tax information slips\" to see what slips have been filed. If you can't get a slip in time, you can still estimate the income and file, then amend later.",
+    tags: ['filing-2025', 'slips'],
+  },
+
+  'tf25-t3-timing': {
+    id: 'tf25-t3-timing',
+    question: 'When do T3 slips arrive?',
+    answer:
+      "T3 slips (trust income from mutual funds, ETFs, and other trusts) are due to investors by **March 31**. In practice, many fund companies file them in late March or even early April. This is the most common reason for a late or amended return — T3 slips often arrive after other slips and are easy to miss. Set a reminder to check your investment accounts in late March before filing.",
+    tags: ['filing-2025', 'slips', 't3'],
+  },
+
+  'tf25-file-without-slips': {
+    id: 'tf25-file-without-slips',
+    question: "Can I still file if I haven't received all my slips?",
+    answer:
+      "Yes — you can file using your best estimate of any missing income, then amend the return once the slip arrives. This is preferable to filing late if the deadline is approaching. Use Auto-fill My Return first; it often captures slips you haven't physically received. If you underestimate income, CRA will charge interest on the difference from the original due date — but filing on time avoids the late-filing penalty.",
+    tags: ['filing-2025', 'slips'],
+  },
+
+  'tf25-autofill': {
+    id: 'tf25-autofill',
+    question: 'What is Auto-fill My Return?',
+    answer:
+      "Auto-fill My Return is a CRA service available inside any NETFILE-certified software. Once you authenticate with your CRA credentials (My Account login), the software automatically imports your T4, T5, T3, T4A, RRSP slips, and other data directly from the CRA database. It saves significant manual entry and catches slips you may have forgotten. CRA requires all employers and financial institutions to submit slips electronically, so most data is available by early March.",
+    tags: ['filing-2025', 'software', 'slips'],
+  },
+
+  // ── Tax Filing 2025 — free software ──────────────────────────────────────
+
+  'tf25-netfile-secure': {
+    id: 'tf25-netfile-secure',
+    question: 'Is NETFILE actually secure?',
+    answer:
+      "Yes. NETFILE transmits your return directly to CRA over an encrypted connection — the same standard used for online banking. CRA certifies each software product annually. Your return data is never stored on third-party servers when using NETFILE; the software sends the completed return file directly to CRA. Wealthsimple Tax, GenuTax, and StudioTax are widely used by millions of Canadians each year.",
+    tags: ['filing-2025', 'software', 'security'],
+  },
+
+  'tf25-switch-software': {
+    id: 'tf25-switch-software',
+    question: 'Can I switch software after I\'ve started?',
+    answer:
+      "Yes, but you'll need to re-enter all your information from scratch — software doesn't export data between platforms. If you've already filed and want to use different software to amend, use ReFILE in your original software instead of switching. The most common reason to switch mid-preparation is discovering your situation requires a paid tier in the platform you started with; switching before filing is fine, just time-consuming.",
+    tags: ['filing-2025', 'software'],
+  },
+
+  'tf25-complex-return': {
+    id: 'tf25-complex-return',
+    question: 'What if I have a complex return?',
+    answer:
+      "**Wealthsimple Tax** handles nearly all T1 situations for free — including rental income, self-employment (T2125), investment gains and losses (T5008), foreign income, and the T1135 foreign asset declaration. For returns requiring professional judgment (corporate structures, trusts, multi-year back-filing, CRA disputes), consult a tax professional. CRA also offers the **Community Volunteer Income Tax Program (CVITP)** for modest-income individuals with simple returns.",
+    tags: ['filing-2025', 'software'],
+  },
+
+  'tf25-netfile-closes': {
+    id: 'tf25-netfile-closes',
+    question: 'When does NETFILE close for 2025?',
+    answer:
+      "NETFILE accepts 2025 T1 returns until **January 29, 2027**. After that date, you can still file a paper return or through a tax professional using the EFILE system (the professional version of NETFILE). The normal 10-year voluntary disclosure window still applies for very late returns. Filing before January 29, 2027 via NETFILE is the fastest path — refunds typically arrive within 8 business days via direct deposit.",
+    tags: ['filing-2025', 'software', 'deadline'],
+  },
+
+  // ── Tax Filing 2025 — credits and deductions ─────────────────────────────
+
+  'tf25-credit-vs-deduction': {
+    id: 'tf25-credit-vs-deduction',
+    question: "What's the difference between a tax credit and a deduction?",
+    answer:
+      "A **deduction** reduces your taxable income — so its value depends on your marginal rate. A $5,000 RRSP deduction at a 43% marginal rate saves $2,150 in tax; the same deduction at 20% saves $1,000. A **non-refundable tax credit** reduces tax owing directly at a fixed rate (usually 15% federal) — so a $1,000 credit saves you $150 regardless of your income. **Refundable credits** (like the GST/HST credit) can produce a refund even if you owe no tax at all.",
+    tags: ['filing-2025', 'credits'],
+  },
+
+  'tf25-childcare-school': {
+    id: 'tf25-childcare-school',
+    question: 'Can I claim childcare if my children are in school?',
+    answer:
+      "Yes, for before- and after-school care, daycare, day camps, and boarding schools for children under 16. The **lower-income spouse must claim** the deduction in most cases — this is the most commonly missed rule. The 2025 limits are $8,000 per child under 7 and $5,000 per child ages 7–16. Overnight camps and language school fees count up to weekly limits. Keep all receipts — CRA may ask for them.",
+    tags: ['filing-2025', 'credits', 'childcare'],
+  },
+
+  'tf25-dtc-apply': {
+    id: 'tf25-dtc-apply',
+    question: 'How do I apply for the Disability Tax Credit?',
+    answer:
+      "The Disability Tax Credit (DTC) requires prior CRA approval — you can't just claim it on your return without it. Have a qualified medical practitioner complete **Form T2201** and submit it to CRA. Approval is valid for a set period (or indefinitely for permanent conditions). Once approved, you can claim the credit retroactively for up to 10 years and transfer unused portions to a supporting person. Apply as early as possible — retroactive claims can recover significant tax.",
+    tags: ['filing-2025', 'credits', 'disability'],
+  },
+
+  'tf25-caip-quebec': {
+    id: 'tf25-caip-quebec',
+    question: 'Are Quebec residents eligible for the Climate Action Incentive Payment?',
+    answer:
+      "No. The **Climate Action Incentive Payment (CAIP)** is only available to residents of provinces under the federal carbon pricing backstop: **Ontario, Manitoba, Saskatchewan, and Alberta** for 2025. Quebec, BC, and other provinces that have their own provincial carbon pricing systems do not receive the federal CAIP. Quebec residents had their own provincial carbon pricing credits; BC had the Climate Action Tax Credit, which was cancelled in April 2025 when federal consumer carbon pricing ended.",
+    tags: ['filing-2025', 'credits', 'caip'],
+  },
+
+  // ── Tax Filing 2025 — life events ─────────────────────────────────────────
+
+  'tf25-principal-residence': {
+    id: 'tf25-principal-residence',
+    question: 'Do I have to report the sale of my principal residence?',
+    answer:
+      "**Yes — always**, even if the full gain is exempt. Since 2016, CRA requires you to designate the property as your principal residence on **Schedule 3** of your T1 return in the year of sale. Failing to report can result in penalties and loss of the exemption for years not designated. If you forgot to report a prior-year sale, file an amendment immediately — the penalty for late designation is $100 per month, up to $8,000.",
+    tags: ['filing-2025', 'property', 'capital-gains'],
+  },
+
+  'tf25-common-law': {
+    id: 'tf25-common-law',
+    question: 'When does common-law status start for CRA purposes?',
+    answer:
+      "CRA considers you common-law after you have **cohabited with a partner for 12 continuous months**, or immediately if you have a child together (by birth or adoption). You must update your marital status in CRA My Account or on your T1 return for the year the status changed. Common-law status affects GST/HST credit calculations, CCB, and spousal credit eligibility — all calculated on combined household income.",
+    tags: ['filing-2025', 'life-events', 'marital-status'],
+  },
+
+  'tf25-home-office-employee': {
+    id: 'tf25-home-office-employee',
+    question: 'Can I deduct home office expenses as a salaried employee?',
+    answer:
+      "Yes, if your employer certifies your eligibility by signing **Form T2200** (Declaration of Conditions of Employment). You must use the space exclusively for work more than 50% of the time, or use it regularly and exclusively for meeting clients. The **detailed method** requires tracking actual costs (utilities, internet, rent for renters). The CRA's flat-rate method ($2/day, maximum $500/year) was a temporary COVID measure and is no longer available for 2025.",
+    tags: ['filing-2025', 'employment-expenses', 'home-office'],
+  },
+
+  'tf25-ccb-stopped': {
+    id: 'tf25-ccb-stopped',
+    question: 'My CCB stopped — did filing late cause this?',
+    answer:
+      "Likely yes. The **Canada Child Benefit** is recalculated each July based on the prior year's net family income as reported on your tax return. If you or your spouse didn't file by the June processing cutoff, CRA may pause or stop CCB payments until returns are assessed. File immediately — payments are usually reinstated within a few weeks of assessment and any missed amounts are back-paid. This is one of the most urgent reasons to file on time.",
+    tags: ['filing-2025', 'ccb', 'benefits'],
+  },
+
+  // ── Tax Filing 2025 — amend a return ─────────────────────────────────────
+
+  'tf25-amendment-timeline': {
+    id: 'tf25-amendment-timeline',
+    question: 'How long does CRA take to process an amendment?',
+    answer:
+      "ReFILE (electronic amendment) typically takes **2 weeks**. A T1-ADJ submitted through CRA My Account takes approximately **4–8 weeks**. A paper T1-ADJ mailed to your tax centre can take **12+ weeks**, especially during peak filing season. CRA sends a **Notice of Reassessment** once the amendment is processed — this replaces your original Notice of Assessment for that year.",
+    tags: ['filing-2025', 'amendment'],
+  },
+
+  'tf25-amend-5-years': {
+    id: 'tf25-amend-5-years',
+    question: 'Can I amend a return from 5 years ago?',
+    answer:
+      "Generally, the normal **3-year reassessment period** applies to both CRA and the taxpayer — meaning you can request adjustments to returns assessed within the last 3 years. For older returns (up to 10 years back), you can still request adjustments under the **Taxpayer Relief Provisions** (formerly Fairness Provisions) by submitting Form RC4288. Common reasons include unclaimed credits or overlooked deductions. CRA has discretion on whether to accept adjustments beyond the 3-year window.",
+    tags: ['filing-2025', 'amendment'],
+  },
+
+  'tf25-amend-audit': {
+    id: 'tf25-amend-audit',
+    question: 'Will amending trigger an audit?',
+    answer:
+      "Amending a return does not automatically trigger an audit. CRA reviews a statistical sample of returns each year, selected on risk factors — amendments are one of many signals CRA weighs. If your amendment significantly changes your return (large additional deduction, change in income), CRA may request supporting documents. Filing an amendment to correct a genuine error — especially one that increases your taxes — is always the right move and demonstrates good faith.",
+    tags: ['filing-2025', 'amendment', 'audit'],
+  },
+
+  'tf25-amend-balance-owing': {
+    id: 'tf25-amend-balance-owing',
+    question: 'What if my amendment creates a larger balance owing?',
+    answer:
+      "Pay the additional amount as quickly as possible. CRA will charge **daily-compounding interest from the original due date** (April 30, 2026 for the 2025 return) on any additional balance revealed by an amendment — not from the amendment date. There is no late-filing penalty for amendments, only interest on the underpaid amount. The sooner you pay, the less interest accrues.",
+    tags: ['filing-2025', 'amendment', 'payment'],
+  },
+
+  // ── Tax Filing 2025 — can't pay ───────────────────────────────────────────
+
+  'tf25-cra-court': {
+    id: 'tf25-cra-court',
+    question: "Will CRA take me to court if I can't pay?",
+    answer:
+      "CRA's preference is always to collect through payment arrangements rather than legal action. CRA can and does garnish wages, freeze bank accounts, and register liens on property — but these escalation steps take time and typically happen after other collection efforts have failed. **Calling CRA proactively** (1-888-863-8657) before collections contact you significantly increases the likelihood of an agreeable payment plan. Court action is a last resort used only in serious, prolonged cases.",
+    tags: ['filing-2025', 'payment', 'collections'],
+  },
+
+  'tf25-arrangement-interest': {
+    id: 'tf25-arrangement-interest',
+    question: 'Does CRA charge interest on a payment arrangement?',
+    answer:
+      "Yes. CRA's **prescribed interest rate** continues to accrue on any unpaid balance during a payment arrangement — it doesn't pause. As of Q1 2026, the prescribed rate on overdue taxes is approximately 8% annually, compounding daily. This is why it's worth paying as much as possible upfront and setting up the largest monthly payment you can manage — each dollar paid reduces the balance interest accrues on.",
+    tags: ['filing-2025', 'payment'],
+  },
+
+  'tf25-credit-card': {
+    id: 'tf25-credit-card',
+    question: 'Can I pay my tax bill with a credit card?',
+    answer:
+      "Not directly through CRA — CRA does not accept credit card payments. However, you can use **PaySimply** (a third-party service) or some financial institutions to pay CRA with a credit card or prepaid card, though a service fee applies (typically 2–3%). Most people pay CRA via **online banking** (pay to \"Canada Revenue Agency - Personal Income Tax\"), **My Payment** (Interac or debit card via the CRA website), or by mail. In-person payments at Canada Post are also accepted.",
+    tags: ['filing-2025', 'payment'],
+  },
+
+  'tf25-cant-pay-anything': {
+    id: 'tf25-cant-pay-anything',
+    question: "What if I genuinely cannot afford to pay anything?",
+    answer:
+      "**File your return anyway** — the late-filing penalty is a separate and more expensive problem than interest on an unpaid balance. After filing, contact CRA to explain your situation. If your inability to pay is due to serious financial hardship, you may qualify for the **Taxpayer Relief Program** (Form RC4288) which can waive or cancel interest and penalties. CRA can also set a monthly payment as low as circumstances require. Document your financial situation thoroughly if applying for relief.",
+    tags: ['filing-2025', 'payment', 'relief'],
+  },
+
+  // ── Tax Filing 2025 — late filing ─────────────────────────────────────────
+
+  'tf25-no-penalty-refund': {
+    id: 'tf25-no-penalty-refund',
+    question: "Is there a penalty if I'm getting a refund?",
+    answer:
+      "No. The late-filing penalty is calculated as a percentage of your **balance owing**. If your balance owing is $0 — whether because you're getting a refund or because you have no taxes owing — the penalty is $0. Filing late with a refund only delays your refund; there is no financial penalty. However, late filing can temporarily pause benefit payments (CCB, GST/HST credit) until your return is assessed.",
+    tags: ['filing-2025', 'penalty'],
+  },
+
+  'tf25-penalty-calc': {
+    id: 'tf25-penalty-calc',
+    question: 'How is the late-filing penalty calculated?',
+    answer:
+      "The standard penalty is **5% of the balance owing on the filing deadline**, plus **1% for each complete month the return is late**, up to a maximum of 12 months. So the maximum standard penalty is 17% of the balance. Complete months are counted from May 1 — a return filed June 29 is 1 complete month late; a return filed July 1 is 2 months late. Interest also accrues daily on both the unpaid balance and the assessed penalty from May 1, 2026.",
+    tags: ['filing-2025', 'penalty'],
+  },
+
+  'tf25-repeat-offender': {
+    id: 'tf25-repeat-offender',
+    question: 'What if I was penalized last year too?',
+    answer:
+      "If CRA assessed a late-filing penalty on your return in **any of the three prior tax years** AND also issued a formal demand to file for the current return, the higher penalty rates apply: **10% of the balance owing plus 2% per complete month late**, up to 20 months. The maximum repeat-offender penalty is 50% of the balance owing. Both conditions (prior penalty AND CRA demand) must apply — a late return without a CRA demand still uses the standard 5% rate.",
+    tags: ['filing-2025', 'penalty'],
+  },
+
+  'tf25-waiver': {
+    id: 'tf25-waiver',
+    question: 'Can CRA waive penalties for illness or hardship?',
+    answer:
+      "Yes. The **Taxpayer Relief Program** (Form RC4288) allows CRA to cancel or waive penalties and interest when circumstances beyond your control prevented timely filing or payment. Qualifying circumstances include: serious illness or accident, natural disaster, CRA processing error or delay, and extreme financial hardship. You must provide documentation (medical records, disaster declarations, etc.). CRA has discretion — approval is not guaranteed but is worth pursuing if your situation qualifies.",
+    tags: ['filing-2025', 'penalty', 'relief'],
+  },
+
+  'tf25-netfile-late': {
+    id: 'tf25-netfile-late',
+    question: 'When does NETFILE close — can I still file online?',
+    answer:
+      "NETFILE accepts 2025 T1 returns until **January 29, 2027**. If you're filing after that date, you must either mail a paper T1 return to your tax centre or have a tax professional file via EFILE (the professional version, which has no closing date). NETFILE returns filed on time receive refunds in approximately 8 business days via direct deposit — paper returns take 4–8 weeks.",
+    tags: ['filing-2025', 'software', 'deadline'],
+  },
+
   'nu-child-benefit': {
     id: 'nu-child-benefit',
     question: "What is the Nunavut Child Benefit?",
