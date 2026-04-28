@@ -145,10 +145,16 @@ const EVENTS = [
         </p>
         <p className="mt-3">
           For <strong>non-principal-residence property</strong> (cottage, rental, investment property), the capital
-          gain is reportable. The capital gains inclusion rate for 2025 depends on when the disposition occurred:
-          gains realized <strong>before June 25, 2024</strong> use a 1/2 inclusion rate;{' '}
-          gains realized <strong>on or after June 25, 2024</strong> use a 2/3 inclusion rate (for individuals above
-          the $250,000 annual threshold). For most 2025 dispositions, the 2/3 rate applies.
+          {/* TODO: Verify final legislative status of capital gains inclusion rate change before publishing.
+              The 2024 federal budget proposed 2/3 inclusion on gains above $250,000/year for individuals
+              (effective June 25, 2024). Confirm this is enacted law as of the 2025 filing year. */}
+          gain is reportable. The capital gains inclusion rate for dispositions in 2025 depends on timing and
+          the size of your annual gains. For gains realized <strong>before June 25, 2024</strong>, the
+          inclusion rate is 1/2. For gains realized <strong>on or after June 25, 2024</strong>, the first
+          $250,000 of annual capital gains for individuals is still included at 1/2 — only the portion{' '}
+          <strong>above $250,000</strong> per year is included at 2/3. Most Canadians selling a single
+          property with a moderate gain will use the 1/2 rate on the full amount. Consult a tax professional
+          if your annual gains exceed $250,000.
         </p>
         <p className="mt-3">
           Rental properties have recaptured CCA (Capital Cost Allowance) to consider — this is ordinary income, not a

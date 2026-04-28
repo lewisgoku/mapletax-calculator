@@ -10,11 +10,9 @@ const fmtPct = (r: number) =>
   new Intl.NumberFormat('en-CA', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(r);
 
 export default function LatePenaltyCalculator() {
-  const [balance, setBalance] = useState('');
+  const [balanceNum, setBalance] = useState(0);
   const [months, setMonths] = useState(0);
   const [repeat, setRepeat] = useState(false);
-
-  const balanceNum = parseFloat(balance.replace(/[^0-9.]/g, '')) || 0;
 
   const result = calculateLatePenalty({
     balanceOwing: balanceNum,
@@ -36,16 +34,19 @@ export default function LatePenaltyCalculator() {
           >
             Balance owing
           </label>
-          <div className="mt-1 flex rounded-lg border border-neutral-300 bg-white dark:border-neutral-700 dark:bg-neutral-900 focus-within:ring-2 focus-within:ring-neutral-400">
-            <span className="flex items-center pl-3 text-neutral-500 dark:text-neutral-400 select-none">$</span>
+          <div className="relative mt-1">
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">
+              $
+            </span>
             <input
               id="lpc-balance"
-              type="text"
-              inputMode="decimal"
-              value={balance}
-              onChange={(e) => setBalance(e.target.value)}
+              type="number"
+              min={0}
+              step={100}
+              value={balanceNum || ''}
+              onChange={(e) => setBalance(Number(e.target.value) || 0)}
               placeholder="0"
-              className="w-full bg-transparent py-2.5 pl-1 pr-3 text-right tabular-nums text-neutral-900 dark:text-neutral-100 focus:outline-none"
+              className="w-full rounded-lg border border-neutral-300 bg-white pl-7 pr-3 py-2 text-base tabular-nums outline-none focus:border-neutral-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
             />
           </div>
           <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
@@ -69,7 +70,7 @@ export default function LatePenaltyCalculator() {
             step={1}
             value={months}
             onChange={(e) => setMonths(Math.max(0, Math.min(20, parseInt(e.target.value) || 0)))}
-            className="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2.5 tabular-nums text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            className="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-base outline-none focus:border-neutral-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
           />
           <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
             Complete months past the April 30, 2026 deadline.

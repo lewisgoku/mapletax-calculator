@@ -139,6 +139,8 @@ export default function TaxFiling2025Page() {
             <a
               key={card.href}
               href={card.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white px-5 py-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-600"
             >
               <div>
