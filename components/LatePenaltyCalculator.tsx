@@ -2,12 +2,7 @@
 
 import { useState } from 'react';
 import { calculateLatePenalty } from '@/lib/filing/penalty';
-
-const fmt = (n: number) =>
-  new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
-
-const fmtPct = (r: number) =>
-  new Intl.NumberFormat('en-CA', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(r);
+import { formatCurrency as fmt, formatPercent as fmtPct } from '@/lib/formatting';
 
 export default function LatePenaltyCalculator() {
   const [balanceNum, setBalance] = useState(0);

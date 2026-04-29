@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { PROVINCE_CODES, PROVINCES_2026 } from '@/lib/rates/2026';
-import { RATES_BY_YEAR, SUPPORTED_YEARS, DEFAULT_YEAR, type TaxYear } from '@/lib/rates';
+import { RATES_BY_YEAR, DEFAULT_YEAR, type TaxYear } from '@/lib/rates';
 import { calculateTax } from '@/lib/tax/calculate';
 import { useProvince } from '@/contexts/ProvinceContext';
+import { formatCurrency, formatPercent } from '@/lib/formatting';
+import YearToggle from '@/components/YearToggle';
 
 const PROVINCE_GOV_LINKS: Record<string, { label: string; href: string }> = {
   BC: { label: 'BC Ministry of Finance — Personal Income Tax',          href: 'https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal' },
@@ -93,18 +95,6 @@ const PROVINCE_INFO: Record<string, readonly string[]> = {
 
 type PayPeriod = 'annual' | 'monthly' | 'biweekly' | 'weekly' | 'daily' | 'hourly';
 
-function formatCurrency(n: number): string {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
-}
-
-function formatPercent(n: number, digits = 1): string {
-  return `${(n * 100).toFixed(digits)}%`;
-}
-
 interface Props {
   defaultProvince?: string;
   defaultIncome?: number;
@@ -117,6 +107,7 @@ export default function IncomeTaxCalculator({
   defaultYear = DEFAULT_YEAR,
 }: Props) {
   const t = useTranslations('Calculator');
+  const locale = useLocale();
   const { province: contextProvince, geoSource, setProvince: setContextProvince } = useProvince();
   const [income, setIncome] = useState(defaultIncome);
   const [payPeriod, setPayPeriod] = useState<PayPeriod>('annual');
@@ -176,21 +167,21 @@ export default function IncomeTaxCalculator({
     window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`);
   }, [province, income, rrsp, otherDeductions, isSelfEmployed]);
 
-  // On mount: read year preference from localStorage
-  useEffect(() => {
-    if (defaultYear !== DEFAULT_YEAR) return;
-    try {
-      const saved = localStorage.getItem('mapletax:tax-year');
-      const parsed = saved ? (Number(saved) as TaxYear) : null;
-      if (parsed && (SUPPORTED_YEARS as number[]).includes(parsed)) {
-        setYear(parsed);
-      }
-    } catch {}
-  }, [defaultYear]);
-
   function handleYearChange(y: TaxYear) {
-    setYear(y);
-    try { localStorage.setItem('mapletax:tax-year', String(y)); } catch {}
+    if (y === year) return;
+    const prefix = locale === 'fr' ? '/fr' : '';
+    const YEAR_PATHS: Record<TaxYear, string> = {
+      2025: `${prefix}/income-tax-calculator-2025`,
+      2026: `${prefix}/income-tax-calculator`,
+    };
+    // Preserve current inputs in the URL so the user's work isn't lost on page load
+    const params = new URLSearchParams();
+    params.set('province', province);
+    if (income > 0) params.set('income', String(income));
+    if (rrsp > 0) params.set('rrsp', String(rrsp));
+    if (otherDeductions > 0) params.set('deductions', String(otherDeductions));
+    if (isSelfEmployed) params.set('selfEmployed', 'true');
+    window.location.href = `${YEAR_PATHS[y]}?${params.toString()}`;
   }
 
   // On mount: apply user preference from localStorage (takes priority over geo,
@@ -265,29 +256,7 @@ export default function IncomeTaxCalculator({
             {t('subtitle')}
           </p>
 
-          {/* Year toggle — only shown when not locked to a specific year by page prop */}
-          {defaultYear === DEFAULT_YEAR && (
-            <div className="mt-4 inline-flex rounded-lg border border-neutral-200 dark:border-neutral-700" role="group" aria-label={t('taxYear')}>
-              {SUPPORTED_YEARS.map((y, i) => (
-                <button
-                  key={y}
-                  onClick={() => handleYearChange(y)}
-                  aria-pressed={year === y}
-                  className={[
-                    'px-4 py-1.5 text-sm font-medium transition-colors',
-                    i === 0 ? 'rounded-l-lg' : '',
-                    i === SUPPORTED_YEARS.length - 1 ? 'rounded-r-lg' : '',
-                    i > 0 ? 'border-l border-neutral-200 dark:border-neutral-700' : '',
-                    year === y
-                      ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-                      : 'bg-white text-neutral-600 hover:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:text-white',
-                  ].join(' ')}
-                >
-                  {y}
-                </button>
-              ))}
-            </div>
-          )}
+          <YearToggle year={year} onChange={handleYearChange} className="mt-4" ariaLabel={t('taxYear')} />
         </div>
 
         <button

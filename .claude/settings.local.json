@@ -30,7 +30,8 @@
       "Bash(python3 -c \"import sys,base64; sys.stdout.buffer.write\\(base64.b64decode\\(sys.stdin.read\\(\\).strip\\(\\).replace\\('\\\\n',''\\)\\)\\)\")",
       "Bash(npx skills *)",
       "Bash(grep -v \"^$\")",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(xargs wc *)"
     ]
   }
 }

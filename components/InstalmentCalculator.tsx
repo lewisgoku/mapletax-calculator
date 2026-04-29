@@ -3,13 +3,7 @@
 import { useState } from 'react';
 import { calculateInstalments } from '@/lib/tax/instalments';
 import { INSTALMENTS_2026 } from '@/lib/registered-accounts/2026';
-
-const fmt = (n: number) =>
-  new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
+import { formatCurrency as fmt } from '@/lib/formatting';
 
 const fmtDate = (iso: string) => {
   const [y, m, d] = iso.split('-').map(Number);

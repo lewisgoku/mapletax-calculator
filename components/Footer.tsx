@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import LanguageToggle from './LanguageToggle';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -80,29 +79,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom row: disclaimer + language toggle */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-zinc-200 pt-6 dark:border-zinc-800 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-2xl space-y-2">
-            <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-              {t('disclaimerFull')}
-            </p>
-            <p className="text-xs leading-relaxed text-zinc-400 dark:text-zinc-600">
-              {t.rich('geoNotice', {
-                link: (chunks) => (
-                  <a
-                    href="https://ipapi.co"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-zinc-600 dark:hover:text-zinc-400"
-                  >
-                    {chunks}
-                  </a>
-                ),
-              })}
-            </p>
-          </div>
-          <div className="shrink-0">
-            <LanguageToggle />
-          </div>
+        <div className="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800 space-y-2">
+          <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+            {t('disclaimerFull')}
+          </p>
+          <p className="text-xs leading-relaxed text-zinc-400 dark:text-zinc-600">
+            {t.rich('geoNotice', {
+              link: (chunks) => (
+                <a
+                  href="https://ipapi.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-zinc-600 dark:hover:text-zinc-400"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
+          </p>
         </div>
       </div>
     </footer>

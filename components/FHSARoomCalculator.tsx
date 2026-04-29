@@ -3,16 +3,9 @@
 import { useState, useMemo } from 'react';
 import { computeFHSARoom } from '@/lib/registered-accounts/room';
 import { FHSA_2026 } from '@/lib/registered-accounts/2026';
+import { formatCurrency as fmt } from '@/lib/formatting';
 
 const CURRENT_YEAR = 2026;
-
-function fmt(n: number) {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
-}
 
 export default function FHSARoomCalculator() {
   const [accountOpenYear, setAccountOpenYear] = useState('');

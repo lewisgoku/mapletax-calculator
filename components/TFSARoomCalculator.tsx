@@ -2,16 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import { computeTFSARoom } from '@/lib/registered-accounts/room';
+import { formatCurrency as fmt } from '@/lib/formatting';
 
 const CURRENT_YEAR = 2026;
-
-function fmt(n: number) {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
-}
 
 export default function TFSARoomCalculator() {
   const [birthYear, setBirthYear] = useState('');

@@ -3,15 +3,9 @@
 import { useState } from 'react';
 import { projectCesg } from '@/lib/registered-accounts/resp';
 import { RESP_2026 } from '@/lib/registered-accounts/2026';
+import { formatCurrency as fmt } from '@/lib/formatting';
 
 const CURRENT_YEAR = 2026;
-
-const fmt = (n: number) =>
-  new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
 
 export default function CesgCalculator() {
   const [birthYear, setBirthYear] = useState(2020);

@@ -2,30 +2,12 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { PROVINCE_CODES, PROVINCES_2026 } from '@/lib/rates/2026';
-import { RATES_BY_YEAR } from '@/lib/rates';
+import { RATES_BY_YEAR, SUPPORTED_YEARS, type TaxYear } from '@/lib/rates';
 import { calculateTax } from '@/lib/tax/calculate';
-
-const RATES_2026 = RATES_BY_YEAR[2026];
+import { formatCurrency, formatPercent, fmtBracket } from '@/lib/formatting';
+import YearToggle from '@/components/YearToggle';
 
 const QUICK_PICKS = [40000, 60000, 80000, 100000, 150000, 200000];
-
-function fmt(n: number): string {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
-}
-
-function fmtPct(n: number): string {
-  return `${(n * 100).toFixed(1)}%`;
-}
-
-function fmtBracket(lower: number, upper: number): string {
-  if (lower === 0) return `First ${fmt(upper)}`;
-  if (!isFinite(upper)) return `Over ${fmt(lower)}`;
-  return `${fmt(lower)} to ${fmt(upper)}`;
-}
 
 interface CompareRow {
   label: string;
@@ -53,6 +35,7 @@ export default function ProvinceCompare() {
   const [province1, setProvince1] = useState('BC');
   const [province2, setProvince2] = useState('ON');
   const [income, setIncome] = useState(80000);
+  const [year, setYear] = useState<TaxYear>(2026);
   const [copied, setCopied] = useState(false);
 
   // Read URL params on mount only
@@ -60,12 +43,17 @@ export default function ProvinceCompare() {
     const params = new URLSearchParams(window.location.search);
     const compare = params.get('compare');
     const inc = params.get('income');
+    const yr = params.get('year');
     if (compare) {
       const [a, b] = compare.split(',');
       if (a && PROVINCES_2026[a]) setProvince1(a);
       if (b && PROVINCES_2026[b]) setProvince2(b);
     }
     if (inc && !isNaN(Number(inc)) && Number(inc) >= 0) setIncome(Number(inc));
+    if (yr) {
+      const parsed = Number(yr) as TaxYear;
+      if ((SUPPORTED_YEARS as readonly number[]).includes(Number(yr))) setYear(parsed);
+    }
   }, []);
 
   // Write URL params on state change
@@ -73,16 +61,19 @@ export default function ProvinceCompare() {
     const params = new URLSearchParams();
     params.set('compare', `${province1},${province2}`);
     params.set('income', String(income));
+    params.set('year', String(year));
     window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`);
-  }, [province1, province2, income]);
+  }, [province1, province2, income, year]);
+
+  const rates = useMemo(() => RATES_BY_YEAR[year], [year]);
 
   const result1 = useMemo(
-    () => calculateTax({ grossIncome: income, provinceCode: province1 }, RATES_2026),
-    [income, province1],
+    () => calculateTax({ grossIncome: income, provinceCode: province1 }, rates),
+    [income, province1, rates],
   );
   const result2 = useMemo(
-    () => calculateTax({ grossIncome: income, provinceCode: province2 }, RATES_2026),
-    [income, province2],
+    () => calculateTax({ grossIncome: income, provinceCode: province2 }, rates),
+    [income, province2, rates],
   );
 
   const diff = result1.netIncome - result2.netIncome;
@@ -97,19 +88,21 @@ export default function ProvinceCompare() {
     });
   }
 
-  const prov1Data = PROVINCES_2026[province1];
-  const prov2Data = PROVINCES_2026[province2];
+  const prov1Data = rates.provinces[province1];
+  const prov2Data = rates.provinces[province2];
 
   return (
     <div className="mx-auto max-w-5xl p-6 md:p-10">
-      <header className="mb-8">
+      <header className="mb-6">
         <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
-          Compare province taxes 2026
+          Compare province taxes {year}
         </h1>
         <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
           Side-by-side income tax, CPP, EI, and take-home pay for any two Canadian provinces.
         </p>
       </header>
+
+      <YearToggle year={year} onChange={setYear} className="mb-6" />
 
       {/* Controls */}
       <div className="mb-8 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950" data-print="hide">
@@ -178,7 +171,7 @@ export default function ProvinceCompare() {
                   : 'border border-neutral-300 text-neutral-600 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-400',
               ].join(' ')}
             >
-              {fmt(v)}
+              {formatCurrency(v)}
             </button>
           ))}
         </div>
@@ -198,10 +191,10 @@ export default function ProvinceCompare() {
       {winner && (
         <div className="mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-900 dark:bg-emerald-950/30">
           <p className="text-sm leading-relaxed text-emerald-900 dark:text-emerald-200">
-            At {fmt(income)}, <strong>{winnerName}</strong> keeps{' '}
-            <strong>{fmt(winnerAmt)}</strong> more per year in take-home pay.
-            That&apos;s <strong>{fmt(winnerAmt / 12)}</strong>/month or{' '}
-            <strong>{fmt(winnerAmt / 26)}</strong>/biweekly.
+            At {formatCurrency(income)}, <strong>{winnerName}</strong> keeps{' '}
+            <strong>{formatCurrency(winnerAmt)}</strong> more per year in take-home pay.
+            That&apos;s <strong>{formatCurrency(winnerAmt / 12)}</strong>/month or{' '}
+            <strong>{formatCurrency(winnerAmt / 26)}</strong>/biweekly.
             CPP and EI are identical — the difference is purely provincial tax.
           </p>
         </div>
@@ -221,8 +214,8 @@ export default function ProvinceCompare() {
             {/* Gross income — neutral */}
             <tr className="border-b border-neutral-100 dark:border-neutral-800/50">
               <td className="px-5 py-3 text-neutral-600 dark:text-neutral-400">Gross income</td>
-              <td className="px-5 py-3 text-right tabular-nums">{fmt(income)}</td>
-              <td className="px-5 py-3 text-right tabular-nums">{fmt(income)}</td>
+              <td className="px-5 py-3 text-right tabular-nums">{formatCurrency(income)}</td>
+              <td className="px-5 py-3 text-right tabular-nums">{formatCurrency(income)}</td>
             </tr>
 
             {ROWS.map(row => {
@@ -249,11 +242,11 @@ export default function ProvinceCompare() {
                 >
                   <td className="px-5 py-3 text-neutral-600 dark:text-neutral-400">{row.label}</td>
                   <td className={`px-5 py-3 text-right tabular-nums ${v1wins ? winClass : ''}`}>
-                    {row.isRate ? fmtPct(v1) : fmt(v1)}
+                    {row.isRate ? formatPercent(v1) : formatCurrency(v1)}
                     {v1wins && <span className="ml-1 text-xs">✓</span>}
                   </td>
                   <td className={`px-5 py-3 text-right tabular-nums ${v2wins ? winClass : ''}`}>
-                    {row.isRate ? fmtPct(v2) : fmt(v2)}
+                    {row.isRate ? formatPercent(v2) : formatCurrency(v2)}
                     {v2wins && <span className="ml-1 text-xs">✓</span>}
                   </td>
                 </tr>
@@ -269,7 +262,7 @@ export default function ProvinceCompare() {
           <div key={code} className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
             <h2 className="mb-1 text-base font-semibold">{data.name}</h2>
             <p className="mb-4 text-xs text-neutral-500">
-              BPA: {fmt(data.basicPersonalAmount)}
+              BPA: {formatCurrency(data.basicPersonalAmount)}
             </p>
             <table className="w-full text-xs">
               <thead>
@@ -286,7 +279,7 @@ export default function ProvinceCompare() {
                       <td className="py-1.5 text-neutral-600 dark:text-neutral-400">
                         {fmtBracket(lower, b.upper)}
                       </td>
-                      <td className="py-1.5 text-right tabular-nums">{fmtPct(b.rate)}</td>
+                      <td className="py-1.5 text-right tabular-nums">{formatPercent(b.rate)}</td>
                     </tr>
                   );
                 })}
@@ -298,7 +291,7 @@ export default function ProvinceCompare() {
 
       <footer className="mt-10 text-xs text-neutral-500">
         <p>
-          Estimates based on 2026 CRA-published rates. Base-case comparison — no RRSP, deductions, or self-employment income.
+          Estimates based on {year} CRA-published rates. Base-case comparison — no RRSP, deductions, or self-employment income.
           Your actual tax may differ. Not tax advice — consult a professional before making financial decisions.
         </p>
       </footer>

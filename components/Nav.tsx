@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import LanguageToggle from './LanguageToggle';
 
 export default function Nav() {
   const t = useTranslations('Nav');
@@ -22,13 +21,14 @@ export default function Nav() {
     { label: t('guides'),           href: `${prefix}/guides` },
   ];
 
+  // Normalize: trailingSlash:true makes usePathname() return "/foo/compare/" but
+  // NAV_LINKS hrefs have no trailing slash, so strip it before comparing.
+  const path = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
+
   function isActive(href: string) {
-    // Exact match always wins
-    if (pathname === href) return true;
-    // Another nav item is an exact match — only that item should be active
-    if (NAV_LINKS.some((l) => l.href !== href && l.href === pathname)) return false;
-    // Fall back to prefix match for sub-pages not in the nav (e.g. province pages)
-    return pathname.startsWith(href + '/');
+    if (path === href) return true;
+    if (NAV_LINKS.some((l) => l.href !== href && l.href === path)) return false;
+    return path.startsWith(href + '/');
   }
 
   function closeSheet() {
@@ -64,11 +64,6 @@ export default function Nav() {
               </Link>
             ))}
           </nav>
-
-          {/* Desktop right: language toggle */}
-          <div className="hidden md:flex items-center">
-            <LanguageToggle />
-          </div>
 
           {/* Mobile: hamburger */}
           <button
@@ -145,10 +140,6 @@ export default function Nav() {
               ))}
             </ul>
 
-            {/* Sheet footer: language toggle */}
-            <div className="border-t border-zinc-200 px-6 py-6 dark:border-zinc-800">
-              <LanguageToggle />
-            </div>
           </nav>
         </>
       )}

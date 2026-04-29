@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
     languages: {
       en: 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
+      fr: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare',
       'x-default': 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
     },
   },

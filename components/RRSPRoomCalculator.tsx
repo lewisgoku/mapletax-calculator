@@ -3,14 +3,7 @@
 import { useState, useMemo } from 'react';
 import { computeRRSPRoom } from '@/lib/registered-accounts/room';
 import { RRSP_2026 } from '@/lib/registered-accounts/2026';
-
-function fmt(n: number) {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
-}
+import { formatCurrency as fmt } from '@/lib/formatting';
 
 export default function RRSPRoomCalculator() {
   const [earnedIncome, setEarnedIncome] = useState('');

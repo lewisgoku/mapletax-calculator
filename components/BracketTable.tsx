@@ -1,15 +1,8 @@
 import type { TaxBracket } from '@/lib/rates/types';
+import { formatCurrency as formatMoney } from '@/lib/formatting';
 
 interface Props {
   brackets: TaxBracket[];
-}
-
-function formatMoney(n: number): string {
-  return new Intl.NumberFormat('en-CA', {
-    style: 'currency',
-    currency: 'CAD',
-    maximumFractionDigits: 0,
-  }).format(n);
 }
 
 function formatRate(rate: number): string {

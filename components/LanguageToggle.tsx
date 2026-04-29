@@ -1,12 +1,11 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function LanguageToggle({ compact = false }: { compact?: boolean }) {
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
 
   function toggleLocale(target: 'en' | 'fr') {
     if (target === locale) return;
@@ -16,7 +15,9 @@ export default function LanguageToggle({ compact = false }: { compact?: boolean 
     } else {
       newPath = pathname.startsWith('/fr/') ? pathname.slice(3) : pathname === '/fr' ? '/' : pathname;
     }
-    router.push(newPath);
+    // Hard navigation required: soft router.push() cannot cross the (en)/fr layout
+    // boundary and remount NextIntlClientProvider with the new locale.
+    window.location.href = newPath;
   }
 
   return (
