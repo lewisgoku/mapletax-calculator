@@ -1,0 +1,43 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dates clés pour les contribuables canadiens en 2026 | Calculateur MapleTax',
+  description:
+    "Toutes les dates importantes pour l'impôt 2026 : REER, acomptes provisionnels, déclaration T1, date limite de fin d'année. Version française à venir.",
+  alternates: {
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates',
+    languages: {
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/key-dates',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/key-dates',
+    },
+  },
+};
+
+export default function KeyDatesFrPage() {
+  return (
+    <main className="mx-auto max-w-[1200px] px-6 py-12">
+      <nav aria-label="Fil d'Ariane" className="mb-6 text-sm text-neutral-500 dark:text-neutral-400">
+        <ol className="flex flex-wrap items-center gap-1">
+          <li><a href="/fr" className="hover:text-neutral-700 dark:hover:text-neutral-200">Accueil</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/fr/tax-planning-2026" className="hover:text-neutral-700 dark:hover:text-neutral-200">Planification fiscale 2026</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-neutral-900 dark:text-neutral-100">Dates clés 2026</li>
+        </ol>
+      </nav>
+      <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Dates clés pour les contribuables canadiens en 2026
+      </h1>
+      <p className="mt-4 max-w-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        Cette page sera bientôt disponible en français. En attendant, consultez la version anglaise.
+      </p>
+      <a
+        href="/tax-planning-2026/key-dates"
+        className="mt-6 inline-block rounded-lg border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:border-neutral-500 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500"
+      >
+        View in English
+      </a>
+    </main>
+  );
+}

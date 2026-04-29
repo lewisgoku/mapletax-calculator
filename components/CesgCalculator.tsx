@@ -19,6 +19,15 @@ export default function CesgCalculator() {
   const [contributionsToDate, setContributionsToDate] = useState(0);
   const [cesgToDate, setCesgToDate] = useState(0);
 
+  const beneficiaryAge = CURRENT_YEAR - birthYear;
+  const isSpecialWindow = beneficiaryAge >= 15 && beneficiaryAge <= 17;
+  let meetsAge17Req: boolean | undefined = undefined;
+  if (isSpecialWindow) {
+    if (contributionsToDate === 0) meetsAge17Req = false;
+    else if (contributionsToDate >= 2000) meetsAge17Req = true;
+    // 0 < x < 2000: undefined → warning + CESG shown (Rule 2 may still be met)
+  }
+
   const result = projectCesg(
     {
       beneficiaryBirthYear: birthYear,
@@ -26,6 +35,7 @@ export default function CesgCalculator() {
       annualContribution,
       totalContributionsToDate: contributionsToDate,
       totalCesgReceivedToDate: cesgToDate,
+      meetsAge17Requirements: meetsAge17Req,
     },
     RESP_2026,
   );

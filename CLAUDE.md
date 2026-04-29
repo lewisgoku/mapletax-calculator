@@ -217,13 +217,23 @@ French mirrors all of above under `/fr/...`.
 - TODO next session: remaining Tax Planning 2026 sub-pages (RESP, Credits, Life Events, Self-Employed, Year-End Checklist, Key Dates)
 - Known issues: none
 
-### Session 9A (2026-04-28)
-- Added: RESP_2026, INSTALMENTS_2026, KEY_DATES_2026 constants to lib/registered-accounts/2026.ts
-- Built: lib/registered-accounts/resp.ts + resp.test.ts (projectCesg)
-- Built: lib/tax/instalments.ts + instalments.test.ts (calculateInstalments)
-- Built: components/CesgCalculator.tsx
-- Built: /tax-planning-2026/resp sub-page
-- TODO (Session 9B): Credits & Deductions, Life Events, Self-Employed, Year-End Checklist, Key Dates, landing flip, French stubs, nav/sitemap, full test suite, deploy verify
+### Session 9 (2026-04-28) [9A + 9B]
+- Built: /tax-planning-2026/resp with CESG projection calculator
+- Built: /tax-planning-2026/credits-and-deductions (reference page, capital gains editorial disclaimer added)
+- Built: /tax-planning-2026/life-events (8 accordion sections, 2026 planning focus)
+- Built: /tax-planning-2026/self-employed with quarterly instalment calculator
+- Built: /tax-planning-2026/year-end-checklist with interactive checklist (localStorage key mapletax_yearend_2026)
+- Built: /tax-planning-2026/key-dates with dynamic timeline component (past dimmed, next highlighted maple-red)
+- Built: lib/registered-accounts/resp.ts + lib/tax/instalments.ts + tests (22 new tests)
+- Built: CesgCalculator.tsx (age-17 meetsAge17Requirements logic: 0 contributions → false, ≥$2,000 → true, unknown → warning)
+- Built: InstalmentCalculator.tsx, YearEndChecklist.tsx, KeyDatesTimeline.tsx
+- Updated: /tax-planning-2026 landing — all 9 cards now live
+- Stubbed: French versions at /fr/tax-planning-2026/* for all 6 new sub-pages (fixed apostrophe-in-single-quote parse errors)
+- Updated: sitemap includes all 12 new URLs (6 EN + 6 FR)
+- Updated: /tax-filing-2025/late-filing cross-links to Key Dates 2026
+- Tests: 348 pass (10 files); build: 108 static HTML pages clean
+- TODO next session: Session 10 — Compare Provinces feature, share-URL functionality, print stylesheet, and deployment checklist for v1 launch
+- Known issues: capital gains 2/3 rate legislative status uncertain as of knowledge cutoff — editorial disclaimer added to all mentions
 
 ### Session 7 (2026-04-27) Extension
 - Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container

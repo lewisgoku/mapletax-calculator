@@ -85,7 +85,7 @@ export default function LateFilingPage() {
       relatedSubPages={[
         { title: "Can't Pay?", description: 'Set up a CRA payment arrangement', href: '/tax-filing-2025/cant-pay' },
         { title: 'Amend a Return', description: 'Fix the return after you file', href: '/tax-filing-2025/amend-a-return' },
-        { title: 'Free NETFILE Software', description: 'File now for free', href: '/tax-filing-2025/free-software' },
+        { title: 'Key Dates 2026', description: 'Instalment and filing deadlines', href: '/tax-planning-2026/key-dates' },
       ]}
       faqs={FAQS}
       pageMetadata={{

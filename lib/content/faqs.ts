@@ -553,6 +553,184 @@ export const FAQS: Record<string, FAQ> = {
       "An RESP and an FHSA are entirely separate account types serving different purposes. An RESP belongs to the subscriber (parent or grandparent) for the benefit of a named child-beneficiary. An FHSA must be opened by the individual who intends to buy a home — it cannot be opened in a child's name. You cannot open an FHSA for your child. However, once your child reaches adulthood and is a first-time buyer, they can open their own FHSA while also potentially drawing on RESP funds if they're enrolled in post-secondary education. There is no restriction on having both types of accounts across generations.",
     tags: ['resp', 'fhsa', 'tax-planning-2026'],
   },
+
+  // ── Credits & Deductions 2026 ───────────────────────────────────────────────
+
+  'tp26-credits-rate-change': {
+    id: 'tp26-credits-rate-change',
+    question: 'Does the 14% federal bottom rate change affect my credits?',
+    answer:
+      "Non-refundable federal tax credits are calculated as a percentage of the credit amount, and most use the **lowest federal marginal rate**. For 2026 that rate is 14% (down from 15%). This means each dollar of a non-refundable credit amount is worth 14 cents of tax reduction, not 15. For example, the Basic Personal Amount credit is worth $16,452 × 14% = $2,303, versus $15,705 × 15% = $2,356 under prior-year parameters. The combined effect of a higher BPA and a lower rate is roughly neutral for most taxpayers, but credits with unchanged amounts (DTC, age amount) are worth marginally less than in prior years.",
+    tags: ['credits', 'tax-planning-2026'],
+  },
+
+  'tp26-dtc-deadline': {
+    id: 'tp26-dtc-deadline',
+    question: 'What is the deadline to apply for the Disability Tax Credit?',
+    answer:
+      "There is no hard annual deadline to apply for the Disability Tax Credit (DTC). You can submit Form T2201 at any time — CRA processes applications on a rolling basis. However, the DTC can be applied retroactively up to 10 years once approved, so applying as soon as a qualifying condition exists is always better. The practical time pressure is the tax filing season: if you want to claim the DTC on your 2026 T1 return, you need an approved certificate in hand before filing. CRA processing time is typically 8–12 weeks, so submitting the T2201 in January or February gives you the best chance of approval before April 30.",
+    tags: ['credits', 'dtc', 'tax-planning-2026'],
+  },
+
+  'tp26-charity-eligible': {
+    id: 'tp26-charity-eligible',
+    question: 'Can I donate to any charity for the tax credit?',
+    answer:
+      "Only donations to **registered charities** or other qualifying donees recognized by CRA generate a Charitable Donation Tax Credit. A registered charity has a CRA registration number and can issue official donation receipts. You can verify a charity's registration at canada.ca/charities-registry. Not-for-profit organizations, crowdfunding campaigns, and GoFundMe pages are generally not registered charities — donations to these do not qualify for the tax credit. Foreign charities are generally not eligible unless specifically designated by the Canadian government.",
+    tags: ['credits', 'donations', 'tax-planning-2026'],
+  },
+
+  'tp26-caip-province': {
+    id: 'tp26-caip-province',
+    question: 'How do I know if I live in a CAIP federal backstop province?',
+    answer:
+      "The Climate Action Incentive Payment (CAIP) is paid automatically to residents of provinces where the federal carbon pricing backstop applies. As of 2026, the federal backstop covers **Alberta, Saskatchewan, Manitoba, and Ontario**. If you live in one of these provinces on December 31 and file your tax return, you receive CAIP automatically — no application required. British Columbia, Quebec, Nova Scotia, New Brunswick, PEI, and the territories have their own carbon pricing systems and receive different treatment. Newfoundland and Labrador joined the federal backstop system — verify current status at canada.ca.",
+    tags: ['credits', 'caip', 'tax-planning-2026'],
+  },
+
+  // ── Life Events 2026 ────────────────────────────────────────────────────────
+
+  'tp26-common-law-immediate': {
+    id: 'tp26-common-law-immediate',
+    question: 'Does moving in common-law affect my tax situation immediately?',
+    answer:
+      "Yes, but the CRA definition of common-law matters. You are common-law for tax purposes after **12 continuous months of cohabitation**, or immediately if you have a child together. Once you qualify, you must update your marital status with CRA via My Account or on your next T1 return. CRA will then recalculate GST/HST credit and CCB based on **combined household income** from the date the common-law status begins — this can increase or decrease your benefit payments depending on relative incomes. Failing to update your status when required is a reportable inaccuracy.",
+    tags: ['life-events', 'tax-planning-2026'],
+  },
+
+  'tp26-cpp-splitting': {
+    id: 'tp26-cpp-splitting',
+    question: 'Can I split my CPP income with my spouse?',
+    answer:
+      "CPP has its own sharing provision — called **CPP pension sharing** — that is separate from pension income splitting under Form T1032. Under CPP sharing, both spouses must be at least 60 and receiving CPP (or be eligible to receive it). You apply through Service Canada, not CRA, and the shared amount is based on the years the couple lived together during the CPP contributory period. This is different from regular pension income splitting, which applies to RRIF income and defined benefit pension payments on Form T1032. CPP itself cannot be split on the T1 via T1032 — only the Service Canada sharing mechanism applies.",
+    tags: ['life-events', 'cpp', 'tax-planning-2026'],
+  },
+
+  'tp26-principal-residence-deadline': {
+    id: 'tp26-principal-residence-deadline',
+    question: "What's the deadline to designate my principal residence after selling?",
+    answer:
+      "The Principal Residence Exemption must be designated on Schedule 3 of your T1 return for the **year of sale**. The filing deadline is April 30 of the following year (or June 15 for self-employed filers, though the designation must be with the on-time return). If you sold in 2026, you designate on your 2026 T1 due April 30, 2027. CRA requires the designation even if the property is fully exempt — failure to file results in a penalty of $100 per month, up to $8,000. CRA can also deny the exemption for years where no designation is filed. If you missed a prior year, file an amended return (T1-ADJ) immediately.",
+    tags: ['life-events', 'real-estate', 'tax-planning-2026'],
+  },
+
+  'tp26-side-business-instalments': {
+    id: 'tp26-side-business-instalments',
+    question: 'If I start a side business mid-year, do I owe instalments right away?',
+    answer:
+      "Probably not in the first year, but the surprise comes in year two. Instalments are required when net tax owing exceeds $3,000 in the current year AND in **either of the two prior years**. In your first year of self-employment, prior-year net tax was likely below the threshold — so no instalments are required that year even if you owe a large amount in April. In year two, if your first year's net tax exceeded $3,000, you are now required to pay quarterly instalments. This is why first-year self-employed individuals often have a very large April tax bill followed by immediate instalment obligations.",
+    tags: ['life-events', 'self-employed', 'tax-planning-2026'],
+  },
+
+  // ── Self-Employed 2026 ──────────────────────────────────────────────────────
+
+  'tp26-instalment-start': {
+    id: 'tp26-instalment-start',
+    question: 'When do I have to start paying quarterly instalments?',
+    answer:
+      "You must pay quarterly instalments when your net tax owing exceeds **$3,000** (or **$1,800** in Quebec) in both the current year AND in at least one of the two prior years. CRA sends instalment reminders in February and August — if you receive these, you are likely required to pay. For most first-year self-employed individuals, instalments begin in the second year, because the prior year was an employment year with no instalment obligation. The four due dates are March 15, June 15, September 15, and December 15.",
+    tags: ['self-employed', 'instalments', 'tax-planning-2026'],
+  },
+
+  'tp26-cpp-self-employed': {
+    id: 'tp26-cpp-self-employed',
+    question: 'How much CPP do I pay as a self-employed person?',
+    answer:
+      "Self-employed individuals pay **both the employee and employer portions** of CPP. For CPP1 in 2026, that is 5.95% + 5.95% = **11.9%** on net self-employment income between $3,500 and $74,600 — a maximum of approximately $8,461. For CPP2 (on the second earnings ceiling between $74,600 and $85,000), the rate is 4% + 4% = **8%** — a maximum of approximately $832. Total maximum CPP contributions for self-employed individuals at maximum earnings is roughly $9,293 in 2026. The employer half of CPP1 (but not CPP2) is deductible as a business expense. This is frequently the largest financial surprise for newly self-employed Canadians.",
+    tags: ['self-employed', 'cpp', 'tax-planning-2026'],
+  },
+
+  'tp26-gst-register': {
+    id: 'tp26-gst-register',
+    question: 'Do I have to register for GST/HST right away when I start a business?',
+    answer:
+      "No — the mandatory registration threshold is **$30,000 in taxable revenues** in any four consecutive calendar quarters. Below that, you are a \"small supplier\" and registration is optional. However, voluntary registration can make sense even before the threshold if your business incurs significant GST/HST-eligible expenses — registering lets you claim **Input Tax Credits (ITCs)** to recover GST/HST paid on business costs. Once you cross the $30,000 threshold, registration is required within 29 days, and you must begin collecting and remitting GST/HST from that point. Quebec businesses must also register for QST separately with Revenu Québec.",
+    tags: ['self-employed', 'gst-hst', 'tax-planning-2026'],
+  },
+
+  'tp26-home-office-secondary': {
+    id: 'tp26-home-office-secondary',
+    question: 'Can I deduct my home office if I also have another office?',
+    answer:
+      "Yes — but only if the home office is where you **principally** carry on your business, or if it is used exclusively for business and on a regular and continuous basis for meeting clients or customers. \"Principally\" generally means more than 50% of your working time. If you split your time fairly evenly between a rented office and your home, the home office deduction is unlikely to pass CRA's test. Document your situation carefully — the T2200 (for employees) or T2125 (for self-employed) requires you to certify eligibility. The deduction is proportional to the business-use area, not all-or-nothing.",
+    tags: ['self-employed', 'home-office', 'tax-planning-2026'],
+  },
+
+  'tp26-vehicle-records': {
+    id: 'tp26-vehicle-records',
+    question: 'What records do I need to keep for a vehicle deduction?',
+    answer:
+      "CRA requires a **logbook** for vehicle deductions — estimates are not acceptable. For each business trip, record: date, destination, business purpose, and kilometres driven. At year-end, calculate total business kilometres and total kilometres driven; the ratio is your deductible percentage. You must also keep all receipts for operating costs: fuel, oil changes, insurance, repairs, registration. For a vehicle you own and use for CCA (depreciation), keep the original purchase documents. CRA can audit vehicle claims for up to 6 years — a contemporaneous logbook (written at the time of each trip) is far more defensible than a reconstructed one.",
+    tags: ['self-employed', 'vehicle', 'tax-planning-2026'],
+  },
+
+  // ── Year-End Checklist 2026 ─────────────────────────────────────────────────
+
+  'tp26-charitable-last-day': {
+    id: 'tp26-charitable-last-day',
+    question: 'What is the last day to make 2026 charitable donations?',
+    answer:
+      "Charitable donations must be made by **December 31, 2026** to be claimed on your 2026 T1 return. There is no grace period — unlike RRSP contributions, there is no 60-day window into the new year. Online donations made by 11:59 PM on December 31 typically qualify; verify with the charity. Cheques must be dated and mailed by December 31 — a postmark alone may not be sufficient for donations made very close to year-end. Donations made between January 1 and March 1, 2027 can be claimed on either the 2026 or 2027 return only if they were physically made in 2026 with the receipt dated in 2026.",
+    tags: ['year-end', 'donations', 'tax-planning-2026'],
+  },
+
+  'tp26-tax-loss-rebuy': {
+    id: 'tp26-tax-loss-rebuy',
+    question: 'Can I do tax-loss selling and immediately rebuy the same stock?',
+    answer:
+      "No — the **superficial loss rule** denies the capital loss if you (or an affiliated person) buys the same or identical security within 30 days before or after the sale. The denied loss is added to the ACB of the repurchased security instead of being usable in the current year. \"Identical security\" means shares of the same class of the same company — AAPL is identical to AAPL. However, you can immediately buy a *similar but not identical* security to maintain exposure: for example, sell one Canadian equity ETF and immediately buy a different ETF tracking a different index or from a different provider. The two ETFs must differ enough that CRA would not treat them as identical — two ETFs tracking the exact same index from different providers may still be considered identical.",
+    tags: ['year-end', 'investments', 'tax-planning-2026'],
+  },
+
+  'tp26-rrsp-2027-deadline': {
+    id: 'tp26-rrsp-2027-deadline',
+    question: 'Is the RRSP contribution deadline really in 2027?',
+    answer:
+      "Yes. RRSP contributions made in the **first 60 days of 2027** — on or before March 2, 2027 — can be claimed on your 2026 T1 return. This is a long-standing feature of the RRSP rules. You can make the contribution in January or February 2027 and deduct it on your 2026 tax return filed in April 2027. However, TFSA, FHSA, and RESP contributions must be made by December 31, 2026 to count for 2026 — those accounts have no 60-day grace period. The RRSP exception is unique.",
+    tags: ['year-end', 'rrsp', 'tax-planning-2026'],
+  },
+
+  'tp26-tfsa-unused-room': {
+    id: 'tp26-tfsa-unused-room',
+    question: 'What happens to my TFSA if I don\'t use the full $7,000 in 2026?',
+    answer:
+      "Unused TFSA contribution room **carries forward indefinitely**. If you don't contribute the full $7,000 in 2026, that unused room adds to your cumulative room and is available in 2027 and beyond. There is no penalty for not contributing and no deadline pressure from a room perspective. However, the tax-free compounding opportunity is permanently lost for 2026 — money that could have grown tax-free inside the TFSA grew tax-exposed outside instead. The carry-forward preserves your room but does not recover the tax-free growth years you didn't use.",
+    tags: ['year-end', 'tfsa', 'tax-planning-2026'],
+  },
+
+  // ── Key Dates 2026 ──────────────────────────────────────────────────────────
+
+  'tp26-rrsp-deadline-2026': {
+    id: 'tp26-rrsp-deadline-2026',
+    question: 'When is the RRSP contribution deadline for the 2026 tax year?',
+    answer:
+      "The RRSP contribution deadline for contributions deductible on your **2026 tax return** is **March 2, 2027** — the first 60 days of the 2027 calendar year. Contributions made after that date still count as RRSP contributions (room permitting) but apply to the 2027 tax year. Your 2026 RRSP contribution room is 18% of your 2025 earned income, up to a maximum of $33,810, plus any unused room from prior years shown on your 2025 Notice of Assessment.",
+    tags: ['key-dates', 'rrsp', 'tax-planning-2026'],
+  },
+
+  'tp26-netfile-opens': {
+    id: 'tp26-netfile-opens',
+    question: 'When does NETFILE open for 2025 tax returns?',
+    answer:
+      "NETFILE typically opens in mid-to-late February. For 2025 returns (filed in 2026), CRA opened NETFILE in approximately late February 2026. CRA announces the exact date on their NETFILE webpage each year — check canada.ca/netfile for confirmation. NETFILE for 2025 returns will accept electronic filings until **January 29, 2027**. If you file after that date, you must use a paper return or a tax professional with EFILE access (which has no closing date).",
+    tags: ['key-dates', 'filing', 'tax-planning-2026'],
+  },
+
+  'tp26-t3-before-filing': {
+    id: 'tp26-t3-before-filing',
+    question: 'Can I file my 2025 return before I receive all my T3 slips?',
+    answer:
+      "Technically yes, but it creates risk. T3 slips (from mutual funds, ETFs, and trusts) have a mailing deadline of **March 31** — so they can legally arrive in early April. If you file in February and later receive a T3 with income, you must amend your return (via ReFILE or T1-ADJ). Amending is not a problem per se, but a T3 showing additional income can create a balance owing plus interest from April 30. If you hold mutual funds, ETFs, or any trust units in non-registered accounts, consider waiting until mid-April to file. T4 and T5 slips must be mailed by January 31 — those are safer to have before February.",
+    tags: ['key-dates', 'filing', 'slips', 'tax-planning-2026'],
+  },
+
+  'tp26-self-employed-balance-due': {
+    id: 'tp26-self-employed-balance-due',
+    question: 'If I\'m self-employed, when is my tax balance actually due?',
+    answer:
+      "Self-employed individuals have **two separate deadlines** that are easy to confuse. The 2025 T1 return can be **filed** as late as June 15, 2026. But any **balance owing** on that return is due **April 30, 2026** — the same date as everyone else. Filing in June does not extend your payment deadline. Interest on the unpaid balance starts compounding daily from May 1. If you cannot pay by April 30, pay whatever you can to reduce the interest base, and consider contacting CRA about a payment arrangement.",
+    tags: ['key-dates', 'self-employed', 'tax-planning-2026'],
+  },
 };
 
 export function getFAQs(ids: string[]): FAQ[] {

@@ -42,36 +42,42 @@ const ACTIVE_CARDS = [
   },
 ];
 
-const COMING_SOON_CARDS = [
+const NEWLY_ACTIVE_CARDS = [
   {
     title: 'RESP',
     description: 'Education savings + CESG matching',
-    keyNumber: 'Coming soon',
+    keyNumber: 'Up to $500/year in grants',
+    href: '/tax-planning-2026/resp',
   },
   {
     title: 'Credits & Deductions',
     description: 'Medical, charitable, tuition, and more',
-    keyNumber: 'Coming soon',
+    keyNumber: '14% federal rate (new)',
+    href: '/tax-planning-2026/credits-and-deductions',
   },
   {
     title: 'Life Events',
     description: 'Marriage, baby, home, retirement',
-    keyNumber: 'Coming soon',
+    keyNumber: '8 planning checklists',
+    href: '/tax-planning-2026/life-events',
   },
   {
     title: 'Self-Employed',
     description: 'GST/HST, instalments, expenses',
-    keyNumber: 'Coming soon',
+    keyNumber: 'Double CPP + instalments',
+    href: '/tax-planning-2026/self-employed',
   },
   {
     title: 'Year-End Checklist',
     description: 'Tax-loss selling and December moves',
-    keyNumber: 'Coming soon',
+    keyNumber: 'Dec 31 hard deadline',
+    href: '/tax-planning-2026/year-end-checklist',
   },
   {
     title: 'Key Dates 2026',
     description: 'RRSP deadline, instalments, filing',
-    keyNumber: 'Coming soon',
+    keyNumber: 'All 2026 deadlines',
+    href: '/tax-planning-2026/key-dates',
   },
 ];
 
@@ -228,11 +234,12 @@ export default function TaxPlanning2026Page() {
             </a>
           ))}
 
-          {/* Coming soon cards — no link, reduced opacity */}
-          {COMING_SOON_CARDS.map((card) => (
-            <div
-              key={card.title}
-              className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white px-5 py-5 opacity-60 dark:border-neutral-800 dark:bg-neutral-950"
+          {/* Newly active cards */}
+          {NEWLY_ACTIVE_CARDS.map((card) => (
+            <a
+              key={card.href}
+              href={card.href}
+              className="group flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white px-5 py-5 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-600"
             >
               <div>
                 <p className="font-semibold text-neutral-900 dark:text-neutral-100">
@@ -241,11 +248,25 @@ export default function TaxPlanning2026Page() {
                 <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
                   {card.description}
                 </p>
+                <p className="mt-3 tabular-nums text-lg font-medium text-neutral-900 dark:text-neutral-100">
+                  {card.keyNumber}
+                </p>
               </div>
-              <span className="mt-4 inline-block rounded-full border border-neutral-300 px-2.5 py-0.5 text-xs font-medium text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
-                Coming soon
-              </span>
-            </div>
+              <svg
+                className="mt-4 h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-0.5 dark:text-neutral-500"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
           ))}
         </div>
       </section>
