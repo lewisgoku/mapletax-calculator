@@ -251,6 +251,13 @@ French mirrors all of above under `/fr/...`.
 - TODO next session: Session 11 — Paycheck Calculator (pay-period selector + gross-up from net)
 - Known issues: `public/og-default.png` not yet created — metadata is wired but file must be manually created in Figma/Canva (1200×630px, #FAF8F3 background, #C41E3A accent) before launch
 
+### Minor updates after Session 10 (2026-04-28)
+- Fixed: /tax-filing-2025/deadlines-and-penalties — page was missing (404 from Guides card); created full sub-page with deadline table, penalty rules, interest, self-employed extension, who-must-file, and can't-pay sections; build went from 111 → 112 pages
+- Updated: all `<a href>` links across content pages, SubPageTemplate breadcrumbs, related-page cards, Guides card grid, landing page breadcrumbs, and ProvincePage breadcrumbs now open with `target="_blank" rel="noopener noreferrer"`; TOC anchor links (#id) excluded (same-page anchors)
+- Updated: Footer.tsx — added "Developed and managed by NZM Tech" line below copyright; NZM Tech is a mailto link to tech@nzmgroup.ca
+- Created: app/icon.svg — SVG favicon with maple-red (#C41E3A) rounded-square background, MT text in a display area, and a 3-row calculator keypad pattern; Next.js App Router picks this up automatically over the existing favicon.ico fallback
+- Build: 113 static HTML pages clean; 348 tests pass (no new logic)
+
 ### Session 7 (2026-04-27) Extension
 - Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container
 - Layout alignment: `app/(en)/page.tsx` and `app/(en)/income-tax-calculator/page.tsx` — FAQ and "Calculators for each province" sections changed from `max-w-3xl` to `max-w-5xl` to match calculator width

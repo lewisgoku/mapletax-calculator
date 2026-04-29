@@ -30,7 +30,7 @@ const EVENTS = [
     content: (
       <>
         <p>Register for the <strong>Canada Child Benefit (CCB)</strong> immediately after birth or adoption through Service Canada — benefits start the month after birth and retroactive payment is available, but delays are unnecessary. Both parents must file their returns for CCB to be calculated correctly.</p>
-        <p className="mt-3">Open an <strong>RESP in the year of birth</strong>. CESG room does not accumulate while no account exists — opening now maximizes the number of years the government adds $500 in matching grants. See the <a href="/tax-planning-2026/resp" className="underline underline-offset-2 hover:opacity-75">RESP guide</a> for the age-17 rules that catch late starters.</p>
+        <p className="mt-3">Open an <strong>RESP in the year of birth</strong>. CESG room does not accumulate while no account exists — opening now maximizes the number of years the government adds $500 in matching grants. See the <a href="/tax-planning-2026/resp" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">RESP guide</a> for the age-17 rules that catch late starters.</p>
         <p className="mt-3"><strong>Parental EI and Quebec QPIP benefits</strong> are fully taxable income. Tax is not automatically withheld at source — set aside money throughout the leave or request additional withholding.</p>
         <p className="mt-3">If <strong>childcare begins in 2026</strong>, keep all receipts: provider name, SIN (for individual caregivers), and amounts paid. The childcare deduction is one of the largest available to families — $8,000 for children under 7, $5,000 for ages 7–16.</p>
         <p className="mt-3">Update <strong>beneficiary designations</strong> on RRSPs, TFSAs, life insurance, and group benefits.</p>
@@ -107,7 +107,7 @@ const EVENTS = [
         <p><strong>GST/HST registration</strong> is mandatory once you exceed $30,000 in taxable revenues in any four consecutive calendar quarters. Below that you are a "small supplier" and registration is optional — but early voluntary registration lets you claim Input Tax Credits on business expenses.</p>
         <p className="mt-3"><strong>Quarterly tax instalments</strong> are required if you expect net tax owing above $3,000 in 2026 and in either prior year. In your first year of self-employment, instalments are usually not required yet — the surprise hits in April of year two. Due dates: March 15, June 15, September 15, December 15.</p>
         <p className="mt-3"><strong>Self-employed CPP</strong> doubles the rate: you pay both employee and employer portions — 11.9% on net self-employment income between $3,500 and $74,600. This is the single largest financial shock for new self-employed Canadians. Set aside 30–35% of net self-employment income for income tax and CPP.</p>
-        <p className="mt-3">See the <a href="/tax-planning-2026/self-employed" className="underline underline-offset-2 hover:opacity-75">Self-Employed guide</a> for the instalment calculator, deductible expenses breakdown, and home office rules.</p>
+        <p className="mt-3">See the <a href="/tax-planning-2026/self-employed" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">Self-Employed guide</a> for the instalment calculator, deductible expenses breakdown, and home office rules.</p>
       </>
     ),
   },

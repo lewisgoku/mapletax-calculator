@@ -214,7 +214,7 @@ export default function LateFilingPage() {
           <p>
             NETFILE is open for 2025 returns until <strong>January 29, 2027</strong>. Any NETFILE-certified software
             works — see the{' '}
-            <a href="/tax-filing-2025/free-software" className="underline underline-offset-2 hover:opacity-75">
+            <a href="/tax-filing-2025/free-software" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">
               free software guide
             </a>{' '}
             for options that cost nothing. Wealthsimple Tax is the fastest path for most situations.

@@ -69,13 +69,13 @@ export default async function ProvincePage({ provinceCode, year, locale = 'en' }
       >
         <ol className="flex flex-wrap items-center gap-1">
           <li>
-            <a href={prefix || '/'} className="hover:text-neutral-700 dark:hover:text-neutral-200">
+            <a href={prefix || '/'} target="_blank" rel="noopener noreferrer" className="hover:text-neutral-700 dark:hover:text-neutral-200">
               {t('breadcrumbHome')}
             </a>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <a href={calcBase} className="hover:text-neutral-700 dark:hover:text-neutral-200">
+            <a href={calcBase} target="_blank" rel="noopener noreferrer" className="hover:text-neutral-700 dark:hover:text-neutral-200">
               {breadcrumbCalc}
             </a>
           </li>

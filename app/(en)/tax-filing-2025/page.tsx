@@ -94,7 +94,7 @@ export default function TaxFiling2025Page() {
       >
         <ol className="flex flex-wrap items-center gap-1">
           <li>
-            <a href="/" className="hover:text-neutral-700 dark:hover:text-neutral-200">Home</a>
+            <a href="/" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-700 dark:hover:text-neutral-200">Home</a>
           </li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" className="text-neutral-900 dark:text-neutral-100">Tax Filing 2025</li>

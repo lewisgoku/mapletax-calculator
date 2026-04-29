@@ -186,7 +186,7 @@ export default function ProvinceCompare() {
         <div className="mt-4 flex justify-end">
           <button
             onClick={handleCopy}
-            className="no-print rounded-lg border border-neutral-300 px-3 py-1.5 text-sm transition-colors hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-600"
+            className="no-print shrink-0 rounded-lg border border-neutral-300 px-3 py-1.5 text-sm transition-colors hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-600"
             aria-label="Copy shareable link"
           >
             {copied ? 'Copied!' : 'Share link'}

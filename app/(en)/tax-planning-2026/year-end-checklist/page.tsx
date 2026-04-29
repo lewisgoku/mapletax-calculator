@@ -174,7 +174,7 @@ export default function YearEndChecklistPage() {
           <p><strong>Accelerate deductible expenses before December 31:</strong> if you have business expenses planned for early 2027, pulling them forward to December can reduce 2026 net self-employment income — particularly valuable if your income is unusually high this year. Common candidates: prepaid software subscriptions, advertising commitments, professional development, equipment purchases.</p>
           <p><strong>Defer December invoices to January</strong> if your income is unusually high and you expect lower income in 2027. The tax on deferred income is deferred one year — a real but time-limited benefit. Do not defer income to a year when you expect higher income.</p>
           <p>For the instalment calculator and full deductible expense breakdown, see the{' '}
-            <a href="/tax-planning-2026/self-employed" className="underline underline-offset-2 hover:opacity-75">Self-Employed guide</a>.
+            <a href="/tax-planning-2026/self-employed" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">Self-Employed guide</a>.
           </p>
         </div>
       </section>

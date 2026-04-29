@@ -15,17 +15,20 @@ export default function Nav() {
   const prefix = locale === 'fr' ? '/fr' : '';
 
   const NAV_LINKS = [
-    { label: t('incomeTax'),       href: `${prefix}/income-tax-calculator` },
-    { label: t('taxFiling2025'),   href: `${prefix}/tax-filing-2025` },
-    { label: t('taxPlanning2026'), href: `${prefix}/tax-planning-2026` },
-    { label: t('guides'),          href: `${prefix}/guides` },
+    { label: t('incomeTax'),        href: `${prefix}/income-tax-calculator` },
+    { label: t('compareProvinces'), href: `${prefix}/income-tax-calculator/compare` },
+    { label: t('taxFiling2025'),    href: `${prefix}/tax-filing-2025` },
+    { label: t('taxPlanning2026'),  href: `${prefix}/tax-planning-2026` },
+    { label: t('guides'),           href: `${prefix}/guides` },
   ];
 
-  const compareHref = `${prefix}/income-tax-calculator/compare`;
-
   function isActive(href: string) {
-    if (href === prefix || href === '/') return pathname === href;
-    return pathname === href || pathname.startsWith(href + '/');
+    // Exact match always wins
+    if (pathname === href) return true;
+    // Another nav item is an exact match — only that item should be active
+    if (NAV_LINKS.some((l) => l.href !== href && l.href === pathname)) return false;
+    // Fall back to prefix match for sub-pages not in the nav (e.g. province pages)
+    return pathname.startsWith(href + '/');
   }
 
   function closeSheet() {
@@ -60,17 +63,6 @@ export default function Nav() {
                 {label}
               </Link>
             ))}
-            <Link
-              href={compareHref}
-              className={[
-                'text-xs tracking-tight transition-colors',
-                isActive(compareHref)
-                  ? 'text-maple-red underline underline-offset-2'
-                  : 'text-zinc-500 underline underline-offset-2 hover:text-maple-red dark:text-zinc-500 dark:hover:text-maple-red',
-              ].join(' ')}
-            >
-              {t('compareProvinces')}
-            </Link>
           </nav>
 
           {/* Desktop right: language toggle */}
@@ -151,20 +143,6 @@ export default function Nav() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href={compareHref}
-                  onClick={closeSheet}
-                  className={[
-                    'block py-3 text-sm tracking-tight transition-colors border-b border-zinc-100 dark:border-zinc-800',
-                    isActive(compareHref)
-                      ? 'text-maple-red'
-                      : 'text-zinc-500 hover:text-maple-red dark:text-zinc-400',
-                  ].join(' ')}
-                >
-                  {t('compareProvinces')}
-                </Link>
-              </li>
             </ul>
 
             {/* Sheet footer: language toggle */}

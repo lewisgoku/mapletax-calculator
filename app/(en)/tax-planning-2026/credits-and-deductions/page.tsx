@@ -183,9 +183,9 @@ export default function CreditsAndDeductionsPage() {
         <div className="mt-3 space-y-4 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
           <p>
             <strong>RRSP and FHSA:</strong> covered in detail on their own sub-pages.{' '}
-            <a href="/tax-planning-2026/rrsp" className="underline underline-offset-2 hover:opacity-75">RRSP guide</a>{' '}
+            <a href="/tax-planning-2026/rrsp" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">RRSP guide</a>{' '}
             ·{' '}
-            <a href="/tax-planning-2026/fhsa" className="underline underline-offset-2 hover:opacity-75">FHSA guide</a>.
+            <a href="/tax-planning-2026/fhsa" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">FHSA guide</a>.
           </p>
           <div>
             <p className="font-medium text-neutral-900 dark:text-neutral-100">Childcare expenses</p>
@@ -211,7 +211,7 @@ export default function CreditsAndDeductionsPage() {
             <strong>Tax-loss selling:</strong> realize capital losses in non-registered accounts before December 31 to offset capital gains from earlier in 2026. Losses reduce net capital gains subject to the inclusion rate. Observe the superficial loss rule — wait more than 30 days before repurchasing the same security.
           </p>
           <p>
-            The <a href="/tax-planning-2026/year-end-checklist" className="underline underline-offset-2 hover:opacity-75">Year-End Checklist</a> covers tax-loss selling mechanics in detail, including settlement timing and what you can immediately buy instead.
+            The <a href="/tax-planning-2026/year-end-checklist" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">Year-End Checklist</a> covers tax-loss selling mechanics in detail, including settlement timing and what you can immediately buy instead.
           </p>
         </div>
       </section>

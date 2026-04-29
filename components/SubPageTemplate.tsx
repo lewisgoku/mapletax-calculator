@@ -53,6 +53,8 @@ export default function SubPageTemplate({
                 <a
                   href={crumb.href}
                   itemProp="item"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-neutral-700 dark:hover:text-neutral-200"
                 >
                   <span itemProp="name">{crumb.label}</span>
@@ -221,6 +223,8 @@ export default function SubPageTemplate({
                   <a
                     key={page.href}
                     href={page.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white px-5 py-4 transition-colors hover:border-neutral-400 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-600"
                   >
                     <div>

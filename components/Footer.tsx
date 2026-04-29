@@ -15,7 +15,7 @@ export default function Footer() {
       links: [
         { label: t('incomeTax2026'),     href: `${prefix}/income-tax-calculator` },
         { label: t('incomeTax2025'),     href: `${prefix}/income-tax-calculator-2025` },
-        { label: t('compareProvinces'), href: `${prefix}/compare-provinces` },
+        { label: t('compareProvinces'), href: `${prefix}/income-tax-calculator/compare` },
       ],
     },
     {
@@ -48,6 +48,15 @@ export default function Footer() {
             </div>
             <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
               {t('copyright', { year: new Date().getFullYear() })}
+            </p>
+            <p className="mt-1 text-xs leading-relaxed text-zinc-400 dark:text-zinc-500">
+              Developed and managed by{' '}
+              <a
+                href="mailto:tech@nzmgroup.ca"
+                className="underline hover:text-zinc-600 dark:hover:text-zinc-300"
+              >
+                NZM Tech
+              </a>
             </p>
           </div>
 

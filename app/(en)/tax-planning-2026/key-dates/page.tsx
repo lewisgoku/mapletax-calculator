@@ -131,7 +131,7 @@ export default function KeyDates2026Page() {
             </table>
           </div>
           <p>Interest on underpaid instalments is charged from the due date — not from April 30. If cumulative underpayment interest exceeds $1,000, CRA adds a 50% excess-interest surcharge on top. Use the{' '}
-            <a href="/tax-planning-2026/self-employed" className="underline underline-offset-2 hover:opacity-75">instalment calculator</a>{' '}
+            <a href="/tax-planning-2026/self-employed" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">instalment calculator</a>{' '}
             on the Self-Employed page to estimate quarterly amounts using the prior-year method.
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function KeyDates2026Page() {
           <p><strong>June 15, 2026:</strong> extended filing deadline for self-employed individuals and their spouses/common-law partners. Balance owing is still due April 30 — the extension is for the paperwork only.</p>
           <p><strong>March 2, 2027:</strong> RRSP contribution deadline for the 2026 tax year. Contributions made in the first 60 days of 2027 can be deducted on the 2026 return.</p>
           <p>For the 2025 return filing guide including NETFILE software options, visit the{' '}
-            <a href="/tax-filing-2025" className="underline underline-offset-2 hover:opacity-75">Tax Filing 2025</a>{' '}
+            <a href="/tax-filing-2025" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">Tax Filing 2025</a>{' '}
             section.
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function KeyDates2026Page() {
             <li><strong>Business expense timing</strong> — deductible expenses paid or incurred by December 31 reduce 2026 self-employment income.</li>
           </ul>
           <p className="mt-3">For a complete action list organized by category, see the{' '}
-            <a href="/tax-planning-2026/year-end-checklist" className="underline underline-offset-2 hover:opacity-75">Year-End Checklist</a>.
+            <a href="/tax-planning-2026/year-end-checklist" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-75">Year-End Checklist</a>.
           </p>
         </div>
       </section>
