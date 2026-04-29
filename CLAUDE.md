@@ -217,6 +217,14 @@ French mirrors all of above under `/fr/...`.
 - TODO next session: remaining Tax Planning 2026 sub-pages (RESP, Credits, Life Events, Self-Employed, Year-End Checklist, Key Dates)
 - Known issues: none
 
+### Session 9A (2026-04-28)
+- Added: RESP_2026, INSTALMENTS_2026, KEY_DATES_2026 constants to lib/registered-accounts/2026.ts
+- Built: lib/registered-accounts/resp.ts + resp.test.ts (projectCesg)
+- Built: lib/tax/instalments.ts + instalments.test.ts (calculateInstalments)
+- Built: components/CesgCalculator.tsx
+- Built: /tax-planning-2026/resp sub-page
+- TODO (Session 9B): Credits & Deductions, Life Events, Self-Employed, Year-End Checklist, Key Dates, landing flip, French stubs, nav/sitemap, full test suite, deploy verify
+
 ### Session 7 (2026-04-27) Extension
 - Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container
 - Layout alignment: `app/(en)/page.tsx` and `app/(en)/income-tax-calculator/page.tsx` — FAQ and "Calculators for each province" sections changed from `max-w-3xl` to `max-w-5xl` to match calculator width

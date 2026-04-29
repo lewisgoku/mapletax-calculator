@@ -511,6 +511,48 @@ export const FAQS: Record<string, FAQ> = {
       "The Nunavut Child Benefit (NUCB) is a territorial program that provides $348 per qualifying child per year to low- and modest-income families, delivered as part of the Canada Child Benefit payment. Eligibility and payment amounts depend on net family income and number of children. The benefit is non-taxable and is administered by the CRA alongside federal benefits, requiring no separate application beyond filing your annual tax return. It supplements the federal Canada Child Benefit and helps offset the exceptionally high cost of raising children in northern communities.",
     tags: ['nu', 'credits', 'family'],
   },
+
+  // ── RESP / Tax Planning 2026 ────────────────────────────────────────────────
+
+  'resp-annual-deadline': {
+    id: 'resp-annual-deadline',
+    question: 'Is there an annual RESP contribution deadline?',
+    answer:
+      "No. Unlike an RRSP or FHSA, there is no year-end or 60-day contribution deadline for an RESP. You can contribute any time during the calendar year — but contributions must be made by December 31 to earn the CESG for that calendar year. The grant is calculated on contributions made within the calendar year, so a contribution on December 31 still qualifies; a contribution on January 1 of the following year does not.",
+    tags: ['resp', 'tax-planning-2026'],
+  },
+
+  'resp-no-postsec': {
+    id: 'resp-no-postsec',
+    question: "What happens to an RESP if my child doesn't go to post-secondary?",
+    answer:
+      "If the beneficiary does not attend a qualifying post-secondary program, you have a few options. You can transfer the RESP to another eligible beneficiary (such as a sibling) or keep the account open for up to 35 years in case the beneficiary changes their mind. If you ultimately close the account, any government grants (CESG, CLB) must be repaid to the government. The investment growth — called an **Accumulated Income Payment (AIP)** — is taxed as ordinary income to the subscriber plus a 20% penalty tax. However, up to $50,000 of an AIP can be rolled into your RRSP (if you have sufficient unused room), which avoids the 20% penalty. Contributions are returned tax-free since they were made with after-tax dollars.",
+    tags: ['resp', 'tax-planning-2026'],
+  },
+
+  'resp-cesg-catchup': {
+    id: 'resp-cesg-catchup',
+    question: 'Can I catch up missed CESG years by contributing more?',
+    answer:
+      "Yes — but only one missed year of CESG can be recovered per calendar year. The CESG is earned on the first $2,500 contributed per year, with a maximum of $500. If you missed contributing in a prior year, contributing $5,000 in a single year lets you earn $1,000 in CESG: $500 for the current year plus $500 to recover one prior missed year. The catch-up applies only to one missed year at a time — you cannot recover multiple missed years in a single year by contributing more than $5,000. The beneficiary must still be within the eligible age window.",
+    tags: ['resp', 'tax-planning-2026'],
+  },
+
+  'resp-withdrawal-tax': {
+    id: 'resp-withdrawal-tax',
+    question: 'How are RESP withdrawals taxed when the child goes to school?',
+    answer:
+      "RESP withdrawals for educational purposes are called **Educational Assistance Payments (EAPs)**. EAPs consist of grants and investment growth — these are taxable income to the **student**, not the subscriber. Because most full-time students have little other income, the tax on EAPs is usually minimal or zero after the basic personal amount ($16,452 federal for 2026). The original contributions are returned to the subscriber tax-free, since they were made with after-tax dollars. This is the core tax advantage: contributions compound untaxed, and the grant and growth are ultimately taxed at the student's low rate.",
+    tags: ['resp', 'tax-planning-2026'],
+  },
+
+  'resp-fhsa-same-child': {
+    id: 'resp-fhsa-same-child',
+    question: 'Can I have both an RESP and an FHSA for the same child?',
+    answer:
+      "An RESP and an FHSA are entirely separate account types serving different purposes. An RESP belongs to the subscriber (parent or grandparent) for the benefit of a named child-beneficiary. An FHSA must be opened by the individual who intends to buy a home — it cannot be opened in a child's name. You cannot open an FHSA for your child. However, once your child reaches adulthood and is a first-time buyer, they can open their own FHSA while also potentially drawing on RESP funds if they're enrolled in post-secondary education. There is no restriction on having both types of accounts across generations.",
+    tags: ['resp', 'fhsa', 'tax-planning-2026'],
+  },
 };
 
 export function getFAQs(ids: string[]): FAQ[] {
