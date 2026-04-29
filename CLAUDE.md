@@ -235,6 +235,22 @@ French mirrors all of above under `/fr/...`.
 - TODO next session: Session 10 — Compare Provinces feature, share-URL functionality, print stylesheet, and deployment checklist for v1 launch
 - Known issues: capital gains 2/3 rate legislative status uncertain as of knowledge cutoff — editorial disclaimer added to all mentions
 
+### Session 10 (2026-04-28)
+- Built: /income-tax-calculator/compare — side-by-side provincial tax comparison tool
+- Built: components/ProvinceCompare.tsx — shareable URL (`?compare=BC,ON&income=80000`), winner callout, ✓ markers on better values, tie-safe neutral rendering, province bracket tables, quick-pick income pills
+- Updated: components/IncomeTaxCalculator.tsx — URL param sync (`?province=&income=&rrsp=&deductions=&selfEmployed=`), Share link button in header, `data-input-panel` / `data-output-section` data attributes, "Compare this province →" link below self-employed checkbox
+- Bug fix: province localStorage effect now checks `userHasChosenRef.current` so URL params win over saved localStorage province (previously localStorage could clobber a shared link on the main calculator page)
+- Updated: Nav.tsx — "Compare provinces" secondary link in desktop nav + mobile sheet; added `compareProvinces` key to en.json and fr.json
+- Created: styles/print.css — `@media print` only; hides nav/inputs/buttons/.no-print; shows output sections full width; greyscale-safe stacked bar segments; A4 page setup; imported in app/layout.tsx
+- Created: public/robots.txt — `Allow: /` + Sitemap pointer
+- Created: public/sitemap.xml — 111 URLs covering all EN pages + FR stubs; hreflang alternates; priorities per spec
+- Wired: Plausible Analytics script in app/layout.tsx (`strategy="afterInteractive"`, data-domain="mapletaxcalculator.ca")
+- Wired: OG default image metadata in app/layout.tsx (`og-default.png` placeholder — create 1200×630px in Figma/Canva before DNS flip)
+- Created: DEPLOYMENT_CHECKLIST.md — 8-section pre-launch checklist (robots/sitemap, Plausible, OG audit, Lighthouse targets, canonical audit, pre-launch checks, DNS/HTTPS, post-launch 48h)
+- Tests: 348 pass (10 files); build: 111 static HTML pages clean
+- TODO next session: Session 11 — Paycheck Calculator (pay-period selector + gross-up from net)
+- Known issues: `public/og-default.png` not yet created — metadata is wired but file must be manually created in Figma/Canva (1200×630px, #FAF8F3 background, #C41E3A accent) before launch
+
 ### Session 7 (2026-04-27) Extension
 - Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container
 - Layout alignment: `app/(en)/page.tsx` and `app/(en)/income-tax-calculator/page.tsx` — FAQ and "Calculators for each province" sections changed from `max-w-3xl` to `max-w-5xl` to match calculator width

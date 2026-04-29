@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <!-- Homepage -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/"/>
+  </url>
+
+  <!-- Main calculator -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator"/>
+  </url>
+
+  <!-- Compare provinces -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/compare</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/compare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/compare"/>
+  </url>
+
+  <!-- 2025 calculator -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator-2025</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator-2025"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator-2025"/>
+  </url>
+
+  <!-- Province pages — 2026 -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/british-columbia</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/british-columbia"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/british-columbia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/british-columbia"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/alberta</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/alberta"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/alberta"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/alberta"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/ontario</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/ontario"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/ontario"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/ontario"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/quebec</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/quebec"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/quebec"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/quebec"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/saskatchewan</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/saskatchewan"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/saskatchewan"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/saskatchewan"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/manitoba</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/manitoba"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/manitoba"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/manitoba"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/new-brunswick</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/new-brunswick"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/new-brunswick"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/new-brunswick"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/nova-scotia</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/nova-scotia"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/nova-scotia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/nova-scotia"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/prince-edward-island</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/prince-edward-island"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/prince-edward-island"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/prince-edward-island"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/newfoundland-and-labrador</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/newfoundland-and-labrador"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/newfoundland-and-labrador"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/newfoundland-and-labrador"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/yukon</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/yukon"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/yukon"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/yukon"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/northwest-territories</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/northwest-territories"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/northwest-territories"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/northwest-territories"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/income-tax-calculator/nunavut</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/income-tax-calculator/nunavut"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/income-tax-calculator/nunavut"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/income-tax-calculator/nunavut"/>
+  </url>
+
+  <!-- Tax Planning 2026 -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/rrsp</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/rrsp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/rrsp"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/tfsa</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/tfsa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/tfsa"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/fhsa</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/fhsa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/fhsa"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/resp</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/resp"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/resp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/resp"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/credits-and-deductions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/life-events</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/life-events"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/life-events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/life-events"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/self-employed</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/self-employed"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/self-employed"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/self-employed"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/year-end-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-planning-2026/key-dates</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-planning-2026/key-dates"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-planning-2026/key-dates"/>
+  </url>
+
+  <!-- Tax Filing 2025 -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/credits-and-deductions</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/credits-and-deductions"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/credits-and-deductions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/credits-and-deductions"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/deadlines-and-penalties</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/deadlines-and-penalties"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/deadlines-and-penalties"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/deadlines-and-penalties"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/slips-checklist</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/slips-checklist"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/slips-checklist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/slips-checklist"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/free-software</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/free-software"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/free-software"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/free-software"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/amend-a-return</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/amend-a-return"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/amend-a-return"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/amend-a-return"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/cant-pay</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/cant-pay"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/cant-pay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/cant-pay"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/life-events</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/life-events"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/life-events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/life-events"/>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/tax-filing-2025/late-filing</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mapletaxcalculator.ca/tax-filing-2025/late-filing"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://mapletaxcalculator.ca/fr/tax-filing-2025/late-filing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mapletaxcalculator.ca/tax-filing-2025/late-filing"/>
+  </url>
+
+  <!-- French stubs (lower priority — content not yet live) -->
+  <url>
+    <loc>https://mapletaxcalculator.ca/fr/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/fr/income-tax-calculator</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/fr/income-tax-calculator-2025</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/fr/tax-planning-2026</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mapletaxcalculator.ca/fr/tax-filing-2025</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

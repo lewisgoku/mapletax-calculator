@@ -1,0 +1,71 @@
+@media print {
+  @page {
+    margin: 15mm;
+    size: A4 portrait;
+  }
+
+  /* Hide navigation, controls, and interactive elements */
+  nav,
+  [role="navigation"],
+  aside,
+  [data-input-panel],
+  [data-print="hide"],
+  .no-print,
+  button {
+    display: none !important;
+  }
+
+  /* Show output sections full width */
+  [data-output-section],
+  [data-print="compare-tool"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Un-grid the two-column calculator layout so output fills the page */
+  .grid {
+    display: block !important;
+  }
+
+  /* Restore 2-column grid for stat cards only */
+  [data-output-section] .grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+  }
+
+  /* Page breaks */
+  h1, h2, h3 { page-break-after: avoid; }
+  dl, table, .rounded-2xl { page-break-inside: avoid; }
+
+  /* Global print reset */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #111 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  body { font-size: 11pt; line-height: 1.5; }
+  [class*="border"] { border-color: #ccc !important; }
+
+  /* Typography scale */
+  h1 { font-size: 18pt !important; }
+  h2 { font-size: 11pt !important; }
+  .text-2xl { font-size: 16pt !important; }
+  .text-lg  { font-size: 12pt !important; }
+  .text-sm  { font-size: 9.5pt !important; }
+  .text-xs  { font-size: 8pt !important; }
+
+  /* Suppress printed URLs */
+  a[href]::after { content: none !important; }
+
+  /* Stacked bar — greyscale-safe segment colours */
+  .bg-emerald-500 { background-color: #222 !important; }
+  .bg-blue-500    { background-color: #555 !important; }
+  .bg-indigo-500  { background-color: #777 !important; }
+  .bg-amber-500   { background-color: #999 !important; }
+  .bg-rose-500    { background-color: #bbb !important; }
+}

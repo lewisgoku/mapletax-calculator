@@ -126,6 +126,15 @@ export default function IncomeTaxCalculator({
   const [isSelfEmployed, setIsSelfEmployed] = useState(false);
   const [year, setYear] = useState<TaxYear>(defaultYear);
 
+  const [copied, setCopied] = useState(false);
+
+  function handleCopyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
   const PAY_PERIODS: Record<PayPeriod, { label: string; factor: number; inputLabel: string }> = {
     annual:   { label: t('annual'),   factor: 1,    inputLabel: t('grossAnnual') },
     monthly:  { label: t('monthly'),  factor: 12,   inputLabel: t('grossMonthly') },
@@ -136,6 +145,36 @@ export default function IncomeTaxCalculator({
   };
 
   const userHasChosenRef = useRef(false);
+
+  // On mount: read URL params (share link) — runs after state initialises
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get('province');
+    const i = params.get('income');
+    const r = params.get('rrsp');
+    const d = params.get('deductions');
+    const s = params.get('selfEmployed');
+    if (p && (PROVINCE_CODES as string[]).includes(p)) {
+      setLocalProvince(p);
+      setContextProvince(p);
+      userHasChosenRef.current = true;
+    }
+    if (i && !isNaN(Number(i)) && Number(i) >= 0) setIncome(Number(i));
+    if (r && !isNaN(Number(r)) && Number(r) >= 0) setRrsp(Number(r));
+    if (d && !isNaN(Number(d)) && Number(d) >= 0) setOtherDeductions(Number(d));
+    if (s === 'true') setIsSelfEmployed(true);
+  }, []); // empty deps — mount only
+
+  // Write URL params on input change
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set('province', province);
+    if (income > 0) params.set('income', String(income));
+    if (rrsp > 0) params.set('rrsp', String(rrsp));
+    if (otherDeductions > 0) params.set('deductions', String(otherDeductions));
+    if (isSelfEmployed) params.set('selfEmployed', 'true');
+    window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`);
+  }, [province, income, rrsp, otherDeductions, isSelfEmployed]);
 
   // On mount: read year preference from localStorage
   useEffect(() => {
@@ -154,9 +193,10 @@ export default function IncomeTaxCalculator({
     try { localStorage.setItem('mapletax:tax-year', String(y)); } catch {}
   }
 
-  // On mount: apply user preference from localStorage (takes priority over geo)
+  // On mount: apply user preference from localStorage (takes priority over geo,
+  // but yields to URL params — userHasChosenRef.current is set by URL read effect first)
   useEffect(() => {
-    if (defaultProvince) return;
+    if (defaultProvince || userHasChosenRef.current) return;
     try {
       const userPref = localStorage.getItem('mapletax:user-province');
       if (userPref && (PROVINCE_CODES as string[]).includes(userPref)) {
@@ -216,13 +256,22 @@ export default function IncomeTaxCalculator({
 
   return (
     <div className="mx-auto max-w-5xl p-6 md:p-10">
-      <header className="mb-8">
-        <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
-          {t('title', { year })}
-        </h1>
-        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-          {t('subtitle')}
-        </p>
+      <header className="mb-8 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-medium tracking-tight md:text-4xl">
+            {t('title', { year })}
+          </h1>
+          <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+            {t('subtitle')}
+          </p>
+        </div>
+        <button
+          onClick={handleCopyLink}
+          className="no-print shrink-0 rounded-lg border border-neutral-300 px-3 py-1.5 text-sm transition-colors hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-600"
+          aria-label="Copy shareable link to current inputs"
+        >
+          {copied ? 'Copied!' : 'Share link'}
+        </button>
 
         {/* Year toggle — only shown when not locked to a specific year by page prop */}
         {defaultYear === DEFAULT_YEAR && (
@@ -250,7 +299,7 @@ export default function IncomeTaxCalculator({
       </header>
 
       <div className="grid gap-8 md:grid-cols-[1fr_1.2fr]">
-        <section className="space-y-5 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+        <section className="space-y-5 rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950" data-input-panel>
           <Field
             label={t('province')}
             hint={t('provinceHint')}
@@ -334,6 +383,15 @@ export default function IncomeTaxCalculator({
             </span>
           </label>
 
+          <p className="no-print text-xs text-neutral-400">
+            <a
+              href="/income-tax-calculator/compare"
+              className="underline underline-offset-2 hover:text-neutral-600"
+            >
+              Compare this province to another →
+            </a>
+          </p>
+
           <div className="border-t border-neutral-200 dark:border-neutral-800" />
 
           <div>
@@ -364,7 +422,7 @@ export default function IncomeTaxCalculator({
           </div>
         </section>
 
-        <section className="space-y-5">
+        <section className="space-y-5" data-output-section aria-label="Tax calculation results">
           <div className="grid grid-cols-2 gap-3">
             <Stat
               label={t('takeHomePay')}

@@ -21,6 +21,8 @@ export default function Nav() {
     { label: t('guides'),          href: `${prefix}/guides` },
   ];
 
+  const compareHref = `${prefix}/income-tax-calculator/compare`;
+
   function isActive(href: string) {
     if (href === prefix || href === '/') return pathname === href;
     return pathname === href || pathname.startsWith(href + '/');
@@ -58,6 +60,17 @@ export default function Nav() {
                 {label}
               </Link>
             ))}
+            <Link
+              href={compareHref}
+              className={[
+                'text-xs tracking-tight transition-colors',
+                isActive(compareHref)
+                  ? 'text-maple-red underline underline-offset-2'
+                  : 'text-zinc-500 underline underline-offset-2 hover:text-maple-red dark:text-zinc-500 dark:hover:text-maple-red',
+              ].join(' ')}
+            >
+              {t('compareProvinces')}
+            </Link>
           </nav>
 
           {/* Desktop right: language toggle */}
@@ -138,6 +151,20 @@ export default function Nav() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={compareHref}
+                  onClick={closeSheet}
+                  className={[
+                    'block py-3 text-sm tracking-tight transition-colors border-b border-zinc-100 dark:border-zinc-800',
+                    isActive(compareHref)
+                      ? 'text-maple-red'
+                      : 'text-zinc-500 hover:text-maple-red dark:text-zinc-400',
+                  ].join(' ')}
+                >
+                  {t('compareProvinces')}
+                </Link>
+              </li>
             </ul>
 
             {/* Sheet footer: language toggle */}
