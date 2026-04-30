@@ -51,11 +51,15 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col antialiased" suppressHydrationWarning>
         {children}
         <Script
-          defer
-          data-domain="mapletaxcalculator.ca"
-          src="https://plausible.io/js/script.js"
+          async
+          src="https://plausible.io/js/pa-uHTbDKoCd4wPDITFChn20.js"
           strategy="afterInteractive"
         />
+        <Script id="plausible-init" strategy="afterInteractive">{`
+          window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};
+          plausible.init=plausible.init||function(i){plausible.o=i||{}};
+          plausible.init();
+        `}</Script>
       </body>
     </html>
   );
