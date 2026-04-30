@@ -52,6 +52,12 @@ export default function RootLayout({
         {children}
         <Script
           async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6448891849672753"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <Script
+          async
           src="https://plausible.io/js/pa-uHTbDKoCd4wPDITFChn20.js"
           strategy="afterInteractive"
         />
