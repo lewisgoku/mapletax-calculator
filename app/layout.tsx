@@ -18,15 +18,26 @@ export const metadata: Metadata = {
   description:
     'Free Canadian income tax calculator for 2025 and 2026. Calculate federal and provincial tax, CPP, EI, and take-home pay for all 13 provinces. No sign-up required.',
   metadataBase: new URL('https://mapletaxcalculator.ca'),
+  verification: {
+    google: 'kC1G4hT1IzRVphzmlKAbTOs-SxUMWSf1FAN0d18iWyg',
+  },
   openGraph: {
     images: [
       {
         url: 'https://mapletaxcalculator.ca/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'Mapletax — Canadian tax calculators',
+        alt: 'MapleTax — Free Canadian income tax calculator',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@mapletaxca',
+    title: 'MapleTax Calculator — Free Canadian Tax Calculator',
+    description:
+      'Free Canadian income tax calculator for 2025 and 2026. Calculate federal and provincial tax, CPP, EI, and take-home pay for all 13 provinces.',
+    images: ['https://mapletaxcalculator.ca/og-default.png'],
   },
 };
 

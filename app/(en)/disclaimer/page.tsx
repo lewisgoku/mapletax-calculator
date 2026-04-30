@@ -6,6 +6,11 @@ export const metadata: Metadata = {
     'MapleTax Calculator is an estimation tool only. Read our disclaimer on accuracy, data sources, and the limitations of our tax calculations.',
   alternates: {
     canonical: 'https://mapletaxcalculator.ca/disclaimer',
+    languages: {
+      'en': 'https://mapletaxcalculator.ca/disclaimer',
+      'fr': 'https://mapletaxcalculator.ca/fr/disclaimer',
+      'x-default': 'https://mapletaxcalculator.ca/disclaimer',
+    },
   },
 };
 

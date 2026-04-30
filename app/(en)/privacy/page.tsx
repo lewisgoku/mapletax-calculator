@@ -6,6 +6,11 @@ export const metadata: Metadata = {
     'MapleTax Calculator collects no personal data. All tax calculations happen in your browser. Learn what we do and do not collect.',
   alternates: {
     canonical: 'https://mapletaxcalculator.ca/privacy',
+    languages: {
+      'en': 'https://mapletaxcalculator.ca/privacy',
+      'fr': 'https://mapletaxcalculator.ca/fr/privacy',
+      'x-default': 'https://mapletaxcalculator.ca/privacy',
+    },
   },
 };
 

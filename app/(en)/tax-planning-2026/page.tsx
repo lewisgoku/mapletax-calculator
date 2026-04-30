@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       'en': 'https://mapletaxcalculator.ca/tax-planning-2026',
       'fr': 'https://mapletaxcalculator.ca/fr/tax-planning-2026',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026',
     },
   },
   openGraph: {

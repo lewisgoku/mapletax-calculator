@@ -6,6 +6,11 @@ export const metadata: Metadata = {
     'Terms of service for MapleTax Calculator. Free to use, provided as-is, for informational purposes only.',
   alternates: {
     canonical: 'https://mapletaxcalculator.ca/terms',
+    languages: {
+      'en': 'https://mapletaxcalculator.ca/terms',
+      'fr': 'https://mapletaxcalculator.ca/fr/terms',
+      'x-default': 'https://mapletaxcalculator.ca/terms',
+    },
   },
 };
 
