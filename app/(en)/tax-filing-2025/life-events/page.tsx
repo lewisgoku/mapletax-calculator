@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description:
     'Tax impacts of marriage, divorce, new baby, home purchase, retirement, and self-employment in 2025. Know what changes on your T1.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/life-events`,
+    canonical: `${BASE}/tax-filing-2025/life-events/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/life-events`,
-      fr: `${BASE}/fr/tax-filing-2025/life-events`,
-      'x-default': `${BASE}/tax-filing-2025/life-events`,
+      en: `${BASE}/tax-filing-2025/life-events/`,
+      fr: `${BASE}/fr/tax-filing-2025/life-events/`,
+      'x-default': `${BASE}/tax-filing-2025/life-events/`,
     },
   },
 };
@@ -283,7 +283,7 @@ export default function LifeEventsPage() {
       pageMetadata={{
         title: '2025 life events and your tax return | MapleTax Calculator',
         description: 'Tax impacts of major 2025 life events on your T1.',
-        canonical: `${BASE}/tax-filing-2025/life-events`,
+        canonical: `${BASE}/tax-filing-2025/life-events/`,
       }}
     >
       {/* Life event accordions */}

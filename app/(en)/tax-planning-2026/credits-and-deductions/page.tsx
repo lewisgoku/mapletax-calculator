@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   description:
     'Credits and deductions you can act on before December 31, 2026: charitable donations, medical expenses, home accessibility, capital gains strategies, and more.',
   alternates: {
-    canonical: `${BASE}/tax-planning-2026/credits-and-deductions`,
+    canonical: `${BASE}/tax-planning-2026/credits-and-deductions/`,
     languages: {
-      en: `${BASE}/tax-planning-2026/credits-and-deductions`,
-      fr: `${BASE}/fr/tax-planning-2026/credits-and-deductions`,
-      'x-default': `${BASE}/tax-planning-2026/credits-and-deductions`,
+      en: `${BASE}/tax-planning-2026/credits-and-deductions/`,
+      fr: `${BASE}/fr/tax-planning-2026/credits-and-deductions/`,
+      'x-default': `${BASE}/tax-planning-2026/credits-and-deductions/`,
     },
   },
   openGraph: {
     title: 'Tax credits and deductions to plan for in 2026 | MapleTax Calculator',
     description: 'Act before December 31, 2026: charitable donations, medical expenses, capital gains strategies, and more.',
-    url: `${BASE}/tax-planning-2026/credits-and-deductions`,
+    url: `${BASE}/tax-planning-2026/credits-and-deductions/`,
   },
 };
 
@@ -87,7 +87,7 @@ export default function CreditsAndDeductionsPage() {
       pageMetadata={{
         title: 'Tax credits and deductions to plan for in 2026 | MapleTax Calculator',
         description: 'Act before December 31, 2026: charitable donations, medical, HATC, capital gains, DTC.',
-        canonical: `${BASE}/tax-planning-2026/credits-and-deductions`,
+        canonical: `${BASE}/tax-planning-2026/credits-and-deductions/`,
       }}
     >
       {/* What's new callout */}

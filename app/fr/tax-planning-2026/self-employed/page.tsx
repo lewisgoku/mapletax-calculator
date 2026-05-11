@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Planification fiscale 2026 pour travailleurs autonomes | Calculateur MapleTax',
   description:
     'Acomptes provisionnels, double cotisation RPC, TPS/TVH, bureau à domicile et déductions de véhicule pour travailleurs autonomes en 2026. Version française à venir.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/self-employed',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/self-employed/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/self-employed',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/self-employed',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/self-employed',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/self-employed/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/self-employed/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/self-employed/',
     },
   },
 };

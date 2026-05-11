@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Événements de vie et déclaration 2025 | Calculateur MapleTax',
   description: 'Incidences fiscales des événements de vie importants en 2025. Version française à venir.',
   alternates: {

@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description:
     "Calculateur d'impôt canadien gratuit pour 2025. Utile pour les déclarations tardives et les comparaisons avec l'année précédente.",
   alternates: {
-    canonical: `${BASE}/fr/income-tax-calculator-2025`,
+    canonical: `${BASE}/fr/income-tax-calculator-2025/`,
     languages: {
-      en: `${BASE}/income-tax-calculator-2025`,
-      fr: `${BASE}/fr/income-tax-calculator-2025`,
-      'x-default': `${BASE}/income-tax-calculator-2025`,
+      en: `${BASE}/income-tax-calculator-2025/`,
+      fr: `${BASE}/fr/income-tax-calculator-2025/`,
+      'x-default': `${BASE}/income-tax-calculator-2025/`,
     },
   },
   openGraph: {

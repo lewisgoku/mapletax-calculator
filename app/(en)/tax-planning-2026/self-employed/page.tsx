@@ -10,17 +10,17 @@ export const metadata: Metadata = {
   description:
     'Quarterly instalments, double CPP, GST/HST, home office, and vehicle deductions for self-employed Canadians. Instalment calculator included.',
   alternates: {
-    canonical: `${BASE}/tax-planning-2026/self-employed`,
+    canonical: `${BASE}/tax-planning-2026/self-employed/`,
     languages: {
-      en: `${BASE}/tax-planning-2026/self-employed`,
-      fr: `${BASE}/fr/tax-planning-2026/self-employed`,
-      'x-default': `${BASE}/tax-planning-2026/self-employed`,
+      en: `${BASE}/tax-planning-2026/self-employed/`,
+      fr: `${BASE}/fr/tax-planning-2026/self-employed/`,
+      'x-default': `${BASE}/tax-planning-2026/self-employed/`,
     },
   },
   openGraph: {
     title: 'Tax planning for self-employed Canadians 2026 | MapleTax Calculator',
     description: 'Quarterly instalments, double CPP, GST/HST, home office, vehicle deductions.',
-    url: `${BASE}/tax-planning-2026/self-employed`,
+    url: `${BASE}/tax-planning-2026/self-employed/`,
   },
 };
 
@@ -99,7 +99,7 @@ export default function SelfEmployedPage() {
       pageMetadata={{
         title: 'Tax planning for self-employed Canadians 2026 | MapleTax Calculator',
         description: 'Instalments, double CPP, GST/HST, home office, vehicle deductions.',
-        canonical: `${BASE}/tax-planning-2026/self-employed`,
+        canonical: `${BASE}/tax-planning-2026/self-employed/`,
       }}
     >
       {/* Instalments */}

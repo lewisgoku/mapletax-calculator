@@ -6,17 +6,17 @@ export const metadata: Metadata = {
   description:
     'Federal bottom rate cut to 14%, higher BPA, Alberta new 8% bracket, CPP2 expansion, and more. Full summary of every 2026 Canadian tax change.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/whats-new-2026',
+    canonical: 'https://mapletaxcalculator.ca/whats-new-2026/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/whats-new-2026',
-      'x-default': 'https://mapletaxcalculator.ca/whats-new-2026',
+      en: 'https://mapletaxcalculator.ca/whats-new-2026/',
+      'x-default': 'https://mapletaxcalculator.ca/whats-new-2026/',
     },
   },
   openGraph: {
     title: "What's new in Canadian taxes for 2026",
     description:
       'Federal bottom rate cut to 14%, higher BPA, Alberta new 8% bracket, CPP2 expansion — every 2026 tax change summarised.',
-    url: 'https://mapletaxcalculator.ca/whats-new-2026',
+    url: 'https://mapletaxcalculator.ca/whats-new-2026/',
   },
 };
 
@@ -100,7 +100,7 @@ export default function WhatsNew2026Page() {
       pageMetadata={{
         title: "What's new in Canadian taxes for 2026",
         description: 'Every 2026 Canadian tax change summarised.',
-        canonical: 'https://mapletaxcalculator.ca/whats-new-2026',
+        canonical: 'https://mapletaxcalculator.ca/whats-new-2026/',
       }}
     >
       <section id="federal-rate-cut" className="space-y-3">

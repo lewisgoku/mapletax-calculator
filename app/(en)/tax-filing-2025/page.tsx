@@ -12,18 +12,18 @@ export const metadata: Metadata = {
   description:
     'Everything you need to file your 2025 T1 return: deadline, slips checklist, free NETFILE software, credits, and what to do if you\'re late or can\'t pay.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025`,
+    canonical: `${BASE}/tax-filing-2025/`,
     languages: {
-      en: `${BASE}/tax-filing-2025`,
-      fr: `${BASE}/fr/tax-filing-2025`,
-      'x-default': `${BASE}/tax-filing-2025`,
+      en: `${BASE}/tax-filing-2025/`,
+      fr: `${BASE}/fr/tax-filing-2025/`,
+      'x-default': `${BASE}/tax-filing-2025/`,
     },
   },
   openGraph: {
     title: 'File your 2025 Canadian tax return | MapleTax Calculator',
     description:
       'Deadline, slips checklist, free NETFILE software, credits, and what to do if you\'re late or can\'t pay.',
-    url: `${BASE}/tax-filing-2025`,
+    url: `${BASE}/tax-filing-2025/`,
   },
 };
 

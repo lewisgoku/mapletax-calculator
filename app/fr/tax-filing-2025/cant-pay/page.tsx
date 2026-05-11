@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Impossible de payer votre solde fiscal 2025 | Calculateur MapleTax',
   description: 'Produisez votre déclaration à temps même si vous ne pouvez pas payer. Version française à venir.',
   alternates: {

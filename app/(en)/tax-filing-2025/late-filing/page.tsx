@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description:
     "Missed the April 30 deadline? Estimate your late-filing penalty and learn how to minimize damage. No penalty if you owe nothing.",
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/late-filing`,
+    canonical: `${BASE}/tax-filing-2025/late-filing/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/late-filing`,
-      fr: `${BASE}/fr/tax-filing-2025/late-filing`,
-      'x-default': `${BASE}/tax-filing-2025/late-filing`,
+      en: `${BASE}/tax-filing-2025/late-filing/`,
+      fr: `${BASE}/fr/tax-filing-2025/late-filing/`,
+      'x-default': `${BASE}/tax-filing-2025/late-filing/`,
     },
   },
 };
@@ -91,7 +91,7 @@ export default function LateFilingPage() {
       pageMetadata={{
         title: 'Filing your 2025 return late | MapleTax Calculator',
         description: 'Penalties, interest, and damage control for late filers.',
-        canonical: `${BASE}/tax-filing-2025/late-filing`,
+        canonical: `${BASE}/tax-filing-2025/late-filing/`,
       }}
     >
       {/* If you owe nothing */}

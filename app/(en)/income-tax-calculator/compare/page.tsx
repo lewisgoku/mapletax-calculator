@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   description:
     'Compare income tax, take-home pay, and tax rates between any two Canadian provinces for 2026. Pick two provinces and an income — results update instantly.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
+    canonical: 'https://mapletaxcalculator.ca/income-tax-calculator/compare/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
-      fr: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare',
-      'x-default': 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
+      en: 'https://mapletaxcalculator.ca/income-tax-calculator/compare/',
+      fr: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare/',
+      'x-default': 'https://mapletaxcalculator.ca/income-tax-calculator/compare/',
     },
   },
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       'Side-by-side 2026 Canadian provincial tax comparison. See the take-home difference between any two provinces instantly.',
     type: 'website',
-    url: 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
+    url: 'https://mapletaxcalculator.ca/income-tax-calculator/compare/',
   },
 };
 

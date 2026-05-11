@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Liste des feuillets fiscaux 2025 | Calculateur MapleTax',
   description: 'Liste complète des feuillets T nécessaires avant de produire votre déclaration 2025. Version française à venir.',
   alternates: {

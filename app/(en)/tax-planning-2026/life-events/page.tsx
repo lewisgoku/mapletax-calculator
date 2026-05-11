@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   description:
     'Tax planning actions to take in 2026 for major life events: new baby, marriage, home purchase, retirement, self-employment, and significant investments.',
   alternates: {
-    canonical: `${BASE}/tax-planning-2026/life-events`,
+    canonical: `${BASE}/tax-planning-2026/life-events/`,
     languages: {
-      en: `${BASE}/tax-planning-2026/life-events`,
-      fr: `${BASE}/fr/tax-planning-2026/life-events`,
-      'x-default': `${BASE}/tax-planning-2026/life-events`,
+      en: `${BASE}/tax-planning-2026/life-events/`,
+      fr: `${BASE}/fr/tax-planning-2026/life-events/`,
+      'x-default': `${BASE}/tax-planning-2026/life-events/`,
     },
   },
   openGraph: {
     title: '2026 life event tax planning | MapleTax Calculator',
     description: 'Tax planning actions for major 2026 life events: baby, marriage, home, retirement, self-employment.',
-    url: `${BASE}/tax-planning-2026/life-events`,
+    url: `${BASE}/tax-planning-2026/life-events/`,
   },
 };
 
@@ -180,7 +180,7 @@ export default function LifeEvents2026Page() {
       pageMetadata={{
         title: '2026 life event tax planning | MapleTax Calculator',
         description: 'Tax planning actions for major 2026 life events: baby, marriage, home, retirement, investments.',
-        canonical: `${BASE}/tax-planning-2026/life-events`,
+        canonical: `${BASE}/tax-planning-2026/life-events/`,
       }}
     >
       <div className="space-y-3">

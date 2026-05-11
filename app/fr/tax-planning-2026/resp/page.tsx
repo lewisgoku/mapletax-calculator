@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'REEE — subventions CESG et règles 2026 | Calculateur MapleTax',
   description:
     "REEE 2026 : subvention canadienne pour l'épargne-études (SCEE) jusqu'à 500 $/an, limite à vie de 50 000 $. Version française à venir.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/resp',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/resp/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/resp',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/resp',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/resp',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/resp/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/resp/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/resp/',
     },
   },
 };

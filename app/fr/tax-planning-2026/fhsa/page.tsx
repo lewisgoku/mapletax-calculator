@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'CELIAPP — règles et limite 2026 | Calculateur MapleTax',
   description:
     'Limite CELIAPP 2026 : 8 000 $/an, 40 000 $ à vie. Déductible comme un REER, retraits non imposables comme un CELI. Version française à venir.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa/',
     },
   },
 };

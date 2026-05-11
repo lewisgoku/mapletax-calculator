@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Planification fiscale 2026 | Calculateur MapleTax',
   description:
     'Planifiez vos impôts canadiens pour 2026. Stratégies REER, CELI et CELIAPP. Version française à venir.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/',
     },
   },
 };

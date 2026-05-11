@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'REER — cotisation et stratégie 2026 | Calculateur MapleTax',
   description:
     "Limite de cotisation REER 2026 : 33 810 $ ou 18 % du revenu gagné en 2025. Version française à venir.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp/',
     },
   },
 };

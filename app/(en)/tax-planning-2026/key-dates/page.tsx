@@ -10,17 +10,17 @@ export const metadata: Metadata = {
   description:
     'Complete list of 2026 Canadian tax deadlines: RRSP, TFSA, instalment due dates, T1 filing deadline, and year-end cutoffs. Timeline highlights the next upcoming date.',
   alternates: {
-    canonical: `${BASE}/tax-planning-2026/key-dates`,
+    canonical: `${BASE}/tax-planning-2026/key-dates/`,
     languages: {
-      en: `${BASE}/tax-planning-2026/key-dates`,
-      fr: `${BASE}/fr/tax-planning-2026/key-dates`,
-      'x-default': `${BASE}/tax-planning-2026/key-dates`,
+      en: `${BASE}/tax-planning-2026/key-dates/`,
+      fr: `${BASE}/fr/tax-planning-2026/key-dates/`,
+      'x-default': `${BASE}/tax-planning-2026/key-dates/`,
     },
   },
   openGraph: {
     title: 'Key tax dates for Canadians in 2026 | MapleTax Calculator',
     description: '2026 tax deadlines: RRSP, TFSA, instalments, T1 filing, and year-end cutoffs.',
-    url: `${BASE}/tax-planning-2026/key-dates`,
+    url: `${BASE}/tax-planning-2026/key-dates/`,
   },
 };
 
@@ -87,7 +87,7 @@ export default function KeyDates2026Page() {
       pageMetadata={{
         title: 'Key tax dates for Canadians in 2026 | MapleTax Calculator',
         description: '2026 tax deadlines: RRSP, TFSA, instalments, filing, and year-end cutoffs.',
-        canonical: `${BASE}/tax-planning-2026/key-dates`,
+        canonical: `${BASE}/tax-planning-2026/key-dates/`,
       }}
     >
       {/* Timeline */}

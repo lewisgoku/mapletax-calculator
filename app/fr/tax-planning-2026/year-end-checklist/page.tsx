@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Liste de contrôle fiscale de fin d'année 2026 | Calculateur MapleTax",
   description:
     "Actions fiscales à compléter avant le 31 décembre 2026 : CELI, CELIAPP, dons de bienfaisance, vente à perte. Version française à venir.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/year-end-checklist',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/year-end-checklist/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/year-end-checklist',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/year-end-checklist/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/year-end-checklist/',
     },
   },
 };

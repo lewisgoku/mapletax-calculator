@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description:
     'Free 2025 Canadian income tax calculator. See federal tax, provincial tax, CPP, EI, and take-home pay for every province. Useful for late filers and prior-year comparisons.',
   alternates: {
-    canonical: `${BASE}/income-tax-calculator-2025`,
+    canonical: `${BASE}/income-tax-calculator-2025/`,
     languages: {
-      en: `${BASE}/income-tax-calculator-2025`,
-      fr: `${BASE}/fr/income-tax-calculator-2025`,
-      'x-default': `${BASE}/income-tax-calculator-2025`,
+      en: `${BASE}/income-tax-calculator-2025/`,
+      fr: `${BASE}/fr/income-tax-calculator-2025/`,
+      'x-default': `${BASE}/income-tax-calculator-2025/`,
     },
   },
   openGraph: {

@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'Complete checklist of 2025 T-slips and documents before filing: T4, T5, T3, RRSP receipts, medical, charitable, and more.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/slips-checklist`,
+    canonical: `${BASE}/tax-filing-2025/slips-checklist/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/slips-checklist`,
-      fr: `${BASE}/fr/tax-filing-2025/slips-checklist`,
-      'x-default': `${BASE}/tax-filing-2025/slips-checklist`,
+      en: `${BASE}/tax-filing-2025/slips-checklist/`,
+      fr: `${BASE}/fr/tax-filing-2025/slips-checklist/`,
+      'x-default': `${BASE}/tax-filing-2025/slips-checklist/`,
     },
   },
 };
@@ -98,7 +98,7 @@ export default function SlipsChecklistPage() {
       pageMetadata={{
         title: '2025 T1 tax slips checklist | MapleTax Calculator',
         description: 'Complete checklist of 2025 T-slips before filing.',
-        canonical: `${BASE}/tax-filing-2025/slips-checklist`,
+        canonical: `${BASE}/tax-filing-2025/slips-checklist/`,
       }}
     >
       {/* Full slip table */}

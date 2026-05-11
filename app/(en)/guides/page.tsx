@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     'Guides for filing your 2025 Canadian tax return and planning for 2026. Covers RRSP, TFSA, FHSA, credits, deadlines, and more.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/guides',
+    canonical: 'https://mapletaxcalculator.ca/guides/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/guides',
-      fr: 'https://mapletaxcalculator.ca/fr/guides',
-      'x-default': 'https://mapletaxcalculator.ca/guides',
+      en: 'https://mapletaxcalculator.ca/guides/',
+      fr: 'https://mapletaxcalculator.ca/fr/guides/',
+      'x-default': 'https://mapletaxcalculator.ca/guides/',
     },
   },
   openGraph: {
     title: 'Canadian tax guides 2025 & 2026',
     description:
       'Everything you need to file your 2025 return and plan your 2026 taxes — RRSP, TFSA, credits, deadlines, and calculators.',
-    url: 'https://mapletaxcalculator.ca/guides',
+    url: 'https://mapletaxcalculator.ca/guides/',
   },
 };
 

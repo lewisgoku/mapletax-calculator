@@ -258,6 +258,21 @@ French mirrors all of above under `/fr/...`.
 - Created: app/icon.svg — SVG favicon with maple-red (#C41E3A) rounded-square background, MT text in a display area, and a 3-row calculator keypad pattern; Next.js App Router picks this up automatically over the existing favicon.ico fallback
 - Build: 113 static HTML pages clean; 348 tests pass (no new logic)
 
+### Session 11 (2026-05-11) — GSC indexing fixes
+- Fixed: "Page with redirect" — root cause was `trailingSlash: true` in next.config.ts; Cloudflare redirects `/path` → `/path/` but all sitemaps and canonical tags omitted trailing slashes; Google saw every sitemap URL as a redirect
+  - Updated: all canonical and `languages` alternate URLs in 51 page files (TypeScript) to include trailing slashes (bulk PowerShell regex across `app/`)
+  - Updated: `public/sitemap.xml` — all `<loc>` and `hreflang href=` URLs now have trailing slashes
+  - Updated: `app/sitemap.ts` — all static and dynamic (province slug) URLs now have trailing slashes
+  - Updated: `app/(en)/page.tsx` homepage canonical changed from bare `BASE` to `` `${BASE}/` ``
+- Fixed: "Alternate page with proper canonical tag" — root cause was Cloudflare serving the site on both `mapletaxcalculator.ca` and `www.mapletaxcalculator.ca`; canonical tags point to non-www only; Google marked every www page as an alternate
+  - Created: `public/_redirects` — Cloudflare Pages redirect rule: `https://www.mapletaxcalculator.ca/* → https://mapletaxcalculator.ca/:splat 301`
+- Fixed: "Soft 404" and "Not found (404)" — three sub-causes:
+  - 7 placeholder pages (`/compare-provinces` EN+FR, `fr/disclaimer`, `fr/privacy`, `fr/terms`, `fr/guides`, `fr/whats-new-2026`) were rendering "This page does not exist yet" with HTTP 200; added `robots: { index: false, follow: false }` metadata to all
+  - 18 French stub sub-pages (`fr/tax-filing-2025/*`, `fr/tax-planning-2026/*` landing + sub-pages) had thin "coming soon" content; added `robots: { index: false, follow: false }` to all; removed all from both sitemaps
+  - Added `_redirects` entries: `/compare-provinces` → `/income-tax-calculator/compare/` and `/fr/compare-provinces` → `/fr/income-tax-calculator/compare/`
+- Rule going forward: never add a URL to the sitemap if its page has `robots: { index: false }` or renders stub/placeholder content
+- Build: clean (same page count); 348 tests pass
+
 ### Session 7 (2026-04-27) Extension
 - Layout alignment: all sections in `components/ProvincePage.tsx` changed from `max-w-3xl` to `max-w-5xl` — breadcrumb, H1/intro, bracket table, prose, FAQ, related provinces, and disclaimer footer now align with the calculator's container
 - Layout alignment: `app/(en)/page.tsx` and `app/(en)/income-tax-calculator/page.tsx` — FAQ and "Calculators for each province" sections changed from `max-w-3xl` to `max-w-5xl` to match calculator width

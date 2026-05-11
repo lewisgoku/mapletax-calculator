@@ -23,7 +23,7 @@ export async function generateMetadata({
 
   const title = `${prov.name} income tax calculator 2026 — take-home pay`;
   const description = `Calculate your 2026 ${prov.name} take-home pay after federal and provincial income tax, CPP, and EI. See ${prov.name}'s 2026 tax brackets, rates, and credits.`;
-  const canonical = `${BASE}/income-tax-calculator/${slug}`;
+  const canonical = `${BASE}/income-tax-calculator/${slug}/`;
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
       canonical,
       languages: {
         en: canonical,
-        fr: `${BASE}/fr/income-tax-calculator/${slug}`,
+        fr: `${BASE}/fr/income-tax-calculator/${slug}/`,
         'x-default': canonical,
       },
     },

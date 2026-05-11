@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     '2026 TFSA limit is $7,000. Cumulative limit is $109,000 for those eligible since 2009. Calculate your room and avoid over-contribution penalties.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa',
+    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa/',
     },
   },
   openGraph: {
     title: 'TFSA contribution limit and room calculator 2026 | MapleTax Calculator',
     description:
       '2026 TFSA limit is $7,000. Cumulative $109,000. Calculate your room and avoid penalties.',
-    url: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa',
+    url: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa/',
   },
 };
 
@@ -132,7 +132,7 @@ export default function TFSAPage() {
         title: 'TFSA contribution limit and room calculator 2026 | MapleTax Calculator',
         description:
           '2026 TFSA limit is $7,000. Cumulative limit is $109,000 for those eligible since 2009. Calculate your room and avoid over-contribution penalties.',
-        canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa',
+        canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa/',
       }}
     >
       {/* 2026 limit */}

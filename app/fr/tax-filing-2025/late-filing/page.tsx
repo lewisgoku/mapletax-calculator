@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Production tardive de votre déclaration 2025 | Calculateur MapleTax',
   description: 'Pénalités et intérêts pour production tardive de la déclaration T1 de 2025. Version française à venir.',
   alternates: {

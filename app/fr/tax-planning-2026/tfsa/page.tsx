@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'CELI — droits de cotisation et calculateur 2026 | Calculateur MapleTax',
   description:
     'Limite CELI 2026 : 7 000 $. Droits cumulatifs : 109 000 $ pour les cotisants depuis 2009. Version française à venir.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/tfsa/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/tfsa/',
     },
   },
 };

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     '2026 RRSP contribution limit is $33,810 or 18% of 2025 earned income. Calculate your room, plan deductions, and avoid penalties.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp',
+    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/rrsp/',
     },
   },
   openGraph: {
     title: 'RRSP contribution limit and strategy 2026 | MapleTax Calculator',
     description:
       '2026 RRSP limit is $33,810. Calculate your room, plan deductions, and avoid the attribution trap.',
-    url: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp',
+    url: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp/',
   },
 };
 
@@ -134,7 +134,7 @@ export default function RRSPPage() {
         title: 'RRSP contribution limit and strategy 2026 | MapleTax Calculator',
         description:
           '2026 RRSP contribution limit is $33,810 or 18% of 2025 earned income. Calculate your room, plan deductions, and avoid penalties.',
-        canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp',
+        canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/rrsp/',
       }}
     >
       {/* Contribution limit section */}

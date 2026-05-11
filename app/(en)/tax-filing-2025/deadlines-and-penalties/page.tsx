@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description:
     'April 30, 2026 is the deadline to file your 2025 tax return. Self-employed filers have until June 15. Miss the deadline and owe money? A 5% penalty starts immediately.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/deadlines-and-penalties`,
+    canonical: `${BASE}/tax-filing-2025/deadlines-and-penalties/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/deadlines-and-penalties`,
-      'x-default': `${BASE}/tax-filing-2025/deadlines-and-penalties`,
+      en: `${BASE}/tax-filing-2025/deadlines-and-penalties/`,
+      'x-default': `${BASE}/tax-filing-2025/deadlines-and-penalties/`,
     },
   },
 };
@@ -81,7 +81,7 @@ export default function DeadlinesAndPenaltiesPage() {
       pageMetadata={{
         title: '2025 tax filing deadlines and penalties | MapleTax Calculator',
         description: 'April 30, 2026 filing deadline, self-employed June 15 extension, and late-filing penalty rules.',
-        canonical: `${BASE}/tax-filing-2025/deadlines-and-penalties`,
+        canonical: `${BASE}/tax-filing-2025/deadlines-and-penalties/`,
       }}
     >
       {/* Key dates */}

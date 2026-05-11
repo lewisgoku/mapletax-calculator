@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Crédits et déductions d'impôt à planifier en 2026 | Calculateur MapleTax",
   description:
     "Crédits et déductions à anticiper avant le 31 décembre 2026 : dons de bienfaisance, frais médicaux, gains en capital. Version française à venir.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/credits-and-deductions',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/credits-and-deductions/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/credits-and-deductions',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/credits-and-deductions/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/credits-and-deductions/',
     },
   },
 };

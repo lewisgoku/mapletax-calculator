@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Crédits et déductions fiscaux 2025 | Calculateur MapleTax',
   description: 'Crédits et déductions fréquemment oubliés pour la déclaration T1 de 2025. Version française à venir.',
   alternates: {

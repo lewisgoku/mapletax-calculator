@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'Commonly missed 2025 T1 credits and deductions: disability, caregiver, childcare, moving expenses, CAIP, and more. With 2025 amounts.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/credits-and-deductions`,
+    canonical: `${BASE}/tax-filing-2025/credits-and-deductions/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/credits-and-deductions`,
-      fr: `${BASE}/fr/tax-filing-2025/credits-and-deductions`,
-      'x-default': `${BASE}/tax-filing-2025/credits-and-deductions`,
+      en: `${BASE}/tax-filing-2025/credits-and-deductions/`,
+      fr: `${BASE}/fr/tax-filing-2025/credits-and-deductions/`,
+      'x-default': `${BASE}/tax-filing-2025/credits-and-deductions/`,
     },
   },
 };
@@ -70,7 +70,7 @@ export default function CreditsAndDeductionsPage() {
       pageMetadata={{
         title: '2025 tax credits and deductions | MapleTax Calculator',
         description: 'Commonly missed 2025 T1 credits and deductions with amounts.',
-        canonical: `${BASE}/tax-filing-2025/credits-and-deductions`,
+        canonical: `${BASE}/tax-filing-2025/credits-and-deductions/`,
       }}
     >
       {/* Credits vs. deductions */}

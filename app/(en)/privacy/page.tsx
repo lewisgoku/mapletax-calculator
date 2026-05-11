@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   description:
     'MapleTax Calculator collects no personal data. All tax calculations happen in your browser. Learn what we do and do not collect.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/privacy',
+    canonical: 'https://mapletaxcalculator.ca/privacy/',
     languages: {
-      'en': 'https://mapletaxcalculator.ca/privacy',
-      'fr': 'https://mapletaxcalculator.ca/fr/privacy',
-      'x-default': 'https://mapletaxcalculator.ca/privacy',
+      'en': 'https://mapletaxcalculator.ca/privacy/',
+      'fr': 'https://mapletaxcalculator.ca/fr/privacy/',
+      'x-default': 'https://mapletaxcalculator.ca/privacy/',
     },
   },
 };

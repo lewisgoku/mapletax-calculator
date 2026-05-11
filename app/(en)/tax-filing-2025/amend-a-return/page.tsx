@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'Amend your 2025 T1 return using ReFILE, T1-ADJ via My Account, or a paper form. Learn timelines and when to amend vs. wait.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/amend-a-return`,
+    canonical: `${BASE}/tax-filing-2025/amend-a-return/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/amend-a-return`,
-      fr: `${BASE}/fr/tax-filing-2025/amend-a-return`,
-      'x-default': `${BASE}/tax-filing-2025/amend-a-return`,
+      en: `${BASE}/tax-filing-2025/amend-a-return/`,
+      fr: `${BASE}/fr/tax-filing-2025/amend-a-return/`,
+      'x-default': `${BASE}/tax-filing-2025/amend-a-return/`,
     },
   },
 };
@@ -71,7 +71,7 @@ export default function AmendAReturnPage() {
       pageMetadata={{
         title: 'How to amend your 2025 tax return | MapleTax Calculator',
         description: 'ReFILE, T1-ADJ, or paper amendment — timelines and rules.',
-        canonical: `${BASE}/tax-filing-2025/amend-a-return`,
+        canonical: `${BASE}/tax-filing-2025/amend-a-return/`,
       }}
     >
       {/* When to amend */}

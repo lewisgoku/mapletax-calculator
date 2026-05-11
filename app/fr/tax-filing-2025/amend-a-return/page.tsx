@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Modifier votre déclaration 2025 | Calculateur MapleTax',
   description: 'Comment corriger votre déclaration T1 de 2025 via ReFILE ou T1-ADJ. Version française à venir.',
   alternates: {

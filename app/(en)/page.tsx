@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'Free 2026 Canadian income tax calculator. See federal tax, provincial tax, CPP, EI, and take-home pay for every province. Live calculation, no sign-up.',
   alternates: {
-    canonical: BASE,
+    canonical: `${BASE}/`,
     languages: {
-      en: BASE,
-      fr: `${BASE}/fr`,
-      'x-default': BASE,
+      en: `${BASE}/`,
+      fr: `${BASE}/fr/`,
+      'x-default': `${BASE}/`,
     },
   },
   openGraph: {

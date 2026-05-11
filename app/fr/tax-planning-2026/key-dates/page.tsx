@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Dates clés pour les contribuables canadiens en 2026 | Calculateur MapleTax',
   description:
     "Toutes les dates importantes pour l'impôt 2026 : REER, acomptes provisionnels, déclaration T1, date limite de fin d'année. Version française à venir.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/key-dates',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/key-dates',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/key-dates/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/key-dates/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/key-dates/',
     },
   },
 };

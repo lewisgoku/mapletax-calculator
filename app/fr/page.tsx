@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description:
     "Calculateur d'impôt canadien gratuit pour 2026. Calculez votre impôt fédéral et provincial, le RPC, l'AE et votre salaire net. Calcul en temps réel, sans inscription.",
   alternates: {
-    canonical: `${BASE}/fr`,
+    canonical: `${BASE}/fr/`,
     languages: {
       en: BASE,
-      fr: `${BASE}/fr`,
+      fr: `${BASE}/fr/`,
       'x-default': BASE,
     },
   },

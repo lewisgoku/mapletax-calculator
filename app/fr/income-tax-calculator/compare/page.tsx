@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   description:
     "Comparez l'impôt sur le revenu, le salaire net et les taux d'imposition entre deux provinces canadiennes pour 2026. Choisissez deux provinces et un revenu — résultats instantanés.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare',
+    canonical: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
-      fr: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare',
-      'x-default': 'https://mapletaxcalculator.ca/income-tax-calculator/compare',
+      en: 'https://mapletaxcalculator.ca/income-tax-calculator/compare/',
+      fr: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare/',
+      'x-default': 'https://mapletaxcalculator.ca/income-tax-calculator/compare/',
     },
   },
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Comparaison côte à côte des impôts provinciaux canadiens 2026. Voyez la différence de salaire net entre deux provinces.",
     type: 'website',
-    url: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare',
+    url: 'https://mapletaxcalculator.ca/fr/income-tax-calculator/compare/',
   },
 };
 

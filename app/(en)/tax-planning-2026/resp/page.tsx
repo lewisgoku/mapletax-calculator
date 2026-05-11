@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   description:
     'The government adds 20% on the first $2,500 RESP contribution per year (max $500). Calculate your CESG projection and understand the age-17 rules.',
   alternates: {
-    canonical: `${BASE}/tax-planning-2026/resp`,
+    canonical: `${BASE}/tax-planning-2026/resp/`,
     languages: {
-      en: `${BASE}/tax-planning-2026/resp`,
-      fr: `${BASE}/fr/tax-planning-2026/resp`,
-      'x-default': `${BASE}/tax-planning-2026/resp`,
+      en: `${BASE}/tax-planning-2026/resp/`,
+      fr: `${BASE}/fr/tax-planning-2026/resp/`,
+      'x-default': `${BASE}/tax-planning-2026/resp/`,
     },
   },
   openGraph: {
     title: 'RESP and CESG in 2026 | MapleTax Calculator',
     description:
       'Maximize the 20% Canada Education Savings Grant. Calculate your CESG projection.',
-    url: `${BASE}/tax-planning-2026/resp`,
+    url: `${BASE}/tax-planning-2026/resp/`,
   },
 };
 
@@ -100,7 +100,7 @@ export default function RespPage() {
       pageMetadata={{
         title: 'RESP and CESG in 2026 | MapleTax Calculator',
         description: 'Maximize the 20% Canada Education Savings Grant. CESG projection calculator and age-17 rules explained.',
-        canonical: `${BASE}/tax-planning-2026/resp`,
+        canonical: `${BASE}/tax-planning-2026/resp/`,
       }}
     >
       {/* How the CESG works */}

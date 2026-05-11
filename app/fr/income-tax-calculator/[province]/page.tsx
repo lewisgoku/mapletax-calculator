@@ -23,7 +23,7 @@ export async function generateMetadata({
 
   const title = `${prov.name} — calculateur d'impôt sur le revenu 2026`;
   const description = `Calculez votre salaire net 2026 pour ${prov.name} après impôt fédéral et provincial, RPC et AE. Consultez les tranches d'imposition et les taux 2026 de ${prov.name}.`;
-  const canonical = `${BASE}/fr/income-tax-calculator/${slug}`;
+  const canonical = `${BASE}/fr/income-tax-calculator/${slug}/`;
 
   return {
     title,
@@ -31,9 +31,9 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        en: `${BASE}/income-tax-calculator/${slug}`,
+        en: `${BASE}/income-tax-calculator/${slug}/`,
         fr: canonical,
-        'x-default': `${BASE}/income-tax-calculator/${slug}`,
+        'x-default': `${BASE}/income-tax-calculator/${slug}/`,
       },
     },
     openGraph: { title, description, type: 'website' },

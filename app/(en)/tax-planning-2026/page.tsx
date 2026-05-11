@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   description:
     'Plan your 2026 Canadian taxes. Compare RRSP, TFSA, and FHSA contribution strategies, claim missed credits, and time year-end moves to reduce tax owing.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026',
+    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/',
     languages: {
-      'en': 'https://mapletaxcalculator.ca/tax-planning-2026',
-      'fr': 'https://mapletaxcalculator.ca/fr/tax-planning-2026',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026',
+      'en': 'https://mapletaxcalculator.ca/tax-planning-2026/',
+      'fr': 'https://mapletaxcalculator.ca/fr/tax-planning-2026/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/',
     },
   },
   openGraph: {
     title: 'Tax planning 2026 | MapleTax Calculator',
     description:
       'Plan your 2026 Canadian taxes. Compare RRSP, TFSA, and FHSA contribution strategies.',
-    url: 'https://mapletaxcalculator.ca/tax-planning-2026',
+    url: 'https://mapletaxcalculator.ca/tax-planning-2026/',
   },
 };
 

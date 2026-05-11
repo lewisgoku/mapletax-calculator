@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Planification fiscale 2026 — événements de vie | Calculateur MapleTax',
   description:
     "Planification fiscale pour les grands événements de vie en 2026 : naissance, mariage, achat d'une maison, retraite, travail autonome. Version française à venir.",
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/life-events',
+    canonical: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/life-events/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/life-events',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/life-events',
-      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/life-events',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/life-events/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/life-events/',
+      'x-default': 'https://mapletaxcalculator.ca/tax-planning-2026/life-events/',
     },
   },
 };

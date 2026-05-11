@@ -10,17 +10,17 @@ export const metadata: Metadata = {
   description:
     'Checklist of tax actions to complete before December 31, 2026: TFSA, FHSA, RESP contributions, charitable donations, tax-loss selling, and year-end business moves.',
   alternates: {
-    canonical: `${BASE}/tax-planning-2026/year-end-checklist`,
+    canonical: `${BASE}/tax-planning-2026/year-end-checklist/`,
     languages: {
-      en: `${BASE}/tax-planning-2026/year-end-checklist`,
-      fr: `${BASE}/fr/tax-planning-2026/year-end-checklist`,
-      'x-default': `${BASE}/tax-planning-2026/year-end-checklist`,
+      en: `${BASE}/tax-planning-2026/year-end-checklist/`,
+      fr: `${BASE}/fr/tax-planning-2026/year-end-checklist/`,
+      'x-default': `${BASE}/tax-planning-2026/year-end-checklist/`,
     },
   },
   openGraph: {
     title: '2026 year-end tax checklist | MapleTax Calculator',
     description: 'Actions before December 31, 2026: TFSA, FHSA, donations, tax-loss selling.',
-    url: `${BASE}/tax-planning-2026/year-end-checklist`,
+    url: `${BASE}/tax-planning-2026/year-end-checklist/`,
   },
 };
 
@@ -88,7 +88,7 @@ export default function YearEndChecklistPage() {
       pageMetadata={{
         title: '2026 year-end tax checklist | MapleTax Calculator',
         description: 'Actions before December 31, 2026: TFSA, FHSA, donations, tax-loss selling.',
-        canonical: `${BASE}/tax-planning-2026/year-end-checklist`,
+        canonical: `${BASE}/tax-planning-2026/year-end-checklist/`,
       }}
     >
       {/* Interactive checklist */}

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Logiciels IMPÔTNET gratuits pour 2025 | Calculateur MapleTax',
   description: 'Options gratuites certifiées IMPÔTNET pour votre déclaration T1 de 2025. Version française à venir.',
   alternates: {

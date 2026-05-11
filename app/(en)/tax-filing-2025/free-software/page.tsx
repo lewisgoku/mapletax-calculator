@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'Five free NETFILE-certified options for your 2025 T1 return: Wealthsimple Tax, GenuTax, StudioTax, and more. No income limit.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/free-software`,
+    canonical: `${BASE}/tax-filing-2025/free-software/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/free-software`,
-      fr: `${BASE}/fr/tax-filing-2025/free-software`,
-      'x-default': `${BASE}/tax-filing-2025/free-software`,
+      en: `${BASE}/tax-filing-2025/free-software/`,
+      fr: `${BASE}/fr/tax-filing-2025/free-software/`,
+      'x-default': `${BASE}/tax-filing-2025/free-software/`,
     },
   },
 };
@@ -106,7 +106,7 @@ export default function FreeSoftwarePage() {
       pageMetadata={{
         title: 'Free NETFILE software for 2025 | MapleTax Calculator',
         description: 'Five free NETFILE-certified options for your 2025 T1.',
-        canonical: `${BASE}/tax-filing-2025/free-software`,
+        canonical: `${BASE}/tax-filing-2025/free-software/`,
       }}
     >
       {/* Comparison table */}

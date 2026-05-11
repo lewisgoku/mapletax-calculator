@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     'File on time even if you can\'t pay — the late-filing penalty is separate from interest. Learn how to set up a CRA payment arrangement.',
   alternates: {
-    canonical: `${BASE}/tax-filing-2025/cant-pay`,
+    canonical: `${BASE}/tax-filing-2025/cant-pay/`,
     languages: {
-      en: `${BASE}/tax-filing-2025/cant-pay`,
-      fr: `${BASE}/fr/tax-filing-2025/cant-pay`,
-      'x-default': `${BASE}/tax-filing-2025/cant-pay`,
+      en: `${BASE}/tax-filing-2025/cant-pay/`,
+      fr: `${BASE}/fr/tax-filing-2025/cant-pay/`,
+      'x-default': `${BASE}/tax-filing-2025/cant-pay/`,
     },
   },
 };
@@ -66,7 +66,7 @@ export default function CantPayPage() {
       pageMetadata={{
         title: "Can't pay your 2025 tax bill? | MapleTax Calculator",
         description: 'File on time even without payment. CRA payment arrangement guide.',
-        canonical: `${BASE}/tax-filing-2025/cant-pay`,
+        canonical: `${BASE}/tax-filing-2025/cant-pay/`,
       }}
     >
       {/* File first */}

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   description:
     '2026 FHSA limit is $8,000/year, $40,000 lifetime. Tax-deductible like RRSP, tax-free withdrawals like TFSA when used for a qualifying first home.',
   alternates: {
-    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa',
+    canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa/',
     languages: {
-      en: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa',
-      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa',
+      en: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa/',
+      fr: 'https://mapletaxcalculator.ca/fr/tax-planning-2026/fhsa/',
     },
   },
   openGraph: {
     title: 'FHSA contribution limit and rules 2026 | MapleTax Calculator',
     description:
       '2026 FHSA: $8,000/year, $40,000 lifetime. Deductible like RRSP, tax-free withdrawals like TFSA.',
-    url: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa',
+    url: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa/',
   },
 };
 
@@ -133,7 +133,7 @@ export default function FHSAPage() {
         title: 'FHSA contribution limit and rules 2026 | MapleTax Calculator',
         description:
           '2026 FHSA limit is $8,000/year, $40,000 lifetime. Tax-deductible like RRSP, tax-free withdrawals like TFSA when used for a qualifying first home.',
-        canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa',
+        canonical: 'https://mapletaxcalculator.ca/tax-planning-2026/fhsa/',
       }}
     >
       {/* Limit and cap */}

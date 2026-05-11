@@ -3,15 +3,16 @@ import type { Metadata } from 'next';
 const BASE = 'https://mapletaxcalculator.ca';
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: 'Produire votre déclaration de revenus 2025 | Calculateur MapleTax',
   description:
     'Tout ce dont vous avez besoin pour produire votre déclaration T1 de 2025 : délai, liste des feuillets, logiciels IMPÔTNET gratuits et plus. Version française à venir.',
   alternates: {
-    canonical: `${BASE}/fr/tax-filing-2025`,
+    canonical: `${BASE}/fr/tax-filing-2025/`,
     languages: {
-      en: `${BASE}/tax-filing-2025`,
-      fr: `${BASE}/fr/tax-filing-2025`,
-      'x-default': `${BASE}/tax-filing-2025`,
+      en: `${BASE}/tax-filing-2025/`,
+      fr: `${BASE}/fr/tax-filing-2025/`,
+      'x-default': `${BASE}/tax-filing-2025/`,
     },
   },
 };
